@@ -10,10 +10,20 @@
 <div class="topbar">
   <div class="wrap">
     <nav class="topnav" aria-label="Utility navigation">
-      <a href="/" aria-current="{{ page.url == '/' ? 'page' : undefined }}">Home</a>
-      <a href="/about/" aria-current="{{ page.url == '/about/' ? 'page' : undefined }}">About Us</a>
-      <a href="/team/"  aria-current="{{ page.url == '/team/'  ? 'page' : undefined }}">Meet the Team</a>
-      <a href="/join/"  aria-current="{{ page.url == '/join/'  ? 'page' : undefined }}">Join Us</a>
+      {# capture current path once #}
+      {% set here = page.url or '/' %}
+
+      <a href="/"
+         {% if here == '/' %}aria-current="page"{% endif %}>Home</a>
+
+      <a href="/about/"
+         {% if here == '/about/' %}aria-current="page"{% endif %}>About Us</a>
+
+      <a href="/team/"
+         {% if here == '/team/' %}aria-current="page"{% endif %}>Meet the Team</a>
+
+      <a href="/join/"
+         {% if here == '/join/' %}aria-current="page"{% endif %}>Join Us</a>
     </nav>
   </div>
 </div>

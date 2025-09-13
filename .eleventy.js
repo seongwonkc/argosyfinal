@@ -1,5 +1,4 @@
 // .eleventy.js
-const path = require("path");
 const catMap = require("./src/_data/categoryMap.js");
 
 /* ----------------------- Helpers ----------------------- */
@@ -19,31 +18,22 @@ const slugify = (s) =>
 
 // ISO date (yyyy-mm-dd)
 const isoDate = (date) => {
-  try {
-    return new Date(date).toISOString().slice(0, 10);
-  } catch {
-    return "";
-  }
+  try { return new Date(date).toISOString().slice(0, 10); } catch { return ""; }
 };
 
 // Nice display date
 const displayDate = (date, locale = "en-US") => {
   try {
-    return new Intl.DateTimeFormat(locale, {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }).format(new Date(date));
-  } catch {
-    return "";
-  }
+    return new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", year: "numeric" })
+      .format(new Date(date));
+  } catch { return ""; }
 };
 
 // Map a raw category string → canonical (via aliases)
 function canonicalName(raw) {
   if (!raw) return "";
   const key = String(raw).trim().toLowerCase();
-  return catMap.aliases?.[key] || key;
+  return (catMap.aliases && catMap.aliases[key]) || key;
 }
 
 // Title-case for display (keeps & and small words)
@@ -64,20 +54,18 @@ function displayName(canon) {
 // Returns array [{name, key}] with canonicalization + slug keys
 function normalizeCategories(data) {
   const set = new Map();
-
-  const pushOne = (name) => {
+  const push = (name) => {
     const raw = String(name || "").trim();
     if (!raw) return;
-    const canon = canonicalName(raw);              // apply alias map
+    const canon = canonicalName(raw);
     const key = slugify(canon) || "uncategorized";
     const nameOut = displayName(canon);
     if (!set.has(key)) set.set(key, { name: nameOut, key });
   };
 
-  if (Array.isArray(data?.categories)) data.categories.forEach(pushOne);
-  else if (typeof data?.categories === "string") pushOne(data.categories);
-
-  if (typeof data?.category === "string") pushOne(data.category);
+  if (Array.isArray(data?.categories)) data.categories.forEach(push);
+  else if (typeof data?.categories === "string") push(data.categories);
+  if (typeof data?.category === "string") push(data.category);
 
   if (set.size === 0) set.set("uncategorized", { name: "Uncategorized", key: "uncategorized" });
   return Array.from(set.values());
@@ -134,14 +122,29 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  // categories: merged + ordered using src/_data/categoryMap.js
+  // Build the same mapped items once (avoid repeating logic)
+  function mappedItems(api) {
+    return api
+      .getFilteredByGlob("src/posts/**/*.md")
+      .sort((a, b) => (b.date || 0) - (a.date || 0))
+      .map((item) => {
+        const cats = normalizeCategories(item.data);
+        const primary = cats[0];
+        return viewOf(item, {
+          _primaryCategoryName: primary.name,
+          _primaryCategoryKey: primary.key,
+          _allCategories: cats,
+        });
+      });
+  }
+
+  // Merged + ordered categories using src/_data/categoryMap.js
   eleventyConfig.addCollection("categories", (api) => {
-    const posts = api.getFilteredByTag("posts"); // the "posts" collection we defined above
+    const items = mappedItems(api);
     const buckets = new Map();
 
-    for (const p of posts) {
-      const cats = p.data._allCategories || normalizeCategories(p.data);
-      const primary = cats[0];
+    for (const p of items) {
+      const primary = p.data._allCategories?.[0];
       if (!primary) continue;
 
       if (!buckets.has(primary.key)) {
@@ -153,11 +156,12 @@ module.exports = function (eleventyConfig) {
     let list = Array.from(buckets.values());
 
     // Apply explicit order if provided
-    if (Array.isArray(catMap.order) && catMap.order.length) {
-      const orderIndex = new Map(catMap.order.map((n, i) => [slugify(n), i]));
+    const order = (Array.isArray(catMap.order) && catMap.order) || [];
+    if (order.length) {
+      const idx = new Map(order.map((n, i) => [slugify(n), i]));
       list.sort((a, b) => {
-        const ai = orderIndex.has(a.key) ? orderIndex.get(a.key) : 9999;
-        const bi = orderIndex.has(b.key) ? orderIndex.get(b.key) : 9999;
+        const ai = idx.has(a.key) ? idx.get(a.key) : 9999;
+        const bi = idx.has(b.key) ? idx.get(b.key) : 9999;
         return ai - bi || a.name.localeCompare(b.name);
       });
     } else {
@@ -169,11 +173,11 @@ module.exports = function (eleventyConfig) {
 
   // Optional: byCategory lookup (key → array of posts)
   eleventyConfig.addCollection("byCategory", (api) => {
+    const items = mappedItems(api);
     const map = new Map();
-    const posts = api.getFilteredByTag("posts");
 
-    for (const p of posts) {
-      const cats = p.data._allCategories || normalizeCategories(p.data);
+    for (const p of items) {
+      const cats = p.data._allCategories || [];
       for (const c of cats) {
         if (!map.has(c.key)) map.set(c.key, []);
         map.get(c.key).push(viewOf(p, { _categoryName: c.name, _categoryKey: c.key }));

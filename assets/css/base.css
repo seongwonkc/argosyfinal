@@ -35,7 +35,7 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
 
 /* Limit article images to page width and center them */
 .site-content img {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   display: block;
   margin-left: auto;

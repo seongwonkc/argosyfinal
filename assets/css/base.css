@@ -8,3 +8,27 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
 .post-card { padding: .75rem; border: 1px solid #eee; border-radius: .5rem; }
 .meta { color:#666; font-size:.9rem; }
 .prose img { max-width: 100%; height: auto; }
+
+/* Slim utility bar for static pages */
+.topbar { 
+  padding: 8px 0; 
+  border-bottom: 1px solid #eee; 
+}
+.topbar .container {
+  /* Match your site’s centered width; adjust if your theme uses a different max-width */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px; /* keeps a little breathing room on small screens */
+}
+.topnav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+.topnav a {
+  text-decoration: none;
+}
+.topnav a:hover {
+  text-decoration: underline;
+}

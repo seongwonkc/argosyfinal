@@ -4,33 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
     {% if site.favicon %}<link rel="icon" href="{{ site.favicon | url }}">{% endif %}
   </head>
 
   <body>
-    <header class="site-header">
+    <!-- Slim top bar: only the pinned pages -->
+    <header class="topbar">
       <div class="container">
-        <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
-
-        <nav class="nav">
-          <!-- Home -->
+        <nav class="topnav" aria-label="Utility navigation">
           <a href="/">Home</a>
-
-          <!-- Pinned static pages -->
           <a href="/about/">About Us</a>
           <a href="/team/">Meet the Team</a>
           <a href="/join/">Join Us</a>
-
-          <!-- Categories -->
-          <a href="/category/politics/">Politics</a>
-          <a href="/category/sports/">Sports</a>
-          <a href="/category/culture/">Culture</a>
-          <a href="/category/health/">Health</a>
         </nav>
       </div>
     </header>
 
+    <!-- Your theme’s existing masthead/hero/categories will render inside {{ content }} -->
     <main class="site-content">
       {{ content | safe }}
     </main>

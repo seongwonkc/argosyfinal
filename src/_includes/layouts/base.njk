@@ -7,37 +7,13 @@
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
   </head>
-
   <body>
-    <!-- Masthead with logo-only brand -->
-    <header class="masthead">
-      <div class="wrap">
-        <a href="/" class="brand" aria-label="The Argosy">
-          <img src="/assets/images/logo.png" alt="The Argosy" class="logo">
-        </a>
-      </div>
-    </header>
-
-    <!-- Slim utility bar: only the pinned pages -->
-    <div class="topbar">
-      <div class="container wrap">
-        <nav class="topnav" aria-label="Utility navigation">
-          <a href="/">Home</a>
-          <a href="/about/">About Us</a>
-          <a href="/team/">Meet the Team</a>
-          <a href="/join/">Join Us</a>
-        </nav>
-      </div>
-    </div>
+    {% include "partials/header.njk" %}
 
     <main class="site-content">
       {{ content | safe }}
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap">
-        <p>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</p>
-      </div>
-    </footer>
+    {% include "partials/footer.njk" %}
   </body>
 </html>

@@ -1,8 +1,9 @@
-{# Shared masthead + slim utility bar #}
-<header class="masthead">
+{# Shared masthead + slim utility bar - prettier masthead #}
+<header class="masthead" role="banner">
   <div class="wrap">
     <a href="/" class="brand" aria-label="The Argosy">
       <img src="/assets/images/logo.png" alt="The Argosy" class="logo">
+      <span class="wordmark">The Argosy</span>
     </a>
   </div>
 </header>
@@ -10,20 +11,11 @@
 <div class="topbar">
   <div class="wrap">
     <nav class="topnav" aria-label="Utility navigation">
-      {# capture current path once #}
       {% set here = page.url or '/' %}
-
-      <a href="/"
-         {% if here == '/' %}aria-current="page"{% endif %}>Home</a>
-
-      <a href="/about/"
-         {% if here == '/about/' %}aria-current="page"{% endif %}>About Us</a>
-
-      <a href="/team/"
-         {% if here == '/team/' %}aria-current="page"{% endif %}>Meet the Team</a>
-
-      <a href="/join/"
-         {% if here == '/join/' %}aria-current="page"{% endif %}>Join Us</a>
+      <a href="/"        {% if here == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="/about/"  {% if here == '/about/' %}aria-current="page"{% endif %}>About Us</a>
+      <a href="/team/"   {% if here == '/team/' %}aria-current="page"{% endif %}>Meet the Team</a>
+      <a href="/join/"   {% if here == '/join/' %}aria-current="page"{% endif %}>Join Us</a>
     </nav>
   </div>
 </div>

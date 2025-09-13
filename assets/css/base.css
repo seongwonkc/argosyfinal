@@ -129,3 +129,55 @@ nav[aria-label="Primary"] .navlinks a::after {
 nav[aria-label="Primary"] .navlinks a:hover::after {
   transform: scaleX(1);
 }
+
+/* --- Masthead polish --- */
+.masthead {
+  background:#fff;
+  border-bottom:1px solid #eee;
+  padding:.6rem 0;
+}
+.masthead .wrap {
+  display:flex;
+  justify-content:center;   /* centered brand */
+  align-items:center;
+}
+
+.brand {
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+}
+
+.brand .logo {
+  height:72px;              /* desktop logo size */
+  width:auto;
+  display:block;
+}
+
+.brand .wordmark {
+  font-family:"Newsreader","EB Garamond",Georgia,serif;
+  font-weight:700;
+  letter-spacing:.02em;
+  line-height:1;
+  font-size:clamp(1.6rem,2.8vw,2.25rem); /* confident but not overwhelming */
+  white-space:nowrap;
+}
+
+/* Keep the utility bar slim and separated */
+.topbar {
+  background:#fff;
+  padding:.55rem 0;
+  border-bottom:1px solid #eee;
+}
+.topbar .wrap { display:flex; align-items:center; }
+.topnav { gap:20px; font-size:.98rem; }
+
+/* Responsive tweaks */
+@media (max-width: 720px){
+  .brand .logo { height:48px; }
+  .brand .wordmark { font-size:clamp(1.3rem,4vw,1.6rem); }
+}
+
+/* Optional: reduce double borders if another header style is present */
+header.site { border:0; }

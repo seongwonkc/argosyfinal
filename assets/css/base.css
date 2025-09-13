@@ -157,3 +157,10 @@ nav[aria-label="Primary"] .navlinks a:hover::after {
    ======================================================= */
 .masthead + .topbar { border-top: 1px solid var(--rule); }
 .site-content { margin-top: .75rem; }
+
+.editor-letter{display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:start;margin:1.5rem auto;border-top:1px solid var(--rule);padding-top:1.25rem;}
+.editor-letter .headshot img{border-radius:50%;display:block}
+.editor-letter .copy h2{font-family:"Newsreader","EB Garamond",Georgia,serif;font-weight:700;margin:.2rem 0 .6rem}
+.editor-letter .sig{color:#555;margin-top:.75rem}
+@media(max-width:720px){.editor-letter{grid-template-columns:1fr}.editor-letter .headshot{order:2}}
+

@@ -62,3 +62,38 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
 
 /* Active state for topbar */
 .topnav a[aria-current="page"] { text-decoration: underline; font-weight: 600; }
+
+/* --- Masthead layout & sizing --- */
+.masthead { padding: .6rem 0; border-bottom: 1px solid #eee; background: #fff; }
+.masthead .wrap { display: flex; align-items: center; gap: .75rem; }
+
+/* Bigger, crisp logo on desktop; sensible on mobile */
+.masthead .brand .logo { height: 72px; width: auto; display: block; }
+@media (max-width: 720px) {
+  .masthead .brand .logo { height: 48px; }
+}
+
+/* Slim topbar directly under masthead, with subtle separation */
+.topbar { padding: .5rem 0; border-bottom: 1px solid #eee; background:#fff; }
+.topbar .wrap { display:flex; align-items:center; }
+.topnav { gap: 20px; font-size: .98rem; }
+
+/* Optional: make the topbar sticky (remove if you don't want sticky) */
+@supports (position: sticky) {
+  .topbar { position: sticky; top: 0; z-index: 50; }
+}
+
+/* Category row under the big homepage title — tighten spacing */
+nav[aria-label="Primary"] { margin-top: .25rem; }
+nav[aria-label="Primary"] .navlinks { gap: .6rem 1rem; }
+
+
+/* Screenreader-only utility */
+.sr-only {
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,1px,1px);
+  white-space:nowrap; border:0;
+}
+

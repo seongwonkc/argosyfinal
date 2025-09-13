@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -15,7 +17,8 @@
     a:hover{ text-decoration-thickness:2px; }
     header.site, footer.site { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
     header.site { border-bottom: 1px solid var(--rule); }
-    .brand { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; font-size:clamp(1.6rem,3.2vw,2.2rem); letter-spacing:.02em; }
+    .brand { display: flex; align-items: center; }
+    .brand img.logo { height: 48px; width: auto; display: block; }
     main { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
     article.post { display:grid; grid-template-columns:1fr; gap: var(--gap); }
     .post-head { border-bottom:1px solid var(--rule); padding-bottom:.75rem; }
@@ -71,7 +74,9 @@
 </head>
 <body>
   <header class="site" role="banner">
-    <div class="brand"><a href="/">Argosy</a></div>
+    <div class="brand">
+      <a href="/"><img src="/assets/images/logo.png" alt="The Argosy logo" class="logo"></a>
+    </div>
   </header>
 
   <main id="content">
@@ -111,7 +116,7 @@
   </main>
 
   <footer class="site" role="contentinfo">
-    <div class="inner"><p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p></div>
+    <div class="inner"><p>&copy; {{ page.date | date('yyyy') }} The Argosy. All rights reserved.</p></div>
   </footer>
 </body>
 </html>

@@ -15,10 +15,9 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   border-bottom: 1px solid #eee; 
 }
 .topbar .container {
-  /* Match your site’s centered width; adjust if your theme uses a different max-width */
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px; /* keeps a little breathing room on small screens */
+  padding: 0 16px;
 }
 .topnav {
   display: flex;
@@ -26,73 +25,13 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   flex-wrap: wrap;
   font-size: 0.95rem;
 }
-.topnav a {
-  text-decoration: none;
-}
-.topnav a:hover {
-  text-decoration: underline;
-}
+.topnav a { text-decoration: none; }
+.topnav a:hover { text-decoration: underline; }
 
-/* Limit article images to page width and center them */
-.site-content img {
-  max-width: 70%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* (Removed global .site-content img 70% so it doesn't shrink everything) */
+/* If you need special image sizing, target specific contexts instead. */
 
-/* Optional: narrower max width for hero images inside articles */
-.article-body img,
-.post-content img {
-  max-width: 850px;   /* adjust to taste (e.g. 800–900px) */
-}
-
-:root { --max: 72rem; --pad: 1.25rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-* { box-sizing: border-box; }
-body { margin: 0; line-height: 1.6; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-a { color: inherit; text-decoration: none; }
-header, footer { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: .75rem 0; }
-ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
-.post-card { padding: .75rem; border: 1px solid #eee; border-radius: .5rem; }
-.meta { color:#666; font-size:.9rem; }
-.prose img { max-width: 100%; height: auto; }
-
-/* Slim utility bar for static pages */
-.topbar { 
-  padding: 8px 0; 
-  border-bottom: 1px solid #eee; 
-}
-.topbar .container {
-  /* Match your site’s centered width; adjust if your theme uses a different max-width */
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px; /* keeps a little breathing room on small screens */
-}
-.topnav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-}
-.topnav a {
-  text-decoration: none;
-}
-.topnav a:hover {
-  text-decoration: underline;
-}
-
-/* Limit article images to page width and center them */
-.site-content img {
-  max-width: 70%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Optional: narrower max width for hero images inside articles */
+/* Optional: narrower max width for hero images inside articles (legacy) */
 .article-body img,
 .post-content img {
   max-width: 850px;   /* adjust to taste (e.g. 800–900px) */
@@ -116,3 +55,10 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   display: flex; flex-wrap: wrap; gap: .75rem 1rem;
 }
 
+/* Space between masthead/logo and page content */
+.masthead + .topbar { border-top: 1px solid #eee; }
+.masthead { padding: .75rem 0; border-bottom: 1px solid #eee; }
+.site-content { margin-top: 0.75rem; }
+
+/* Active state for topbar */
+.topnav a[aria-current="page"] { text-decoration: underline; font-weight: 600; }

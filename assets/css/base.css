@@ -105,3 +105,14 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   display: block;
 }
 
+/* Logo sizing + mobile adjustment */
+.brand .logo { height: 64px; width: auto; display: block; }
+@media (max-width: 720px) {
+  .brand .logo { height: 44px; }
+}
+
+/* Let long category lines wrap gracefully */
+.navlinks, .category-row, nav[aria-label="Primary"] .navlinks {
+  display: flex; flex-wrap: wrap; gap: .75rem 1rem;
+}
+

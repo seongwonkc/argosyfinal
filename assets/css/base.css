@@ -32,3 +32,18 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
 .topnav a:hover {
   text-decoration: underline;
 }
+
+/* Limit article images to page width and center them */
+.site-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional: narrower max width for hero images inside articles */
+.article-body img,
+.post-content img {
+  max-width: 850px;   /* adjust to taste (e.g. 800–900px) */
+}

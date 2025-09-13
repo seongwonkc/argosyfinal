@@ -3,15 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or site.title }}</title>
+    <title>{{ title or 'The Argosy' }}</title>
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
-    {% if site.favicon %}<link rel="icon" href="{{ site.favicon | url }}">{% endif %}
   </head>
 
   <body>
-    <!-- Slim top bar: only the pinned pages -->
-    <header class="topbar">
-      <div class="container">
+    <!-- Masthead with logo-only brand -->
+    <header class="masthead">
+      <div class="wrap">
+        <a href="/" class="brand" aria-label="The Argosy">
+          <img src="/assets/images/logo.png" alt="The Argosy" class="logo">
+        </a>
+      </div>
+    </header>
+
+    <!-- Slim utility bar: only the pinned pages -->
+    <div class="topbar">
+      <div class="container wrap">
         <nav class="topnav" aria-label="Utility navigation">
           <a href="/">Home</a>
           <a href="/about/">About Us</a>
@@ -19,16 +28,15 @@
           <a href="/join/">Join Us</a>
         </nav>
       </div>
-    </header>
+    </div>
 
-    <!-- Your theme’s existing masthead/hero/categories will render inside {{ content }} -->
     <main class="site-content">
       {{ content | safe }}
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; {{ now | date('yyyy') }} {{ site.title }}. All rights reserved.</p>
+      <div class="wrap">
+        <p>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</p>
       </div>
     </footer>
   </body>

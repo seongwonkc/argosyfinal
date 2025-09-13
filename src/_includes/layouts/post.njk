@@ -15,10 +15,12 @@
     body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.6; }
     a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
     a:hover{ text-decoration-thickness:2px; }
+
     header.site, footer.site { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
     header.site { border-bottom: 1px solid var(--rule); }
-    .brand { display: flex; align-items: center; }
-    .brand img.logo { height: 48px; width: auto; display: block; }
+    .brand { display:inline-flex; align-items:center; }
+    .brand img.logo { height: 64px; width:auto; display:block; } /* bumped from 48 → 64 */
+
     main { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
     article.post { display:grid; grid-template-columns:1fr; gap: var(--gap); }
     .post-head { border-bottom:1px solid var(--rule); padding-bottom:.75rem; }
@@ -56,17 +58,15 @@
       max-width: 850px;
       margin: 0 auto 1.5rem;
     }
-
     article.post > figure > img {
-      width: 100% !important;   /* override width="1200" */
+      width: 100% !important;
       max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
     }
-
     article.post .post-body {
-      max-width: 850px;         /* align text column with image */
+      max-width: 850px;
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -74,9 +74,9 @@
 </head>
 <body>
   <header class="site" role="banner">
-    <div class="brand">
-      <a href="/"><img src="/assets/images/logo.png" alt="The Argosy logo" class="logo"></a>
-    </div>
+    <a href="/" class="brand" aria-label="The Argosy">
+      <img src="/assets/images/logo.png" alt="The Argosy" class="logo">
+    </a>
   </header>
 
   <main id="content">

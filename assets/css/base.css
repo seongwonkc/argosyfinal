@@ -98,3 +98,10 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   max-width: 850px;   /* adjust to taste (e.g. 800–900px) */
 }
 
+/* Logo sizing (homepage masthead) */
+.masthead .brand .logo {
+  height: 64px;   /* match post logo size */
+  width: auto;
+  display: block;
+}
+

@@ -47,6 +47,26 @@
     .footnotes li{ margin:.35rem 0; }
     .post-nav{ display:flex; justify-content:space-between; gap:1rem; border-top:1px solid var(--rule); padding-top:1rem; margin-top:2rem; font-size:.98rem; color:#333; }
     footer.site{ color:#444; border-top:1px solid var(--rule); margin-top:2rem; }
+
+    /* === Hero image fix === */
+    article.post > figure {
+      max-width: 850px;
+      margin: 0 auto 1.5rem;
+    }
+
+    article.post > figure > img {
+      width: 100% !important;   /* override width="1200" */
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    article.post .post-body {
+      max-width: 850px;         /* align text column with image */
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
   </style>
 </head>
 <body>
@@ -57,7 +77,6 @@
   <main id="content">
     <article class="post" itemscope itemtype="https://schema.org/NewsArticle">
       <header class="post-head">
-        {# Build categories from this page's own front matter #}
         {% set cats = normalizeCategories({ category: category, categories: categories }) %}
         {% set primary = cats[0] %}
         {% if primary %}

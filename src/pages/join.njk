@@ -1,0 +1,83 @@
+---
+title: Join Us
+permalink: /join/index.html
+layout: null
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} – Argosy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --maxw: 900px; --ink:#111; --muted:#555; --rule:#e6e6e6; }
+    *{ box-sizing: border-box; }
+    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.6; }
+    a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+    a:hover{ text-decoration-thickness:2px; }
+    header.site, main, footer.site{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
+    header.site{ border-bottom:1px solid var(--rule); }
+    footer.site{ border-top:1px solid var(--rule); margin-top:2rem; color:#444; }
+    .brand{ font-family:"Newsreader","EB Garamond",serif; font-weight:700; font-size:clamp(1.6rem,3vw,2.2rem); }
+    h1,h2,h3{ font-family:"Newsreader","EB Garamond",serif; font-weight:700; line-height:1.12; letter-spacing:.006em; text-wrap:balance; }
+    h1{ font-size:clamp(1.9rem,3.2vw,2.6rem); margin:.35rem 0 .6rem; }
+    h2{ font-size:clamp(1.25rem,2vw,1.5rem); margin:1.2rem 0 .5rem; }
+    ul{ margin:.25rem 0 1rem; padding-left:1.2rem; }
+    li{ margin:.25rem 0 .25rem; }
+    .well{ background:#fafafa; border:1px solid var(--rule); border-radius:12px; padding:1rem 1.1rem; }
+    .apply{ background:#0f0f0f; color:#fff; display:inline-block; padding:.6rem .9rem; border-radius:10px; text-decoration:none; }
+    .apply:hover{ filter:brightness(1.1); text-decoration:none; }
+    .muted{ color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand"><a href="/">Argosy</a></div>
+  </header>
+
+  <main id="content">
+    <h1>Join Us</h1>
+    <p>
+      The Argosy is built on a single premise: that thoughtful, independent student voices are essential. We are a platform for ambitious, curious, and dedicated writers who are committed to producing journalism that is a level above the rest.
+    </p>
+    <p>
+      Our standard is that of a top undergraduate publication—made for high-school students. Our scope is global. If you care deeply about an issue and have the drive to explore it with depth, clarity, and integrity, we’d love to hear from you.
+    </p>
+
+    <h2>What We Look For</h2>
+    <ul>
+      <li><strong>Exceptional Writing Skills:</strong> Craft compelling, well-structured, evidence-based arguments.</li>
+      <li><strong>Intellectual Curiosity:</strong> Go beyond the surface and ask the deeper questions.</li>
+      <li><strong>Commitment to Integrity:</strong> Accuracy, fairness, and ethical journalism—always.</li>
+    </ul>
+
+    <h2>Open Positions</h2>
+    <ul>
+      <li><strong>Staff Writer (All Sections):</strong> Pitch and write articles for Politics, Culture, Sports, Health, Economics &amp; Finance, Business, Technology, Sustainability, or Student Affairs. Specialists in a niche are especially welcome.</li>
+      <li><strong>Copy Editor:</strong> Detail-oriented guardians of grammar, style, and fact-checking. The final gatekeepers of our quality standard.</li>
+    </ul>
+
+    <h2>How to Apply</h2>
+    <div class="well">
+      <p><strong>Email:</strong> <a href="mailto:editors@argosynews.com">editors@argosynews.com</a></p>
+      <p><strong>Subject:</strong> <code>Application: [Position] - [Your Name]</code></p>
+      <p><strong>Body:</strong> A brief introduction, your academic interests, and why you’re a strong fit for The Argosy.</p>
+      <p><strong>Attachments:</strong> Two writing samples (academic essays or published pieces) that best demonstrate your analysis and writing.</p>
+      <p class="muted">We review applications on a rolling basis.</p>
+    </div>
+
+    <p style="margin-top:1rem">
+      <a class="apply" href="mailto:editors@argosynews.com?subject=Application%3A%20%5BPosition%5D%20-%20%5BYour%20Name%5D">
+        Apply via Email
+      </a>
+    </p>
+  </main>
+
+  <footer class="site">
+    <p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

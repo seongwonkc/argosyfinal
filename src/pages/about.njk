@@ -1,0 +1,82 @@
+---
+title: About Us
+permalink: /about/index.html
+layout: null
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} – Argosy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --maxw: 900px; --ink:#111; --muted:#555; --rule:#e6e6e6; }
+    *{ box-sizing: border-box; }
+    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.6; }
+    a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+    a:hover{ text-decoration-thickness:2px; }
+    header.site, main, footer.site{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
+    header.site{ border-bottom:1px solid var(--rule); }
+    footer.site{ border-top:1px solid var(--rule); margin-top:2rem; color:#444; }
+    .brand{ font-family:"Newsreader","EB Garamond",serif; font-weight:700; font-size:clamp(1.6rem,3vw,2.2rem); }
+    h1,h2{ font-family:"Newsreader","EB Garamond",serif; font-weight:700; line-height:1.12; letter-spacing:.006em; text-wrap:balance; }
+    h1{ font-size:clamp(1.9rem,3.2vw,2.6rem); margin:.35rem 0 .6rem; }
+    h2{ font-size:clamp(1.25rem,2vw,1.5rem); margin:1.3rem 0 .5rem; }
+    p{ margin:.6rem 0 1rem; }
+    .lede{ font-size:1.05em; color:#222; }
+    .well{ background:#fafafa; border:1px solid var(--rule); border-radius:12px; padding:1rem 1.1rem; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="brand"><a href="/">Argosy</a></div>
+  </header>
+
+  <main id="content">
+    <h1>About Us</h1>
+    <p class="lede">
+      Founded in 2023, <em>The Argosy</em> is a student newspaper created to give talented young writers—and students with a commitment to the public good—a serious forum for ideas.
+    </p>
+    <p>
+      We are generously funded by Herbart Kita Publishing, a small independent house with a passion for student work and “learning by doing.” Their support allows us to focus on what matters most: reporting with clarity, editing with care, and publishing with integrity—without chasing clicks or trends.
+    </p>
+
+    <h2>What We Stand For</h2>
+    <p>
+      Our newsroom is built on three promises:
+    </p>
+    <div class="well">
+      <p><strong>Independence.</strong> We choose our stories and our words. Editorial decisions are made by editors and writers, not by algorithms or advertisers.</p>
+      <p><strong>Depth.</strong> We prefer analysis over noise. Our pieces bring context, evidence, and follow-through—so readers understand not just what happened, but why it matters.</p>
+      <p><strong>Craft.</strong> Every sentence should earn its place. We prize strong arguments, precise language, and careful sourcing.</p>
+    </div>
+
+    <h2>Our Scope</h2>
+    <p>
+      The Argosy covers politics, culture, sports, health, economics &amp; finance, business, technology, sustainability, and student affairs. We welcome diverse viewpoints and aim to model good-faith argument—firm in judgment, fair in tone.
+    </p>
+
+    <h2>How We Work</h2>
+    <p>
+      Writers pitch, revise, and fact-check with editors in a process designed to mirror professional newsrooms. Mentorship is hands-on. Feedback is candid. Publication is earned.
+    </p>
+
+    <h2>Why “Argosy”?</h2>
+    <p>
+      An “argosy” is a great ship laden with goods. We like the metaphor: a vessel built by many hands, carrying ideas across distance, meant to be shared.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      General inquiries: <a href="mailto:editors@argosynews.com">editors@argosynews.com</a>
+    </p>
+  </main>
+
+  <footer class="site">
+    <p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

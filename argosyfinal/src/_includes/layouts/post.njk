@@ -1,0 +1,98 @@
+{# src/_includes/layouts/post.njk #}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --maxw: 1120px; --measure: 68ch; --ink:#111; --muted:#666; --rule:#e6e6e6; --gap:1.25rem; }
+    *{ box-sizing:border-box; } html{ text-size-adjust:100%; }
+    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.6; }
+    a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+    a:hover{ text-decoration-thickness:2px; }
+    header.site, footer.site { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    header.site { border-bottom: 1px solid var(--rule); }
+    .brand { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; font-size:clamp(1.6rem,3.2vw,2.2rem); letter-spacing:.02em; }
+    main { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    article.post { display:grid; grid-template-columns:1fr; gap: var(--gap); }
+    .post-head { border-bottom:1px solid var(--rule); padding-bottom:.75rem; }
+    .post-hed { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; letter-spacing:.006em; line-height:1.12; font-size:clamp(2rem,4vw,3rem); text-wrap:balance; margin:.25rem 0 .5rem; }
+    .post-dek { color:#333; font-size:clamp(1.05rem,1.2vw,1.2rem); max-width:var(--measure); margin:.25rem 0 .75rem; }
+    .byline { color: var(--muted); font-size:.98rem; }
+    .post-body { max-width: var(--measure); margin: 0 auto; }
+    .post-body p { margin: 0 0 1.05em; }
+    .post-body > p:first-of-type { font-size:1.03em; line-height:1.65; hanging-punctuation:first allow-end; text-wrap:pretty; }
+    h2,h3 { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:600; line-height:1.2; letter-spacing:.004em; margin:1.6em 0 .5em; }
+    h2{ font-size:clamp(1.35rem,2.2vw,1.85rem); } h3{ font-size:clamp(1.15rem,1.8vw,1.35rem); }
+    blockquote{ margin:1.4em auto; padding:.75em 1em; border-left:3px solid #bbb; color:#333; max-width:calc(var(--measure) - 1ch); font-style:italic; background:#fafafa; }
+    blockquote cite{ display:block; color:var(--muted); font-style:normal; margin-top:.5em; }
+    .post-body img{ display:block; max-width:min(100%,900px); width:100%; height:auto; margin:0 auto; border-radius:6px; background:#f2f2f2; }
+    figure{ margin:1.25rem auto; text-align:center; max-width:min(100%,900px); }
+    figure > img{ margin:0 auto; }
+    figcaption{ margin-top:.5rem; color:#444; font-size:.95rem; line-height:1.35; }
+    p:has(> img){ text-align:center; }
+    p:has(> img) + p em.caption{ display:block; margin-top:.5rem; color:#444; font-size:.95rem; font-style:normal; }
+    .full{ width:100vw; max-width:100vw; margin-left:50%; transform:translateX(-50%); }
+    .post-body table{ border-collapse:collapse; width:100%; overflow:auto; display:block; margin:1rem 0; border:1px solid var(--rule); }
+    .post-body th,.post-body td{ padding:.5rem .75rem; border-bottom:1px solid var(--rule); }
+    .post-body thead th{ background:#fafafa; text-align:left; }
+    pre,code{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; font-size:.95em; }
+    pre{ background:#0f0f0f; color:#eee; padding:.9rem 1rem; border-radius:8px; overflow:auto; margin:1rem 0; }
+    code{ background:#f6f6f6; padding:.1rem .25rem; border-radius:4px; }
+    .footnotes{ margin-top:2rem; border-top:1px solid var(--rule); padding-top:1rem; color:#333; }
+    .footnotes ol{ padding-left:1.25rem; }
+    .footnotes li{ margin:.35rem 0; }
+    .post-nav{ display:flex; justify-content:space-between; gap:1rem; border-top:1px solid var(--rule); padding-top:1rem; margin-top:2rem; font-size:.98rem; color:#333; }
+    footer.site{ color:#444; border-top:1px solid var(--rule); margin-top:2rem; }
+  </style>
+</head>
+<body>
+  <header class="site" role="banner">
+    <div class="brand"><a href="/">Argosy</a></div>
+  </header>
+
+  <main id="content">
+    <article class="post" itemscope itemtype="https://schema.org/NewsArticle">
+      <header class="post-head">
+        {# Build categories from this page's own front matter #}
+        {% set cats = normalizeCategories({ category: category, categories: categories }) %}
+        {% set primary = cats[0] %}
+        {% if primary %}
+          <div class="byline">In <a href="/category/{{ primary.key }}/">{{ primary.name }}</a></div>
+        {% endif %}
+
+        <h1 class="post-hed" itemprop="headline">{{ title }}</h1>
+        {% if description %}<p class="post-dek">{{ description }}</p>{% endif %}
+        <p class="byline">
+          {% if author %}By <span itemprop="author">{{ author }}</span> · {% endif %}
+          {% if date %}<time datetime="{{ date | isoDate }}" itemprop="datePublished">{{ date | displayDate('en-US') }}</time>{% endif %}
+        </p>
+      </header>
+
+      {% if image %}
+        <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <img src="{{ image }}" alt="{{ title | safe }}" loading="eager" decoding="async" width="1200" height="675">
+          {% if imageCaption %}<figcaption>{{ imageCaption | safe }}</figcaption>{% endif %}
+          <meta itemprop="url" content="{{ image }}">
+        </figure>
+      {% endif %}
+
+      <section class="post-body" itemprop="articleBody">
+        {{ content | safe }}
+      </section>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <div>{% if collections.posts and pagination and pagination.href.previous %}<a href="{{ pagination.href.previous }}">← Previous</a>{% endif %}</div>
+        <div>{% if collections.posts and pagination and pagination.href.next %}<a href="{{ pagination.href.next }}">Next →</a>{% endif %}</div>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <div class="inner"><p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

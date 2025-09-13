@@ -1,0 +1,17 @@
+{
+  "politics": {
+    "default": "/assets/placeholders/politics/default.jpg"
+  },
+  "sports": {
+    "default": "/assets/placeholders/sports/default.jpg"
+  },
+  "health": {
+    "default": "/assets/placeholders/health/default.jpg"
+  },
+  "culture": {
+    "default": "/assets/placeholders/culture/default.jpg"
+  },
+  "default": {
+    "default": "/assets/placeholders/politics/default.jpg"
+  }
+}

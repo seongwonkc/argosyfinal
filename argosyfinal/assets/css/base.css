@@ -1,0 +1,10 @@
+:root { --max: 72rem; --pad: 1.25rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.6; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+a { color: inherit; text-decoration: none; }
+header, footer { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: .75rem 0; }
+ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
+.post-card { padding: .75rem; border: 1px solid #eee; border-radius: .5rem; }
+.meta { color:#666; font-size:.9rem; }
+.prose img { max-width: 100%; height: auto; }

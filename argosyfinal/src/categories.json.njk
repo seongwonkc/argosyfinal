@@ -1,0 +1,9 @@
+---
+permalink: /categories.json
+eleventyExcludeFromCollections: true
+---
+{
+  {% for name, items in collections.byCategory -%}
+  "{{ name }}": {{ items | length }}{% if not loop.last %},{% endif %}
+  {%- endfor %}
+}

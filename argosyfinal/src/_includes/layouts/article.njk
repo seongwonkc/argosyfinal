@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="article">
+  <header class="article-header">
+    <h1 class="article-title">{{ title }}</h1>
+    <p class="article-meta">
+      <time datetime="{{ date | date('yyyy-LL-dd') }}">{{ date | date("LLL d, yyyy") }}</time>
+      {% if author %} · {{ author }}{% endif %}
+      {% if category %} · {{ category }}{% endif %}
+    </p>
+  </header>
+
+  {% if image %}
+    <figure class="article-figure">
+      <img src="{{ image }}" alt="{{ title }}" loading="lazy" decoding="async">
+      {% if image_credit %}
+        <figcaption class="figure-credit">
+          {% if image_source_url %}
+            <a href="{{ image_source_url }}" rel="nofollow noopener">{{ image_credit }}</a>
+          {% else %}
+            {{ image_credit }}
+          {% endif %}
+        </figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
+  <div class="article-body">
+    {{ content | safe }}
+  </div>
+</article>

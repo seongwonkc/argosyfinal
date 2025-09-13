@@ -1,0 +1,139 @@
+---
+title: Home
+layout: null
+permalink: /
+---
+
+{% set all = collections.posts %}
+{% set hero = all[0] %}
+{# FIXED: use Jinja-style conditional, not JS ternary #}
+{% set rest = all | exceptByUrl(hero.url if hero else null) %}
+{% set cats = collections.categoryList %}
+
+{% macro Card(post) %}
+<article class="card">
+  <a href="{{ post.url }}" class="thumb" aria-label="{{ post.data.title }}">
+    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}" alt="{{ post.data.title | safe }}" loading="lazy" decoding="async" width="600" height="338">
+  </a>
+  <div class="meta">
+    {% set catName = (post.data._categoryName or post.data._primaryCategoryName) %}
+    {% set catKey  = (post.data._categoryKey  or post.data._primaryCategoryKey) %}
+    {% if catName and catKey %}
+      <a class="pill" href="/category/{{ catKey }}/">{{ catName }}</a>
+    {% endif %}
+    <h3 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    {% if post.date %}
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title or "Home" }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --maxw:1120px; --gap:1rem; --ink:#111; --muted:#666; --rule:#e6e6e6; --measure:68ch; }
+    *{ box-sizing:border-box; } html{ text-size-adjust:100%; }
+    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.5; }
+    a{ color:inherit; text-decoration:none; } a:hover{ text-decoration:underline; }
+    header.site,main,footer.site{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
+    header.site{ padding-top:1.25rem; padding-bottom:.5rem; border-bottom:1px solid var(--rule); }
+    .brand{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-size:clamp(1.75rem,3.5vw,2.4rem); font-weight:700; letter-spacing:.02em; }
+    nav .navlinks{ display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.5rem; }
+    nav .navlinks a{ font-variant:small-caps; letter-spacing:.04em; color:#333; }
+
+    h1,h2,h3{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:600; letter-spacing:.005em; }
+    h1{ font-size:clamp(2rem,4vw,3rem); line-height:1.1; text-wrap:balance; }
+    h2{ font-size:clamp(1.4rem,2.2vw,2rem); line-height:1.15; margin:0; }
+    h3{ font-size:clamp(1.125rem,1.8vw,1.35rem); line-height:1.2; margin:.25rem 0 .25rem; }
+    .dek{ color:#333; font-size:clamp(1rem,1.2vw,1.15rem); max-width:var(--measure); margin-top:.5rem; }
+
+    .hero{ display:grid; gap:var(--gap); grid-template-columns:1fr; padding-block:1.25rem; border-bottom:1px solid var(--rule); }
+    .hero .media img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
+    .hero .hed{ font-size:clamp(1.75rem,3.5vw,2.4rem); line-height:1.12; margin:.5rem 0; }
+    .byline{ color:var(--muted); font-size:.95rem; }
+
+    .section{ padding-block:1rem; border-bottom:1px solid var(--rule); }
+    .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.5rem; gap:.5rem; }
+    .section-head .more{ font-variant:small-caps; letter-spacing:.04em; color:#444; }
+
+    .grid{ display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); }
+    .card{ display:flex; flex-direction:column; gap:.5rem; }
+    .card .thumb img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
+    .pill{ font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color:#555; }
+    .muted{ color:var(--muted); }
+
+    @media (min-width:900px){ .hero{ grid-template-columns:1.15fr .85fr; } }
+  </style>
+</head>
+<body>
+  <header class="site" role="banner">
+    <div class="brand"><a href="/">Argosy</a></div>
+    <nav aria-label="Primary">
+      <div class="navlinks">
+        {% for c in cats %}
+          <a href="/category/{{ c.key }}/">{{ c.name }}</a>
+        {% endfor %}
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-label="Lead story">
+      {% if hero %}
+        <div class="media">
+          <a href="{{ hero.url }}">
+            <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}" alt="{{ hero.data.title | safe }}" loading="eager" decoding="async" width="1200" height="675">
+          </a>
+        </div>
+        <article class="meta">
+          {% if hero.data._primaryCategoryName and hero.data._primaryCategoryKey %}
+            <a class="pill" href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
+          {% endif %}
+          <h1 class="hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h1>
+          <p class="dek">{{ hero.data.description or hero.templateContent | striptags | truncate(180) }}</p>
+          <p class="byline">
+            {% if hero.data.author %}By {{ hero.data.author }} · {% endif %}
+            {% if hero.date %}<time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>{% endif %}
+          </p>
+        </article>
+      {% else %}
+        <article><h1 class="hed">No articles yet</h1></article>
+      {% endif %}
+    </section>
+
+    <section class="section" aria-label="Top Stories">
+      <div class="section-head"><h2>Top Stories</h2></div>
+      <div class="grid">
+        {% for post in rest | take(6) %}
+          {{ Card(post) | safe }}
+        {% else %}<p class="muted">More stories coming soon.</p>{% endfor %}
+      </div>
+    </section>
+
+    {% for c in cats %}
+      <section class="section category-block" id="{{ c.key }}">
+        <div class="section-head">
+          <h2>{{ c.name }}</h2>
+          <a class="more" href="/category/{{ c.key }}/">More</a>
+        </div>
+        <div class="grid">
+          {% for post in c.items | take(6) %}
+            {{ Card(post) | safe }}
+          {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <p>&copy; Argosy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

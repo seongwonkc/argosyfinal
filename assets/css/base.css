@@ -47,6 +47,7 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   display: flex;
   justify-content: center;   /* center the brand */
   align-items: center;
+  gap: .9rem;                /* ✨ a touch more breathing room */
 }
 
 /* Brand lockup */
@@ -56,8 +57,9 @@ ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
   gap: .6rem;
   text-decoration: none;
 }
+/* ✨ Bigger logo */
 .brand .logo {
-  height: 72px;          /* desktop logo size */
+  height: 96px;          /* was 72px */
   width: auto;
   display: block;
 }
@@ -110,7 +112,7 @@ header.site { border: 0; }
 
 /* Responsive tweaks */
 @media (max-width: 720px){
-  .brand .logo { height: 48px; }
+  .brand .logo { height: 56px; }   /* was 48px */
   .brand .wordmark { font-size: clamp(1.3rem, 4vw, 1.6rem); }
 }
 
@@ -163,4 +165,3 @@ nav[aria-label="Primary"] .navlinks a:hover::after {
 .editor-letter .copy h2{font-family:"Newsreader","EB Garamond",Georgia,serif;font-weight:700;margin:.2rem 0 .6rem}
 .editor-letter .sig{color:#555;margin-top:.75rem}
 @media(max-width:720px){.editor-letter{grid-template-columns:1fr}.editor-letter .headshot{order:2}}
-

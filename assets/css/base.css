@@ -1,120 +1,143 @@
-:root { --max: 72rem; --pad: 1.25rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+/* =========================================================
+   Base (site-wide)
+   ======================================================= */
+:root {
+  --max: 72rem;
+  --pad: 1.25rem;
+  --ink: #111;      /* text color used in effects */
+  --rule: #eee;     /* subtle divider color */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
 * { box-sizing: border-box; }
 body { margin: 0; line-height: 1.6; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 a { color: inherit; text-decoration: none; }
-header, footer { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: .75rem 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
 ul.post-list { list-style: none; padding: 0; display: grid; gap: .75rem; }
-.post-card { padding: .75rem; border: 1px solid #eee; border-radius: .5rem; }
+.post-card { padding: .75rem; border: 1px solid var(--rule); border-radius: .5rem; }
 .meta { color:#666; font-size:.9rem; }
 .prose img { max-width: 100%; height: auto; }
 
-/* Slim utility bar for static pages */
-.topbar { 
-  padding: 8px 0; 
-  border-bottom: 1px solid #eee; 
+/* Screenreader-only utility (used for hidden H1) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px);
+  white-space: nowrap; border: 0;
 }
-.topbar .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-.topnav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-}
-.topnav a { text-decoration: none; }
-.topnav a:hover { text-decoration: underline; }
 
-/* (Removed global .site-content img 70% so it doesn't shrink everything) */
-/* If you need special image sizing, target specific contexts instead. */
-
-/* Optional: narrower max width for hero images inside articles (legacy) */
+/* Optional legacy: cap narrow article images if a page uses these classes */
 .article-body img,
-.post-content img {
-  max-width: 850px;   /* adjust to taste (e.g. 800–900px) */
+.post-content img { max-width: 850px; }
+
+/* =========================================================
+   Masthead (logo + wordmark) and Topbar (Home/About/...)
+   ======================================================= */
+
+/* Masthead container */
+.masthead {
+  background: #fff;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.masthead .wrap {
+  display: flex;
+  justify-content: center;   /* center the brand */
+  align-items: center;
 }
 
-/* Logo sizing (homepage masthead) */
-.masthead .brand .logo {
-  height: 64px;   /* match post logo size */
+/* Brand lockup */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+}
+.brand .logo {
+  height: 72px;          /* desktop logo size */
   width: auto;
   display: block;
 }
-
-/* Logo sizing + mobile adjustment */
-.brand .logo { height: 64px; width: auto; display: block; }
-@media (max-width: 720px) {
-  .brand .logo { height: 44px; }
+.brand .wordmark {
+  font-family: "Newsreader","EB Garamond",Georgia,serif;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1;
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  white-space: nowrap;
 }
 
-/* Let long category lines wrap gracefully */
-.navlinks, .category-row, nav[aria-label="Primary"] .navlinks {
-  display: flex; flex-wrap: wrap; gap: .75rem 1rem;
+/* Topbar (utility nav) */
+.topbar {
+  background: #fff;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.topbar .wrap {
+  display: flex;
+  justify-content: center;    /* center links */
+  align-items: center;
 }
 
-/* Space between masthead/logo and page content */
-.masthead + .topbar { border-top: 1px solid #eee; }
-.masthead { padding: .75rem 0; border-bottom: 1px solid #eee; }
-.site-content { margin-top: 0.75rem; }
-
-/* Active state for topbar */
-.topnav a[aria-current="page"] { text-decoration: underline; font-weight: 600; }
-
-/* --- Masthead layout & sizing --- */
-.masthead { padding: .6rem 0; border-bottom: 1px solid #eee; background: #fff; }
-.masthead .wrap { display: flex; align-items: center; gap: .75rem; }
-
-/* Bigger, crisp logo on desktop; sensible on mobile */
-.masthead .brand .logo { height: 72px; width: auto; display: block; }
-@media (max-width: 720px) {
-  .masthead .brand .logo { height: 48px; }
+/* Centered, larger top navigation links */
+.topnav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;                /* spacing between links */
+  flex-wrap: wrap;
+  font-size: 1.15rem;         /* larger */
+  font-family: "Newsreader","EB Garamond",Georgia,serif;
+  font-weight: 500;
+}
+.topnav a { text-decoration: none; position: relative; }
+.topnav a:hover,
+.topnav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
 
-/* Slim topbar directly under masthead, with subtle separation */
-.topbar { padding: .5rem 0; border-bottom: 1px solid #eee; background:#fff; }
-.topbar .wrap { display:flex; align-items:center; }
-.topnav { gap: 20px; font-size: .98rem; }
-
-/* Optional: make the topbar sticky (remove if you don't want sticky) */
+/* Optional: sticky topbar (remove if not desired) */
 @supports (position: sticky) {
   .topbar { position: sticky; top: 0; z-index: 50; }
 }
 
-/* Category row under the big homepage title — tighten spacing */
-nav[aria-label="Primary"] { margin-top: .25rem; }
-nav[aria-label="Primary"] .navlinks { gap: .6rem 1rem; }
+/* Remove any borders from legacy headers to avoid double lines */
+header.site { border: 0; }
 
-
-/* Screenreader-only utility */
-.sr-only {
-  position:absolute !important;
-  width:1px; height:1px;
-  padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,1px,1px);
-  white-space:nowrap; border:0;
+/* Responsive tweaks */
+@media (max-width: 720px){
+  .brand .logo { height: 48px; }
+  .brand .wordmark { font-size: clamp(1.3rem, 4vw, 1.6rem); }
 }
 
+/* =========================================================
+   Primary Category Row (below homepage title)
+   ======================================================= */
 
-/* Bigger, more elegant category nav */
+/* Layout + spacing for the category row */
+nav[aria-label="Primary"] { margin: .25rem 0 .75rem; }
 nav[aria-label="Primary"] .navlinks {
-  justify-content: center;          /* center on wide screens */
-  gap: 1rem 1.5rem;                  /* wider gaps */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;             /* wider gaps */
+  padding: .75rem 0 1rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   font-weight: 500;
   letter-spacing: .02em;
-  padding: 0.75rem 0 1rem;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
 
+/* Minimal underline hover effect */
 nav[aria-label="Primary"] .navlinks a {
   position: relative;
   text-decoration: none;
 }
-
 nav[aria-label="Primary"] .navlinks a::after {
   content: "";
   position: absolute;
@@ -123,61 +146,14 @@ nav[aria-label="Primary"] .navlinks a::after {
   background: var(--ink);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.2s ease;
+  transition: transform .2s ease;
 }
-
 nav[aria-label="Primary"] .navlinks a:hover::after {
   transform: scaleX(1);
 }
 
-/* --- Masthead polish --- */
-.masthead {
-  background:#fff;
-  border-bottom:1px solid #eee;
-  padding:.6rem 0;
-}
-.masthead .wrap {
-  display:flex;
-  justify-content:center;   /* centered brand */
-  align-items:center;
-}
-
-.brand {
-  display:inline-flex;
-  align-items:center;
-  gap:.6rem;
-  text-decoration:none;
-}
-
-.brand .logo {
-  height:72px;              /* desktop logo size */
-  width:auto;
-  display:block;
-}
-
-.brand .wordmark {
-  font-family:"Newsreader","EB Garamond",Georgia,serif;
-  font-weight:700;
-  letter-spacing:.02em;
-  line-height:1;
-  font-size:clamp(1.6rem,2.8vw,2.25rem); /* confident but not overwhelming */
-  white-space:nowrap;
-}
-
-/* Keep the utility bar slim and separated */
-.topbar {
-  background:#fff;
-  padding:.55rem 0;
-  border-bottom:1px solid #eee;
-}
-.topbar .wrap { display:flex; align-items:center; }
-.topnav { gap:20px; font-size:.98rem; }
-
-/* Responsive tweaks */
-@media (max-width: 720px){
-  .brand .logo { height:48px; }
-  .brand .wordmark { font-size:clamp(1.3rem,4vw,1.6rem); }
-}
-
-/* Optional: reduce double borders if another header style is present */
-header.site { border:0; }
+/* =========================================================
+   Spacing helpers
+   ======================================================= */
+.masthead + .topbar { border-top: 1px solid var(--rule); }
+.site-content { margin-top: .75rem; }

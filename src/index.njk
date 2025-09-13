@@ -34,7 +34,7 @@ title: Home
 {% endmacro %}
 
 {# -----------------------------
-   Page-local styles (layout handles masthead/topbar/footer)
+   Page-local styles
 ------------------------------ #}
 <style>
   :root{ --maxw:1120px; --gap:1rem; --ink:#111; --muted:#666; --rule:#e6e6e6; --measure:68ch; }
@@ -57,8 +57,10 @@ title: Home
   /* Hero block */
   .hero{ display:grid; gap:var(--gap); grid-template-columns:1fr; padding-block:1.25rem; border-bottom:1px solid var(--rule); }
   .hero .media img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
-  .hero .hed{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; letter-spacing:.006em; line-height:1.12;
-              font-size:clamp(1.75rem,3.5vw,2.4rem); margin:.5rem 0; text-wrap:balance; }
+  .hero .hed{
+    font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; letter-spacing:.006em; line-height:1.12;
+    font-size:clamp(1.75rem,3.5vw,2.4rem); margin:.5rem 0; text-wrap:balance;
+  }
   .dek{ color:#333; font-size:clamp(1rem,1.2vw,1.15rem); max-width:var(--measure); margin-top:.5rem; }
   .byline{ color:var(--muted); font-size:.95rem; }
 
@@ -85,67 +87,75 @@ title: Home
 </style>
 
 {# -----------------------------
-   Page content (base.njk wraps this in masthead/topbar/footer)
+   Page content (wrapped to align with masthead width)
 ------------------------------ #}
 
-<h1 class="sr-only">The Argosy</h1>
+<div class="wrap">
+  <h1 class="sr-only">The Argosy</h1>
 
-<nav aria-label="Primary">
-  <div class="navlinks">
-    {% for c in cats %}
-      <a href="/category/{{ c.key }}/">{{ c.name }}</a>
-    {% endfor %}
-  </div>
-</nav>
-
-<section class="hero" aria-label="Lead story">
-  {% if hero %}
-    <div class="media">
-      <a href="{{ hero.url }}">
-        <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}"
-             alt="{{ hero.data.title | safe }}"
-             loading="eager" decoding="async" width="1200" height="675">
-      </a>
+  <nav aria-label="Primary">
+    <div class="navlinks">
+      {% for c in cats %}
+        <a href="/category/{{ c.key }}/">{{ c.name }}</a>
+      {% endfor %}
     </div>
-    <article class="meta">
-      {% if hero.data._primaryCategoryName and hero.data._primaryCategoryKey %}
-        <a class="pill" href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
-      {% endif %}
-      <h2 class="hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h2>
-      <p class="dek">{{ hero.data.description or hero.templateContent | striptags | truncate(180) }}</p>
-      <p class="byline">
-        {% if hero.data.author %}By {{ hero.data.author }} · {% endif %}
-        {% if hero.date %}<time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>{% endif %}
-      </p>
-    </article>
-  {% else %}
-    <article><h2 class="hed">No articles yet</h2></article>
-  {% endif %}
-</section>
+  </nav>
 
-<section class="section" aria-label="Top Stories">
-  <div class="section-head"><h2>Top Stories</h2></div>
-  <div class="grid">
-    {% for post in rest | take(6) %}
-      {{ Card(post) | safe }}
+  <section class="hero" aria-label="Lead story">
+    {% if hero %}
+      <div class="media">
+        <a href="{{ hero.url }}">
+          <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}"
+               alt="{{ hero.data.title | safe }}"
+               loading="eager" decoding="async" width="1200" height="675">
+        </a>
+      </div>
+      <article class="meta">
+        {% if hero.data._primaryCategoryName and hero.data._primaryCategoryKey %}
+          <a class="pill" href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
+        {% endif %}
+
+        <h2 class="hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h2>
+
+        <p class="dek">{{ hero.data.description or hero.templateContent | striptags | truncate(180) }}</p>
+
+        {# Remove duplicate leading "By " if author already includes it #}
+        {% set rawAuthor = hero.data.author or '' %}
+        {% set authorClean = rawAuthor | replace('By ', '') %}
+        <p class="byline">
+          {% if authorClean %}By {{ authorClean }} · {% endif %}
+          {% if hero.date %}<time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>{% endif %}
+        </p>
+      </article>
     {% else %}
-      <p class="muted">More stories coming soon.</p>
-    {% endfor %}
-  </div>
-</section>
+      <article><h2 class="hed">No articles yet</h2></article>
+    {% endif %}
+  </section>
 
-{% for c in cats %}
-  <section class="section category-block" id="{{ c.key }}">
-    <div class="section-head">
-      <h2>{{ c.name }}</h2>
-      <a class="more" href="/category/{{ c.key }}/">More</a>
-    </div>
+  <section class="section" aria-label="Top Stories">
+    <div class="section-head"><h2>Top Stories</h2></div>
     <div class="grid">
-      {% for post in c.items | take(6) %}
+      {% for post in rest | take(6) %}
         {{ Card(post) | safe }}
       {% else %}
-        <p class="muted">No articles yet in this section.</p>
+        <p class="muted">More stories coming soon.</p>
       {% endfor %}
     </div>
   </section>
-{% endfor %}
+
+  {% for c in cats %}
+    <section class="section category-block" id="{{ c.key }}">
+      <div class="section-head">
+        <h2>{{ c.name }}</h2>
+        <a class="more" href="/category/{{ c.key }}/">More</a>
+      </div>
+      <div class="grid">
+        {% for post in c.items | take(6) %}
+          {{ Card(post) | safe }}
+        {% else %}
+          <p class="muted">No articles yet in this section.</p>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>

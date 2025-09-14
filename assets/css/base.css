@@ -239,3 +239,17 @@ nav[aria-label="Primary"] .navlinks a:hover::after {
 
 .primary-nav .caret { margin-left: .25rem; font-size: .9em; }
 
+/* Keep category nav all on one line */
+nav[aria-label="Primary"] .navlinks {
+  flex-wrap: nowrap;            /* never wrap */
+  justify-content: space-around;/* spread items evenly */
+  gap: 2rem;                     /* bigger gaps so they breathe */
+  overflow-x: auto;             /* allow horizontal scroll on very small screens */
+}
+
+/* Optional: hide scroll bar on WebKit if you want it cleaner */
+nav[aria-label="Primary"] .navlinks::-webkit-scrollbar {
+  display: none;
+}
+
+

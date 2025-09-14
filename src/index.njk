@@ -7,10 +7,13 @@ title: Home
 {% set hero = all[0] %}
 {% set rest = all | exceptByUrl(hero.url if hero else null) %}
 
+{# ===== Card macro ===== #}
 {% macro Card(post) %}
 <article class="card">
   <a href="{{ post.url }}" class="thumb" aria-label="{{ post.data.title }}">
-    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}" alt="{{ post.data.title | safe }}" loading="lazy" decoding="async" width="600" height="338">
+    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}"
+         alt="{{ post.data.title | safe }}"
+         loading="lazy" decoding="async" width="600" height="338">
   </a>
   <div class="meta">
     {% set catName = (post.data._categoryName or post.data._primaryCategoryName) %}
@@ -26,6 +29,42 @@ title: Home
 </article>
 {% endmacro %}
 
+{# ===== Category lists ===== #}
+{% set catsAll = collections.categoryList %}
+{# keys we want as the primary buckets #}
+{% set topKeys = [
+  'politics',
+  'culture',
+  'economics-and-finance',
+  'sustainability',
+  'public-health',
+  'sports',
+  'roundtable'
+] %}
+
+{# Helper: find a category object by key in catsAll #}
+{% macro CatByKey(key) -%}
+  {%- for c in catsAll -%}
+    {%- if c.key == key -%}
+      {{- c | dump | safe -}}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro %}
+
+{# Build arrays for top cats and "other" cats #}
+{% set topCats = [] %}
+{% for k in topKeys %}
+  {% for c in catsAll if c.key == k %}
+    {% set topCats = topCats.concat([c]) %}
+  {% endfor %}
+{% endfor %}
+{% set otherCats = [] %}
+{% for c in catsAll %}
+  {% if c.key not in topKeys %}
+    {% set otherCats = otherCats.concat([c]) %}
+  {% endif %}
+{% endfor %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,8 +79,34 @@ title: Home
     body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.5; }
     a{ color:inherit; text-decoration:none; } a:hover{ text-decoration:underline; }
     header.site,main,footer.site{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
-    nav .navlinks{ display:flex; gap:1rem 1.5rem; flex-wrap:wrap; margin:.25rem 0 1rem; justify-content:center; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:.75rem 0; }
-    nav .navlinks a{ font-variant:small-caps; letter-spacing:.04em; color:#333; font-size:clamp(1.05rem,1.8vw,1.35rem); }
+
+    /* Dropdown primary categories */
+    .primary-nav .menu{
+      display:flex; justify-content:center; flex-wrap:wrap;
+      gap:1.25rem 1.75rem; padding:.75rem 0 1rem;
+      border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+      font-family:"Newsreader","EB Garamond",Georgia,serif;
+      font-weight:500; letter-spacing:.02em;
+      font-size:clamp(1.05rem,1.6vw,1.25rem);
+      list-style:none; margin:0;
+    }
+    .primary-nav .menu>li{ position:relative; }
+    .primary-nav a,.primary-nav .dropbtn{
+      text-decoration:none; background:none; border:0; padding:.25rem .25rem;
+      line-height:1.2; color:inherit; cursor:pointer; font:inherit;
+    }
+    .primary-nav a:hover,.primary-nav .dropbtn:hover{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:2px; }
+    .primary-nav .has-dropdown .dropdown{
+      display:none; position:absolute; top:calc(100% + .4rem); left:50%; transform:translateX(-50%);
+      min-width:220px; background:#fff; border:1px solid var(--rule);
+      box-shadow:0 8px 20px rgba(0,0,0,.08); padding:.4rem 0; z-index:40;
+      list-style:none; margin:0;
+    }
+    .primary-nav .has-dropdown:hover .dropdown,
+    .primary-nav .has-dropdown:focus-within .dropdown{ display:block; }
+    .primary-nav .dropdown li a{ display:block; padding:.45rem .9rem; white-space:nowrap; }
+    .primary-nav .dropdown li a:hover{ background:#f7f7f7; text-decoration:none; }
+    .primary-nav .caret{ margin-left:.25rem; font-size:.9em; }
 
     h1,h2,h3{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:600; letter-spacing:.005em; }
     h2{ font-size:clamp(1.4rem,2.2vw,2rem); line-height:1.15; margin:0; }
@@ -67,12 +132,28 @@ title: Home
 </head>
 <body>
   <header class="site" role="banner">
-    <nav aria-label="Primary">
-      <div class="navlinks">
-        {% for c in collections.categories %}
-          <a href="/category/{{ c.key }}/">{{ c.name }}</a>
-        {% endfor %}
-      </div>
+    {# Primary dropdown nav #}
+    <nav class="primary-nav wrap" aria-label="Primary">
+      <ul class="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="/category/politics/">Politics</a></li>
+        <li role="none"><a role="menuitem" href="/category/culture/">Culture</a></li>
+        <li role="none"><a role="menuitem" href="/category/economics-and-finance/">Economics and Finance</a></li>
+        <li role="none"><a role="menuitem" href="/category/sustainability/">Sustainability</a></li>
+        <li role="none"><a role="menuitem" href="/category/public-health/">Public Health</a></li>
+        <li role="none"><a role="menuitem" href="/category/sports/">Sports</a></li>
+        <li role="none"><a role="menuitem" href="/category/roundtable/">Roundtable</a></li>
+
+        <li class="has-dropdown" role="none">
+          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+            Other <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown" role="menu">
+            {% for c in otherCats %}
+              <li role="none"><a role="menuitem" href="/category/{{ c.key }}/">{{ c.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
     </nav>
   </header>
 
@@ -81,7 +162,8 @@ title: Home
       {% if hero %}
         <div class="media">
           <a href="{{ hero.url }}">
-            <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}" alt="{{ hero.data.title | safe }}" loading="eager" decoding="async" width="1200" height="675">
+            <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}"
+                 alt="{{ hero.data.title | safe }}" loading="eager" decoding="async" width="1200" height="675">
           </a>
         </div>
         <article class="meta">
@@ -109,23 +191,43 @@ title: Home
       </div>
     </section>
 
-    {% for c in collections.categories %}
-      <section class="section category-block" id="{{ c.key }}">
-        <div class="section-head">
-          <h2>{{ c.name }}</h2>
-          <a class="more" href="/category/{{ c.key }}/">More</a>
-        </div>
-        <div class="grid">
-          {% for post in c.items | take(6) %}
-            {{ Card(post) | safe }}
-          {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
-        </div>
-      </section>
+    {# Render the 7 top buckets first (only if they exist) #}
+    {% for c in topCats %}
+      {% if c and c.items and c.items.length %}
+        <section class="section category-block" id="{{ c.key }}">
+          <div class="section-head">
+            <h2>{{ c.name }}</h2>
+            <a class="more" href="/category/{{ c.key }}/">More</a>
+          </div>
+          <div class="grid">
+            {% for post in c.items | take(6) %}
+              {{ Card(post) | safe }}
+            {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    {% endfor %}
+
+    {# Then render any remaining categories under “Other” #}
+    {% for c in otherCats %}
+      {% if c and c.items and c.items.length %}
+        <section class="section category-block" id="{{ c.key }}">
+          <div class="section-head">
+            <h2>{{ c.name }}</h2>
+            <a class="more" href="/category/{{ c.key }}/">More</a>
+          </div>
+          <div class="grid">
+            {% for post in c.items | take(6) %}
+              {{ Card(post) | safe }}
+            {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
+          </div>
+        </section>
+      {% endif %}
     {% endfor %}
   </main>
 
   <footer class="site" role="contentinfo">
-    <p>&copy; The Argosy. All rights reserved.</p>
+    <p>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</p>
   </footer>
 </body>
 </html>

@@ -1,54 +1,39 @@
 ---
 pagination:
-  data: collections.categoryList
+  data: collections.categoryList   # array of { key, name, count, items }
   size: 1
   alias: cat
-permalink: "/category/{{ cat.key }}/index.html"
+permalink: /category/{{ cat.key }}/index.html
+layout: layouts/base.njk
 eleventyComputed:
   title: "{{ cat.name }}"
-layout: null
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ cat.name }} – Argosy</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{ --maxw:1120px; --gap:1rem; --rule:#e6e6e6; }
-    body{ margin:0; font-family:"EB Garamond",Garamond,Georgia,serif; }
-    header,main,footer{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
-    header{ border-bottom:1px solid var(--rule); }
-    .brand{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; font-size:clamp(1.6rem,3.2vw,2.2rem); }
-    h1{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-size:clamp(1.8rem,3vw,2.4rem); margin:.25rem 0 1rem; }
-    .grid{ display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); }
-    .card{ display:flex; flex-direction:column; gap:.5rem; }
-    .card img{ width:100%; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
-    .pill{ font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color:#555; }
-  </style>
-</head>
-<body>
-  <header><div class="brand"><a href="/">Argosy</a></div></header>
-  <main>
-    <h1>{{ cat.name }}</h1>
-    <div class="grid">
-      {% for post in cat.items %}
-        <article class="card">
-          <a href="{{ post.url }}"><img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}" alt="{{ post.data.title | safe }}" loading="lazy" decoding="async"></a>
-          <div>
-            <a class="pill" href="/category/{{ cat.key }}/">{{ cat.name }}</a>
-            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-            {% if post.date %}<time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>{% endif %}
-          </div>
-        </article>
-      {% else %}
-        <p>No articles in this category yet.</p>
-      {% endfor %}
-    </div>
-  </main>
-  <footer><p>&copy; {{ page.date | date('yyyy') }} Argosy.</p></footer>
-</body>
-</html>
+{% macro Card(post) %}
+<article class="card">
+  <a href="{{ post.url }}" class="thumb" aria-label="{{ post.data.title }}">
+    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}"
+         alt="{{ post.data.title | safe }}" loading="lazy" decoding="async"
+         width="600" height="338">
+  </a>
+  <div class="meta">
+    <h3 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    {% if post.date %}
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}
+
+<header class="section-head" style="margin: .5rem 0 1rem;">
+  <h1 style="margin:0">{{ cat.name }}</h1>
+  <span class="meta">{{ cat.count }} article{% if cat.count != 1 %}s{% endif %}</span>
+</header>
+
+<div class="grid">
+  {% for post in cat.items %}
+    {{ Card(post) | safe }}
+  {% else %}
+    <p class="muted">No articles yet in this section.</p>
+  {% endfor %}
+</div>

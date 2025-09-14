@@ -1,42 +1,53 @@
 ---
 title: Categories
 permalink: /categories/index.html
-layout: null
+layout: layouts/base.njk
 ---
 
-{% set cats = collections.categoryList %}
+{% set cats = collections.categoryList | sort(attribute='name') %}
+{% set total = cats | length %}
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Categories – The Argosy</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    :root{ --maxw:900px; --gap:1rem; --rule:#e6e6e6; }
-    body{ margin:0; font-family:"EB Garamond",Garamond,Georgia,serif; }
-    header,main,footer{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
-    header{ border-bottom:1px solid var(--rule); }
-    .brand{ font-weight:700; font-size:1.5rem; }
-    ul{ list-style:none; padding:0; display:grid; gap:.5rem; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); }
-    li{ border:1px solid var(--rule); border-radius:8px; padding:.75rem 1rem; }
-    a{ text-decoration:none; color:inherit; } a:hover{ text-decoration:underline; }
-    .count{ color:#666; font-size:.95rem; }
-  </style>
-</head>
-<body>
-  <header><div class="brand"><a href="/">The Argosy</a></div></header>
-  <main>
-    <h1>Categories</h1>
-    <ul>
-      {% for c in cats %}
-        <li>
-          <a href="/category/{{ c.key }}/"><strong>{{ c.name }}</strong></a>
-          <div class="count">{{ c.count }} article{% if c.count != 1 %}s{% endif %}</div>
-        </li>
-      {% endfor %}
-    </ul>
-  </main>
-  <footer><p>&copy; {{ page.date | date('yyyy') }} Argosy.</p></footer>
-</body>
-</html>
+<style>
+  /* scoped to this page */
+  .cats-wrap { max-width: 960px; margin: 0 auto; }
+  .cats-grid {
+    list-style: none; padding: 0; margin: .75rem 0 0;
+    display: grid; gap: .75rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .cat-card {
+    border: 1px solid var(--rule, #e6e6e6);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+    background: #fff;
+    transition: box-shadow .15s ease, transform .15s ease;
+  }
+  .cat-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.06); transform: translateY(-1px); }
+  .cat-link {
+    display: inline-flex; align-items: baseline; gap: .5rem;
+    text-decoration: none; color: inherit;
+    font-family: "Newsreader","EB Garamond",Georgia,serif; font-weight: 600;
+    letter-spacing: .01em;
+  }
+  .cat-count { color: #666; font-size: .95rem; }
+</style>
+
+<div class="cats-wrap">
+  <header class="section-head" style="margin: .25rem 0 1rem;">
+    <h1 style="margin:0;">Categories</h1>
+    <div class="meta">{{ total }} categor{% if total == 1 %}y{% else %}ies{% endif %}</div>
+  </header>
+
+  <ul class="cats-grid">
+    {% for c in cats %}
+      <li class="cat-card">
+        <a class="cat-link" href="/category/{{ c.key }}/">
+          <span>{{ c.name }}</span>
+        </a>
+        <div class="cat-count">
+          {{ c.count }} article{% if c.count != 1 %}s{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

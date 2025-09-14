@@ -1,17 +1,23 @@
 ---
-title: "The Argosy Debates: Should Universal Basic Income (UBI) Be a Central Goal for Developed Nations?"
-author: "Yehee Jung and Anthony Min"
-category: "Debate"
-date: "2024-11-14T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: Should Universal Basic Income (UBI) Be a Central Goal for
+  Developed Nations?
+author: Yehee Jung and Anthony Min
+category: Debate
+date: '2024-11-14T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - UBI
   - economics
   - social policy
   - public health
-excerpt: "As automation and inequality reshape our economies, the idea of giving every citizen a regular, unconditional income is gaining traction. Science Editor Yehee Jung and Finance Editor Anthony Min debate whether UBI is a visionary solution or a fiscally irresponsible fantasy."
-image: 
-image_credit: 
+excerpt: >-
+  As automation and inequality reshape our economies, the idea of giving every
+  citizen a regular, unconditional income is gaining traction. Science Editor
+  Yehee Jung and Finance Editor Anthony Min debate whether UBI is a visionary
+  solution or a fiscally irresponsible fantasy.
+image: /assets/images/2024/debate-should-universal-basic-income-be-a-central-goal.jpg
+image_credit: Wolf Schram — Unsplash
 ---
 
 ***Editor's Note:*** *From pilot programs in Finland to the presidential platform of Andrew Yang, Universal Basic Income has moved from a theoretical concept to a serious policy debate. Is it a necessary evolution of the social safety net for the 21st century, or a recipe for economic disaster?*

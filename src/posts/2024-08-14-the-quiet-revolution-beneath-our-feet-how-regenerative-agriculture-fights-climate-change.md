@@ -1,17 +1,23 @@
 ---
-title: "The Quiet Revolution Beneath Our Feet: How Regenerative Agriculture Fights Climate Change"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2024-08-14T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Quiet Revolution Beneath Our Feet: How Regenerative Agriculture Fights
+  Climate Change
+author: Ethan Yang
+category: Sustainability
+date: '2024-08-14T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - regenerative agriculture
   - soil
   - carbon sequestration
   - farming
-excerpt: "When we think of climate solutions, we often look to technology like solar panels and electric cars. But one of the most powerful tools in fighting climate change might be right under our feet: healthy soil."
-image: 
-image_credit: 
+excerpt: >-
+  When we think of climate solutions, we often look to technology like solar
+  panels and electric cars. But one of the most powerful tools in fighting
+  climate change might be right under our feet: healthy soil.
+image: >-
+  /assets/images/2024/the-quiet-revolution-beneath-our-feet-how-regenerative-agriculture-fights-climate-change.jpg
+image_credit: kazi arifuzzaman — Unsplash
 ---
 
 The conversation about climate solutions is often dominated by high-tech, industrial-scale ideas: vast solar arrays, giant carbon capture facilities, and next-generation nuclear reactors. These are all crucial pieces of the puzzle. But a growing movement of farmers, scientists, and environmentalists is championing a solution that is as old as civilization itself, yet revolutionary in its potential. This solution lies not in silicon valleys or engineering labs, but in the soil beneath our feet. Regenerative agriculture, a holistic approach to farming, promises not only to produce nutritious food but also to turn our agricultural lands from a source of carbon into a massive carbon sink, quietly pulling CO2 from the atmosphere and storing it in the ground.

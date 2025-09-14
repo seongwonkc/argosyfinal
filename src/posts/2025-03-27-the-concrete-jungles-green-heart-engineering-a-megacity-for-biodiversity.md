@@ -1,18 +1,23 @@
 ---
-title: "The Concrete Jungle's Green Heart: Engineering a Megacity for Biodiversity"
-author: "Ethan Yang and Yehee Jung"
-category: "Interdisciplinary"
-date: "2025-03-27T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Concrete Jungle''s Green Heart: Engineering a Megacity for Biodiversity'
+author: Ethan Yang and Yehee Jung
+category: Interdisciplinary
+date: '2025-03-27T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - urban planning
   - biodiversity
   - engineering
   - public health
   - green infrastructure
-excerpt: "Cities are often seen as the opposite of nature. But a new movement in urban design is trying to change that, weaving nature back into the urban fabric. An engineer and a science editor explore how green infrastructure can make cities like Seoul healthier and more resilient."
-image: 
-image_credit: 
+excerpt: >-
+  Cities are often seen as the opposite of nature. But a new movement in urban
+  design is trying to change that, weaving nature back into the urban fabric. An
+  engineer and a science editor explore how green infrastructure can make cities
+  like Seoul healthier and more resilient.
+image: >-
+  /assets/images/2025/the-concrete-jungles-green-heart-engineering-a-megacity-for-biodiversity.jpg
+image_credit: Nadia Ferrari — Unsplash
 ---
 
 **By Ethan Yang and Yehee Jung**

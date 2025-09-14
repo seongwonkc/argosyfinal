@@ -1,18 +1,23 @@
 ---
-title: "Direct Air Capture: A Technological Marvel or an Expensive Fantasy?"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-07-30T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Direct Air Capture: A Technological Marvel or an Expensive Fantasy?'
+author: Ethan Yang
+category: Sustainability
+date: '2025-07-30T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - direct air capture
   - DAC
   - carbon removal
   - engineering
   - climate change
-excerpt: "What if we could build machines that act like artificial trees, sucking CO2 directly out of the sky? Direct Air Capture technology does just that. It's a critical part of many climate models, but its real-world feasibility faces immense energy and cost challenges."
-image: 
-image_credit: 
+excerpt: >-
+  What if we could build machines that act like artificial trees, sucking CO2
+  directly out of the sky? Direct Air Capture technology does just that. It's a
+  critical part of many climate models, but its real-world feasibility faces
+  immense energy and cost challenges.
+image: >-
+  /assets/images/2025/direct-air-capture-a-technological-marvel-or-an-expensive-fantasy.jpg
+image_credit: Klaudio Metolli — Unsplash
 ---
 
 For decades, the fight against climate change has been about mitigation—reducing the amount of carbon dioxide we emit into the atmosphere. But as the concentration of CO2 continues to rise, a more radical idea is gaining traction: what if we could clean up the pollution we've already created? This is the promise of Direct Air Capture (DAC), a technology designed to do exactly what its name implies: capture CO2 directly from the ambient air. It's the ultimate technological fix, a man-made solution to a man-made problem. Proponents see it as an essential tool for achieving "net-zero" emissions, while critics dismiss it as an expensive, energy-intensive fantasy that distracts from the real work of cutting emissions.

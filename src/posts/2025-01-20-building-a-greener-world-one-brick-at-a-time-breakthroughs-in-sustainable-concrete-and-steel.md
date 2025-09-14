@@ -1,18 +1,25 @@
 ---
-title: "Building a Greener World, One Brick at a Time: Breakthroughs in Sustainable Concrete and Steel"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-01-20T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  Building a Greener World, One Brick at a Time: Breakthroughs in Sustainable
+  Concrete and Steel
+author: Ethan Yang
+category: Sustainability
+date: '2025-01-20T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - green materials
   - concrete
   - steel
   - decarbonization
   - engineering
-excerpt: "The modern world is built with concrete and steel. These miracle materials are foundational to our cities and infrastructure, but their production is responsible for over 15% of global CO2 emissions. A new wave of material science innovation is trying to change that."
-image: 
-image_credit: 
+excerpt: >-
+  The modern world is built with concrete and steel. These miracle materials are
+  foundational to our cities and infrastructure, but their production is
+  responsible for over 15% of global CO2 emissions. A new wave of material
+  science innovation is trying to change that.
+image: >-
+  /assets/images/2025/building-a-greener-world-one-brick-at-a-time-breakthroughs-in-sustainable-concrete-and-steel.jpg
+image_credit: Zoshua Colah — Unsplash
 ---
 
 Look around you. The building you are in, the bridge you cross on your commute, the foundations of our entire modern civilization are built with two materials: concrete and steel. They are the unsung heroes of the industrial world, unmatched in their strength, durability, and versatility. But this strength comes at a staggering climate cost. The production of cement (the key ingredient in concrete) and steel are two of the most carbon-intensive industrial processes on the planet, together accounting for a massive slice of global greenhouse gas emissions. Decarbonizing our world means not just cleaning up our energy and transport, but fundamentally reinventing the very materials we use to build it.

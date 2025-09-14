@@ -1,17 +1,21 @@
 ---
-title: "Beyond the Blue Bin: Deconstructing the Myth of a Truly Circular Economy"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2024-08-28T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Beyond the Blue Bin: Deconstructing the Myth of a Truly Circular Economy'
+author: Ethan Yang
+category: Sustainability
+date: '2024-08-28T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - circular economy
   - sustainability
   - recycling
   - engineering
-excerpt: "We are taught to reduce, reuse, and recycle. But our current system is failing. A true circular economy requires a radical re-engineering of how we design, produce, and consume everything."
-image: 
-image_credit: 
+excerpt: >-
+  We are taught to reduce, reuse, and recycle. But our current system is
+  failing. A true circular economy requires a radical re-engineering of how we
+  design, produce, and consume everything.
+image: >-
+  /assets/images/2024/beyond-the-blue-bin-deconstructing-the-myth-of-a-truly-circular-economy.jpg
+image_credit: George Pagan III — Unsplash
 ---
 
 For most of us, environmental responsibility begins and ends at the recycling bin. We dutifully sort our plastics, paper, and glass, confident that we are doing our part. This is the public face of the circular economy—the idea that we can close the loop on consumption, turning waste into resource. But this perception masks a far more complicated and often disappointing reality. Our current system is not a circle; it is a linear process with a brief, inefficient recycling detour on its way to the landfill. The blue bin is a symbol of good intentions, but to build a truly sustainable future, we must look beyond it and fundamentally re-engineer our entire economic model.

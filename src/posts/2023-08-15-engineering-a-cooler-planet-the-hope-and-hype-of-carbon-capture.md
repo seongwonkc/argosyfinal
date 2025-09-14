@@ -1,17 +1,21 @@
 ---
-title: "Engineering a Cooler Planet: The Hope and Hype of Carbon Capture"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2023-08-15T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Engineering a Cooler Planet: The Hope and Hype of Carbon Capture'
+author: Ethan Yang
+category: Sustainability
+date: '2023-08-15T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - carbon capture
   - climate change
   - engineering
   - technology
-excerpt: "Carbon Capture, Utilization, and Storage promises a technological fix for our emissions problem. But can we truly engineer our way out of climate change, or is it an expensive and dangerous distraction?"
-image: 
-image_credit: 
+excerpt: >-
+  Carbon Capture, Utilization, and Storage promises a technological fix for our
+  emissions problem. But can we truly engineer our way out of climate change, or
+  is it an expensive and dangerous distraction?
+image: >-
+  /assets/images/2023/engineering-a-cooler-planet-the-hope-and-hype-of-carbon-capture.jpg
+image_credit: Johannes Plenio — Unsplash
 ---
 
 The scale of the climate crisis demands solutions of an equal magnitude. For decades, the primary focus has been on mitigating emissions by transitioning to renewable energy. But as the carbon budget dwindles, a parallel strategy is gaining momentum: not just stopping emissions, but actively removing existing carbon dioxide from the atmosphere. This is the world of Carbon Capture, Utilization, and Storage (CCUS), a field of climate engineering that promises to undo decades of damage. It’s a compelling vision—a technological redemption for our industrial sins. But as we look closer, the line between a climate savior and a costly diversion becomes increasingly blurry.

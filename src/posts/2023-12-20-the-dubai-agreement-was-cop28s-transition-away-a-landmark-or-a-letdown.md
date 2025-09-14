@@ -1,17 +1,22 @@
 ---
-title: "The Dubai Agreement: Was COP28's 'Transition Away' a Landmark or a Letdown?"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2023-12-20T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Dubai Agreement: Was COP28''s ''Transition Away'' a Landmark or a Letdown?'
+author: Ethan Yang
+category: Sustainability
+date: '2023-12-20T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - COP28
   - climate policy
   - fossil fuels
   - international relations
-excerpt: "For the first time in history, a UN climate agreement has called for a transition away from fossil fuels. It's being hailed as the 'beginning of the end' for the fossil fuel era, but did the final text deliver the decisive action the world needs?"
-image: 
-image_credit: 
+excerpt: >-
+  For the first time in history, a UN climate agreement has called for a
+  transition away from fossil fuels. It's being hailed as the 'beginning of the
+  end' for the fossil fuel era, but did the final text deliver the decisive
+  action the world needs?
+image: >-
+  /assets/images/2023/the-dubai-agreement-was-cop28s-transition-away-a-landmark-or-a-letdown.jpg
+image_credit: Mohammed Nabeel — Unsplash
 ---
 
 After weeks of tense negotiations, the 28th UN Climate Change conference (COP28) in Dubai concluded with a final agreement that, for the first time, explicitly addresses the primary driver of climate change: fossil fuels. The central clause of the "UAE Consensus" calls on nations to contribute to "transitioning away from fossil fuels in energy systems, in a just, orderly and equitable manner." The language was immediately hailed as "historic" by many diplomats and observers, a landmark moment in a three-decade-long process that had previously failed to name the problem. But as the dust settles, a more nuanced picture emerges. Was this the powerful, unambiguous signal the world needed, or a carefully worded compromise that offers more loopholes than solutions?

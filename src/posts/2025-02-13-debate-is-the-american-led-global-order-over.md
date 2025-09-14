@@ -1,17 +1,21 @@
 ---
-title: "The Argosy Debates: Is the Era of the American-Led Global Order Over?"
-author: "Minwoo Jung and Yehee Jung"
-category: "Debate"
-date: "2025-02-13T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Argosy Debates: Is the Era of the American-Led Global Order Over?'
+author: Minwoo Jung and Yehee Jung
+category: Debate
+date: '2025-02-13T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - geopolitics
   - international relations
   - USA
   - China
-excerpt: "For 30 years, the world operated under a 'unipolar moment' of American dominance. With the rise of China and a fractured West, is that era definitively over? Politics Editor Minwoo Jung and Science Editor Yehee Jung offer competing views on the state of global power."
-image: 
-image_credit: 
+excerpt: >-
+  For 30 years, the world operated under a 'unipolar moment' of American
+  dominance. With the rise of China and a fractured West, is that era
+  definitively over? Politics Editor Minwoo Jung and Science Editor Yehee Jung
+  offer competing views on the state of global power.
+image: /assets/images/2025/debate-is-the-american-led-global-order-over.jpg
+image_credit: Eric Prouzet — Unsplash
 ---
 
 ***Editor's Note:*** *From the war in Ukraine to the competition in the South China Sea, the foundational assumptions of the post-Cold War world are being challenged. Is the 'Pax Americana' that defined the last generation giving way to a new, more chaotic and contested era?*

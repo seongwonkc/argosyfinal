@@ -1,18 +1,23 @@
 ---
-title: "The Ghost in the Machine: Can AI's Code Recode Our Climate Future?"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-09-12T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Ghost in the Machine: Can AI''s Code Recode Our Climate Future?'
+author: Ethan Yang
+category: Sustainability
+date: '2025-09-12T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - artificial intelligence
   - AI
   - climate change
   - technology
   - data science
-excerpt: "Artificial intelligence is a tool of unprecedented power, capable of finding patterns and optimizing systems beyond human ability. It could be our greatest ally in the fight against climate change, but it also comes with a voracious appetite for energy. Can AI save the planet?"
-image: 
-image_credit: 
+excerpt: >-
+  Artificial intelligence is a tool of unprecedented power, capable of finding
+  patterns and optimizing systems beyond human ability. It could be our greatest
+  ally in the fight against climate change, but it also comes with a voracious
+  appetite for energy. Can AI save the planet?
+image: >-
+  /assets/images/2025/the-ghost-in-the-machine-can-ais-code-recode-our-climate-future.jpg
+image_credit: Jayphen Simpson — Unsplash
 ---
 
 Artificial intelligence is rapidly becoming the defining technology of our era. From the large language models that generate text to the complex algorithms that guide our financial markets, AI is a tool of almost unimaginable power. It can analyze vast datasets, identify subtle patterns, and optimize complex systems in ways that are far beyond the capabilities of the human mind. It is natural, then, to ask if this powerful new tool could be turned towards solving our most existential challenge: climate change. The potential is immense. AI could be a "ghost in the machine" of our global systems, a powerful intelligence that helps us recode our economy for sustainability. But this technological savior has a dark side: a voracious and rapidly growing appetite for energy.

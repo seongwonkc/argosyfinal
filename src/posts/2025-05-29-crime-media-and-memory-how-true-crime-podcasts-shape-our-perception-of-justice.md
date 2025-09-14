@@ -1,17 +1,24 @@
 ---
-title: "Crime, Media, and Memory: How True Crime Podcasting Shapes Our Perception of Justice"
-author: "Hannah Ryu"
-category: "Interdisciplinary"
-date: "2025-05-29T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  Crime, Media, and Memory: How True Crime Podcasting Shapes Our Perception of
+  Justice
+author: Hannah Ryu
+category: Interdisciplinary
+date: '2025-05-29T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - true crime
   - media
   - psychology
   - justice system
-excerpt: "The true crime genre has exploded into a multi-million dollar podcasting industry with a massive, dedicated following. But what is the psychological and social impact of turning real-life tragedies into popular entertainment? A media and psychology writer investigates."
-image: 
-image_credit: 
+excerpt: >-
+  The true crime genre has exploded into a multi-million dollar podcasting
+  industry with a massive, dedicated following. But what is the psychological
+  and social impact of turning real-life tragedies into popular entertainment? A
+  media and psychology writer investigates.
+image: >-
+  /assets/images/2025/crime-media-and-memory-how-true-crime-podcasts-shape-our-perception-of-justice.jpg
+image_credit: Jessica Christian — Unsplash
 ---
 
 **By Hannah Ryu**

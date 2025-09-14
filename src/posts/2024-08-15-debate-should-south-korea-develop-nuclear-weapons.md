@@ -1,17 +1,21 @@
 ---
-title: "The Argosy Debates: Should South Korea Develop Its Own Nuclear Weapons?"
-author: "Minwoo Jung and Yehee Jung"
-category: "Debate"
-date: "2024-08-15T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Argosy Debates: Should South Korea Develop Its Own Nuclear Weapons?'
+author: Minwoo Jung and Yehee Jung
+category: Debate
+date: '2024-08-15T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - geopolitics
   - nuclear proliferation
   - South Korea
   - security
-excerpt: "With an increasingly belligerent North Korea and shifting global alliances, the ultimate security question is back on the table. Politics Editor Minwoo Jung and Science Editor Yehee Jung face off on whether South Korea must pursue a nuclear deterrent."
-image: 
-image_credit: 
+excerpt: >-
+  With an increasingly belligerent North Korea and shifting global alliances,
+  the ultimate security question is back on the table. Politics Editor Minwoo
+  Jung and Science Editor Yehee Jung face off on whether South Korea must pursue
+  a nuclear deterrent.
+image: /assets/images/2024/debate-should-south-korea-develop-nuclear-weapons.jpg
+image_credit: Juwhan Yu — Unsplash
 ---
 
 ***Editor's Note:*** *The question of a domestic nuclear weapons program, long a fringe topic in South Korean politics, has entered the mainstream discourse. As global security dynamics shift, we asked two of our editors to make their strongest case for and against this monumental step. The following are their opening arguments.*

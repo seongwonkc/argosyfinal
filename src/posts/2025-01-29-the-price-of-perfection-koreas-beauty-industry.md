@@ -1,18 +1,24 @@
 ---
-title: "The Price of Perfection: A Cultural and Psychological Look at South Korea's Beauty Industry"
-author: "Saerom Kim and Hannah Ryu"
-category: "Interdisciplinary"
-date: "2025-01-29T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Price of Perfection: A Cultural and Psychological Look at South Korea's
+  Beauty Industry
+author: Saerom Kim and Hannah Ryu
+category: Interdisciplinary
+date: '2025-01-29T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - K-Beauty
   - culture
   - psychology
   - beauty standards
   - South Korea
-excerpt: "The world is obsessed with K-Beauty's innovative products and flawless results. But behind the multi-billion dollar industry lies a culture of immense pressure. A culture writer and a psychology writer explore the social and mental cost of South Korea's demanding beauty standards."
-image: 
-image_credit: 
+excerpt: >-
+  The world is obsessed with K-Beauty's innovative products and flawless
+  results. But behind the multi-billion dollar industry lies a culture of
+  immense pressure. A culture writer and a psychology writer explore the social
+  and mental cost of South Korea's demanding beauty standards.
+image: /assets/images/2025/the-price-of-perfection-koreas-beauty-industry.jpg
+image_credit: Kamil Kalkan — Unsplash
 ---
 
 **By Saerom Kim and Hannah Ryu**

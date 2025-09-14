@@ -1,17 +1,22 @@
 ---
-title: "Architecture Against the Apocalypse: Designing the Climate-Resilient City"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-01-29T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Architecture Against the Apocalypse: Designing the Climate-Resilient City'
+author: Ethan Yang
+category: Sustainability
+date: '2025-01-29T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - resilient design
   - architecture
   - urban planning
   - climate adaptation
-excerpt: "Climate change is no longer a distant threat; it's a present reality of fires, floods, and extreme heat. The survival of our cities depends on a new generation of architects and engineers who are designing for a world of extremes."
-image: 
-image_credit: 
+excerpt: >-
+  Climate change is no longer a distant threat; it's a present reality of fires,
+  floods, and extreme heat. The survival of our cities depends on a new
+  generation of architects and engineers who are designing for a world of
+  extremes.
+image: >-
+  /assets/images/2025/architecture-against-the-apocalypse-designing-the-climate-resilient-city.jpg
+image_credit: Roman — Unsplash
 ---
 
 For centuries, the primary struggle of architecture was against gravity. Today, it is against the climate. The abstract threat of rising global temperatures has materialized into a series of visceral, recurring disasters: record-breaking heatwaves that turn cities into ovens, atmospheric rivers that unleash catastrophic floods, and wildfires that consume entire communities. In the face of this new reality, the design of our cities and buildings is no longer just a matter of aesthetics or efficiency; it is a matter of survival. A new discipline is emerging at the intersection of architecture, engineering, and ecology: climate-resilient design. It is the urgent work of retrofitting our present and reimagining our future for a world that is hotter, wetter, and more extreme.

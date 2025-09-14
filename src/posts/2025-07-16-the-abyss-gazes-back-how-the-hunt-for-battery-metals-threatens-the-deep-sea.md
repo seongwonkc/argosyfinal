@@ -1,17 +1,22 @@
 ---
-title: "The Abyss Gazes Back: How the Hunt for Battery Metals Threatens the Deep Sea"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-07-16T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Abyss Gazes Back: How the Hunt for Battery Metals Threatens the Deep Sea'
+author: Ethan Yang
+category: Sustainability
+date: '2025-07-16T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - deep sea mining
   - biodiversity
   - ocean conservation
   - battery metals
-excerpt: "To power our green transition, we need vast quantities of cobalt, nickel, and manganese. A new and controversial industry wants to find them on the ocean floor. Deep-sea mining could unlock a treasure trove of metals, but at what cost to the planet's last true wilderness?"
-image: 
-image_credit: 
+excerpt: >-
+  To power our green transition, we need vast quantities of cobalt, nickel, and
+  manganese. A new and controversial industry wants to find them on the ocean
+  floor. Deep-sea mining could unlock a treasure trove of metals, but at what
+  cost to the planet's last true wilderness?
+image: >-
+  /assets/images/2025/the-abyss-gazes-back-how-the-hunt-for-battery-metals-threatens-the-deep-sea.jpg
+image_credit: soap so — Unsplash
 ---
 
 The deep sea is the Earth's final frontier. It is a world of crushing pressure, perpetual darkness, and bizarre life forms that we are only just beginning to understand. For millennia, it has remained beyond the reach of human industry. But that is about to change. Lying scattered across the abyssal plains, thousands of meters below the surface, are trillions of potato-sized rocks known as polymetallic nodules. These nodules are a geological treasure chest, rich in the very metals we need to power our clean energy transition: cobalt, nickel, manganese, and copper. As demand for these battery metals skyrockets, a new and highly controversial industry is preparing to launch a new kind of gold rush: deep-sea mining.

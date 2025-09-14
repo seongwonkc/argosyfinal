@@ -1,17 +1,22 @@
 ---
-title: "The Argosy Debates: Has Social Media Done More to Corrupt Than to Support Modern Journalism?"
-author: "Hannah Ryu and Minwoo Jung"
-category: "Debate"
-date: "2024-12-11T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: Has Social Media Done More to Corrupt Than to Support
+  Modern Journalism?
+author: Hannah Ryu and Minwoo Jung
+category: Debate
+date: '2024-12-11T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - social media
   - journalism
   - media
   - politics
-excerpt: "Social media has become the primary way many people get their news, but has it been a net-negative for the press? A media writer and a politics editor debate the true impact of the algorithmic newsfeed."
-image: 
-image_credit: 
+excerpt: >-
+  Social media has become the primary way many people get their news, but has it
+  been a net-negative for the press? A media writer and a politics editor debate
+  the true impact of the algorithmic newsfeed.
+image: /assets/images/2024/debate-has-social-media-corrupted-journalism.jpg
+image_credit: Brett Jordan — Unsplash
 ---
 
 ***Editor's Note:*** *From the Arab Spring to the 2020 US election, social media platforms have played a central role in how news is made, distributed, and consumed. But has this revolution empowered journalism or irrevocably damaged it? We asked two editors to make their case.*

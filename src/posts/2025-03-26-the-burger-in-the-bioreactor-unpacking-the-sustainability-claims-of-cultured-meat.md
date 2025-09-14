@@ -1,17 +1,23 @@
 ---
-title: "The Burger in the Bioreactor: Unpacking the Sustainability Claims of Cultured Meat"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-03-26T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Burger in the Bioreactor: Unpacking the Sustainability Claims of Cultured
+  Meat
+author: Ethan Yang
+category: Sustainability
+date: '2025-03-26T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - cultured meat
   - food technology
   - sustainability
   - biotechnology
-excerpt: "It promises the taste and texture of real meat without the animal agriculture. Cultured meat, grown from cells in a lab, is hailed as a solution to climate change and animal welfare. But is it truly a sustainable alternative?"
-image: 
-image_credit: 
+excerpt: >-
+  It promises the taste and texture of real meat without the animal agriculture.
+  Cultured meat, grown from cells in a lab, is hailed as a solution to climate
+  change and animal welfare. But is it truly a sustainable alternative?
+image: >-
+  /assets/images/2025/the-burger-in-the-bioreactor-unpacking-the-sustainability-claims-of-cultured-meat.jpg
+image_credit: yousef samuil — Unsplash
 ---
 
 The global appetite for meat is one of the single largest drivers of environmental degradation. Animal agriculture is responsible for a significant chunk of global greenhouse gas emissions, is a leading cause of deforestation, and consumes vast amounts of land and water. For decades, the proposed solutions have been plant-based alternatives or simply eating less meat. But a new, far more technologically ambitious solution is now on the table: cultured meat. Also known as cultivated, lab-grown, or cell-based meat, it is genuine animal meat produced by cultivating animal cells directly, entirely outside of an animal. It’s a concept straight out of science fiction, promising the sizzle of a real burger without the farm. But as this technology moves from the lab to the market, it's time to critically examine its sustainability claims.

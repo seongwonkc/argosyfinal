@@ -1,17 +1,20 @@
 ---
-title: "Why the World is Betting Billions on Green Hydrogen"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2024-03-10T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: Why the World is Betting Billions on Green Hydrogen
+author: Ethan Yang
+category: Sustainability
+date: '2024-03-10T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - green hydrogen
   - renewable energy
   - engineering
   - decarbonization
-excerpt: "It's been called the 'Swiss Army knife' of clean energy, a fuel that can power everything from steel mills to container ships. But is green hydrogen the key to decarbonizing our toughest sectors, or just an inefficient dream?"
-image: 
-image_credit: 
+excerpt: >-
+  It's been called the 'Swiss Army knife' of clean energy, a fuel that can power
+  everything from steel mills to container ships. But is green hydrogen the key
+  to decarbonizing our toughest sectors, or just an inefficient dream?
+image: /assets/images/2024/why-the-world-is-betting-billions-on-green-hydrogen.jpg
+image_credit: Oxana Melis — Unsplash
 ---
 
 In the quest to decarbonize our economy, we have clear solutions for some sectors. Solar and wind power can clean up our electricity grids. Electric vehicles can decarbonize personal transport. But what about the rest? How do we power a container ship across the Pacific, forge steel without coal, or provide long-term energy storage for a grid that runs on intermittent renewables? For these hard-to-abate sectors, a new contender is emerging, attracting billions of dollars in investment and government support: green hydrogen. It’s being hailed as the "Swiss Army knife" of the energy transition, a versatile, zero-emission fuel that could be the missing piece of the net-zero puzzle.

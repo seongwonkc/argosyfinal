@@ -1,17 +1,23 @@
 ---
-title: "The Argosy Debates: Is K-Pop's Global Dominance a Net Positive for South Korea?"
-author: "Anthony Min and Saerom Kim"
-category: "Debate"
-date: "2024-09-12T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: Is K-Pop's Global Dominance a Net Positive for South
+  Korea?
+author: Anthony Min and Saerom Kim
+category: Debate
+date: '2024-09-12T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - K-Pop
   - economics
   - culture
   - soft power
-excerpt: "K-Pop has become a multi-billion dollar export and the engine of South Korea's soft power. But at what cost? Finance Editor Anthony Min and Culture Writer Saerom Kim debate the true value of the Hallyu wave."
-image: 
-image_credit: 
+excerpt: >-
+  K-Pop has become a multi-billion dollar export and the engine of South Korea's
+  soft power. But at what cost? Finance Editor Anthony Min and Culture Writer
+  Saerom Kim debate the true value of the Hallyu wave.
+image: >-
+  /assets/images/2024/debate-is-k-pop-dominance-a-net-positive-for-south-korea.jpg
+image_credit: Ra Dragon — Unsplash
 ---
 
 ***Editor's Note:*** *From BTS addressing the UN to BLACKPINK headlining Coachella, K-Pop's global reach is undeniable. It's a source of immense national pride and economic power. But is the hyper-industrialized 'idol' system a sustainable model for cultural and economic health? We asked two of our writers with very different perspectives to weigh in.*

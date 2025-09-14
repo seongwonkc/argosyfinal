@@ -1,18 +1,24 @@
 ---
-title: "Our EV Addiction Has a Dirty Secret: The True Environmental Cost of Lithium Mining"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2024-10-29T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  Our EV Addiction Has a Dirty Secret: The True Environmental Cost of Lithium
+  Mining
+author: Ethan Yang
+category: Sustainability
+date: '2024-10-29T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - electric vehicles
   - lithium
   - mining
   - sustainability
   - engineering
-excerpt: "Electric vehicles are key to decarbonizing transport, but the lithium-ion batteries that power them come at a significant environmental and social cost. Can we have a green revolution without creating new sacrifice zones?"
-image: 
-image_credit: 
+excerpt: >-
+  Electric vehicles are key to decarbonizing transport, but the lithium-ion
+  batteries that power them come at a significant environmental and social cost.
+  Can we have a green revolution without creating new sacrifice zones?
+image: >-
+  /assets/images/2024/our-ev-addiction-has-a-dirty-secret-the-true-environmental-cost-of-lithium-mining.jpg
+image_credit: Aitor Olaskoaga — Unsplash
 ---
 
 The electric vehicle (EV) is the gleaming symbol of our green future. Sleek, silent, and tailpipe-free, it represents a decisive break from the fossil-fueled past. Governments around the world are pouring subsidies into EV adoption, and consumers are responding, driving a global transition away from the internal combustion engine. This revolution is powered by the lithium-ion battery, a marvel of electrochemical engineering. But hidden behind the clean facade of the EV lies a dirty secret: the extraction of lithium, the battery's essential ingredient, carries a heavy environmental and social price tag. As we rush to electrify everything, we risk trading one form of extraction for another, creating new sacrifice zones in the name of climate progress.

@@ -1,18 +1,24 @@
 ---
-title: "The NIMBY Paradox: Why Our Brains Are Wired to Fight the Green Energy We Say We Want"
-author: "Ethan Yang and Hannah Ryu"
-category: "Interdisciplinary"
-date: "2024-08-28T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The NIMBY Paradox: Why Our Brains Are Wired to Fight the Green Energy We Say
+  We Want
+author: Ethan Yang and Hannah Ryu
+category: Interdisciplinary
+date: '2024-08-28T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - NIMBY
   - psychology
   - renewable energy
   - engineering
   - climate change
-excerpt: "Polls show overwhelming support for renewables, yet local opposition kills green projects every day. An engineer and a psychologist team up to deconstruct the cognitive biases that turn climate allies into local adversaries."
-image: 
-image_credit: 
+excerpt: >-
+  Polls show overwhelming support for renewables, yet local opposition kills
+  green projects every day. An engineer and a psychologist team up to
+  deconstruct the cognitive biases that turn climate allies into local
+  adversaries.
+image: /assets/images/2024/the-nimby-paradox-why-our-brains-fight-green-energy.jpg
+image_credit: Moritz Kindler — Unsplash
 ---
 
 **By Ethan Yang and Hannah Ryu**

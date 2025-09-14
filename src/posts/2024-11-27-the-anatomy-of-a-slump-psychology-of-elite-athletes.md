@@ -1,17 +1,23 @@
 ---
-title: "The Anatomy of a Slump: Deconstructing the Psychological Pressures on Elite Athletes"
-author: "Hannah Ryu and Yonghyuk Choi"
-category: "Interdisciplinary"
-date: "2024-11-27T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Anatomy of a Slump: Deconstructing the Psychological Pressures on Elite
+  Athletes
+author: Hannah Ryu and Yonghyuk Choi
+category: Interdisciplinary
+date: '2024-11-27T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - sports psychology
   - sports
   - psychology
   - performance
-excerpt: "They are the best in the world, yet sometimes they inexplicably forget how to do the very thing that made them great. A psychology writer and a sports editor team up to explore the terrifying phenomenon of 'the yips' and choking under pressure."
-image: 
-image_credit: 
+excerpt: >-
+  They are the best in the world, yet sometimes they inexplicably forget how to
+  do the very thing that made them great. A psychology writer and a sports
+  editor team up to explore the terrifying phenomenon of 'the yips' and choking
+  under pressure.
+image: /assets/images/2024/the-anatomy-of-a-slump-psychology-of-elite-athletes.jpg
+image_credit: Natalia Churina — Unsplash
 ---
 
 **By Hannah Ryu and Yonghyuk Choi**

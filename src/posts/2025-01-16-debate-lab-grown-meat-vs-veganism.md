@@ -1,18 +1,24 @@
 ---
-title: "The Argosy Debates: To Save the Climate, Should We Embrace Lab-Grown Meat or Go Vegan?"
-author: "Ethan Yang and Yehee Jung"
-category: "Debate"
-date: "2025-01-16T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: To Save the Climate, Should We Embrace Lab-Grown Meat or
+  Go Vegan?
+author: Ethan Yang and Yehee Jung
+category: Debate
+date: '2025-01-16T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - cultured meat
   - veganism
   - food
   - sustainability
   - climate change
-excerpt: "Animal agriculture is a climate disaster. The solution lies in changing our food system, but how? An engineer argues for the technological fix of cultured meat, while a science and health editor makes the case for a plant-based future."
-image: 
-image_credit: 
+excerpt: >-
+  Animal agriculture is a climate disaster. The solution lies in changing our
+  food system, but how? An engineer argues for the technological fix of cultured
+  meat, while a science and health editor makes the case for a plant-based
+  future.
+image: /assets/images/2025/debate-lab-grown-meat-vs-veganism.jpg
+image_credit: Wolfgang Hasselmann — Unsplash
 ---
 
 ***Editor's Note:*** *There is a broad scientific consensus that the world needs to dramatically reduce its consumption of meat to meet climate goals. But two competing visions for how to achieve this have emerged: a high-tech, engineered solution and a systemic, behavioral one. Which path is more promising?*

@@ -1,17 +1,22 @@
 ---
-title: "Putting a Price Tag on Nature: The Dangerous Economics of Valuing Biodiversity"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-05-14T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Putting a Price Tag on Nature: The Dangerous Economics of Valuing Biodiversity'
+author: Ethan Yang
+category: Sustainability
+date: '2025-05-14T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - biodiversity
   - economics
   - conservation
   - natural capital
-excerpt: "To save nature, do we first have to put it on a balance sheet? The concept of 'natural capital' and the rise of biodiversity markets are trying to make conservation profitable. But can we really put a price on a forest, and should we?"
-image: 
-image_credit: 
+excerpt: >-
+  To save nature, do we first have to put it on a balance sheet? The concept of
+  'natural capital' and the rise of biodiversity markets are trying to make
+  conservation profitable. But can we really put a price on a forest, and should
+  we?
+image: >-
+  /assets/images/2025/putting-a-price-tag-on-nature-the-dangerous-economics-of-valuing-biodiversity.jpg
+image_credit: Ernesto Argüello — Unsplash
 ---
 
 The world is facing a biodiversity crisis that is as severe as the climate crisis, yet it receives a fraction of the attention. Species are disappearing at an alarming rate, and ecosystems are collapsing, threatening the very life-support systems of the planet. For decades, the conservation movement has been driven by a moral and ethical argument: that we have a duty to protect nature for its intrinsic value. But this argument has largely failed to halt the destruction. Now, a new, more pragmatic, and far more controversial approach is gaining ground: to save nature, we must first put a price on it. This is the world of "natural capital," a framework that attempts to value the services nature provides and integrate them into our economic system.

@@ -1,17 +1,23 @@
 ---
-title: "The Argosy Debates: Is Deep-Sea Mining a Necessary Evil for the Green Transition?"
-author: "Anthony Min and Ethan Yang"
-category: "Debate"
-date: "2024-10-17T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: Is Deep-Sea Mining a Necessary Evil for the Green
+  Transition?
+author: Anthony Min and Ethan Yang
+category: Debate
+date: '2024-10-17T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - deep sea mining
   - sustainability
   - economics
   - environment
-excerpt: "We need cobalt, nickel, and manganese for a world of batteries. Is the bottom of the ocean the best place to get them? Finance Editor Anthony Min and Sustainability writer Ethan Yang debate the devil's bargain of deep-sea mining."
-image: 
-image_credit: 
+excerpt: >-
+  We need cobalt, nickel, and manganese for a world of batteries. Is the bottom
+  of the ocean the best place to get them? Finance Editor Anthony Min and
+  Sustainability writer Ethan Yang debate the devil's bargain of deep-sea
+  mining.
+image: /assets/images/2024/debate-is-deep-sea-mining-a-necessary-evil.jpg
+image_credit: NOAA — Unsplash
 ---
 
 ***Editor's Note:*** *The global transition to electric vehicles and renewable energy requires a staggering quantity of critical minerals. As land-based mines struggle to keep up, a new and controversial frontier has emerged: the deep ocean floor. Is harvesting these resources an unavoidable step in saving the climate, or an environmental catastrophe in the making?*

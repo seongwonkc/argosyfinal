@@ -1,17 +1,23 @@
 ---
-title: "The Argosy Debates: Is National Interest a Justification for Protectionist 'Green Tariffs'?"
-author: "Minwoo Jung and Anthony Min"
-category: "Debate"
-date: "2025-04-10T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Argosy Debates: Is National Interest a Justification for Protectionist
+  'Green Tariffs'?
+author: Minwoo Jung and Anthony Min
+category: Debate
+date: '2025-04-10T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - trade
   - climate change
   - economics
   - geopolitics
-excerpt: "To fight climate change, should countries use tariffs to punish high-polluting trade partners and protect their own green industries? Two of our conservative-leaning editors clash on the intersection of climate, trade, and national interest."
-image: 
-image_credit: 
+excerpt: >-
+  To fight climate change, should countries use tariffs to punish high-polluting
+  trade partners and protect their own green industries? Two of our
+  conservative-leaning editors clash on the intersection of climate, trade, and
+  national interest.
+image: /assets/images/2025/debate-are-green-tariffs-justified.jpg
+image_credit: Wolfgang Weiser — Unsplash
 ---
 
 ***Editor's Note:*** *The European Union's Carbon Border Adjustment Mechanism (CBAM) has brought the controversial idea of 'green tariffs' to the forefront of global trade. Are these tariffs a necessary tool to level the playing field and drive global decarbonization, or are they simply old-fashioned protectionism in a new, green disguise?*

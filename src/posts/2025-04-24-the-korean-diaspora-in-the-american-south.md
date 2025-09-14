@@ -1,18 +1,24 @@
 ---
-title: "The Korean Diaspora in an Unlikely Place: Finding Identity in the American South"
-author: "Saerom Kim and Minwoo Jung"
-category: "Interdisciplinary"
-date: "2024-04-24T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The Korean Diaspora in an Unlikely Place: Finding Identity in the American
+  South
+author: Saerom Kim and Minwoo Jung
+category: Interdisciplinary
+date: '2024-04-24T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - diaspora
   - culture
   - identity
   - geopolitics
   - Korean-American
-excerpt: "Driven by the auto industry, a vibrant Korean community is taking root in the heart of the American South. A culture writer on the ground in Georgia and a politics editor in Seoul team up to explore this fascinating story of migration, identity, and soft power."
-image: 
-image_credit: 
+excerpt: >-
+  Driven by the auto industry, a vibrant Korean community is taking root in the
+  heart of the American South. A culture writer on the ground in Georgia and a
+  politics editor in Seoul team up to explore this fascinating story of
+  migration, identity, and soft power.
+image: /assets/images/2025/the-korean-diaspora-in-the-american-south.jpg
+image_credit: Daniel Bernard — Unsplash
 ---
 
 **By Saerom Kim and Minwoo Jung**

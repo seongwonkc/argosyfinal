@@ -1,17 +1,24 @@
 ---
-title: "Grading the Green New Deal: A Five-Year Report Card on South Korea's Climate Ambitions"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-05-19T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  Grading the Green New Deal: A Five-Year Report Card on South Korea's Climate
+  Ambitions
+author: Ethan Yang
+category: Sustainability
+date: '2025-05-19T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - South Korea
   - Green New Deal
   - climate policy
   - renewable energy
-excerpt: "In 2020, South Korea announced an ambitious Green New Deal, pledging to achieve carbon neutrality by 2050 and transform its fossil-fuel-dependent economy. Five years on, it's time to assess the progress. How is the plan holding up?"
-image: 
-image_credit: 
+excerpt: >-
+  In 2020, South Korea announced an ambitious Green New Deal, pledging to
+  achieve carbon neutrality by 2050 and transform its fossil-fuel-dependent
+  economy. Five years on, it's time to assess the progress. How is the plan
+  holding up?
+image: >-
+  /assets/images/2025/grading-the-green-new-deal-a-five-year-report-card-on-south-koreas-climate-ambitions.jpg
+image_credit: KG Baek — Unsplash
 ---
 
 In the summer of 2020, amidst the global turmoil of the pandemic, South Korea unveiled a bold vision for its future: the Korean Green New Deal. It was one of the most ambitious national climate plans in Asia, a multi-billion-dollar strategy to simultaneously tackle climate change, foster economic growth, and create a more inclusive society. The plan's centerpiece was a legally binding commitment to achieve carbon neutrality by 2050. It was a landmark pledge from a nation historically dependent on heavy industry and imported fossil fuels. Now, five years into this transformative project, it's a critical moment to issue a report card. Has the Green New Deal lived up to its initial promise, or has the momentum stalled in the face of economic and political headwinds?

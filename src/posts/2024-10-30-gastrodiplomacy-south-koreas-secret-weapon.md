@@ -1,18 +1,23 @@
 ---
-title: "Gastrodiplomacy: Can South Korea's Culinary Ambitions Succeed Where Traditional Diplomacy Fails?"
-author: "Saerom Kim and Minwoo Jung"
-category: "Interdisciplinary"
-date: "2024-10-30T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  Gastrodiplomacy: Can South Korea's Culinary Ambitions Succeed Where
+  Traditional Diplomacy Fails?
+author: Saerom Kim and Minwoo Jung
+category: Interdisciplinary
+date: '2024-10-30T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - food
   - culture
   - diplomacy
   - soft power
   - South Korea
-excerpt: "From kimchi to Korean fried chicken, the world is falling in love with Hansik. A culture writer and a politics editor team up to explore whether a nation's dinner table can be its most effective negotiating table."
-image: 
-image_credit: 
+excerpt: >-
+  From kimchi to Korean fried chicken, the world is falling in love with Hansik.
+  A culture writer and a politics editor team up to explore whether a nation's
+  dinner table can be its most effective negotiating table.
+image: /assets/images/2024/gastrodiplomacy-south-koreas-secret-weapon.jpg
+image_credit: William Warby — Unsplash
 ---
 
 **By Saerom Kim and Minwoo Jung**

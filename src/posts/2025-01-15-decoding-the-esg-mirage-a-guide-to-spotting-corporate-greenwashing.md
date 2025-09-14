@@ -1,17 +1,22 @@
 ---
-title: "Decoding the ESG Mirage: A Guide to Spotting Corporate Greenwashing"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-01-15T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Decoding the ESG Mirage: A Guide to Spotting Corporate Greenwashing'
+author: Ethan Yang
+category: Sustainability
+date: '2025-01-15T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - ESG
   - greenwashing
   - finance
   - sustainability
-excerpt: "Investors are pouring trillions of dollars into companies with high ESG ratings, believing they are supporting a sustainable future. But the world of Environmental, Social, and Governance metrics is a murky one, often rewarding savvy marketing over real impact."
-image: 
-image_credit: 
+excerpt: >-
+  Investors are pouring trillions of dollars into companies with high ESG
+  ratings, believing they are supporting a sustainable future. But the world of
+  Environmental, Social, and Governance metrics is a murky one, often rewarding
+  savvy marketing over real impact.
+image: >-
+  /assets/images/2025/decoding-the-esg-mirage-a-guide-to-spotting-corporate-greenwashing.jpg
+image_credit: Markus Spiske — Unsplash
 ---
 
 In the world of finance, a new set of letters has become ubiquitous: ESG. It stands for Environmental, Social, and Governance, a framework designed to help investors assess a company's performance on a wide range of non-financial factors. The logic is compelling: companies that manage their environmental risks, treat their employees well, and have strong corporate governance should be better long-term investments. This has fueled a boom in sustainable investing, with trillions of dollars flowing into funds that prioritize companies with high ESG ratings. But as the market has grown, so have the criticisms. The ESG framework, intended to be a tool for transparency and positive change, is increasingly being called a mirage—a system that often obscures more than it reveals and enables a sophisticated form of corporate "greenwashing."

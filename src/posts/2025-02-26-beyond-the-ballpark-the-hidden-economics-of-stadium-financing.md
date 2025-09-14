@@ -1,17 +1,22 @@
 ---
-title: "Beyond the Ballpark: The Hidden Economics of Stadium Financing"
-author: "Yonghyuk Choi and Anthony Min"
-category: "Interdisciplinary"
-date: "2025-02-26T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Beyond the Ballpark: The Hidden Economics of Stadium Financing'
+author: Yonghyuk Choi and Anthony Min
+category: Interdisciplinary
+date: '2025-02-26T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - sports business
   - economics
   - stadiums
   - public policy
-excerpt: "A gleaming new stadium is often sold as a catalyst for urban renewal and a great deal for the city. But who really pays, and who benefits? A sports editor and a finance editor follow the money behind these multi-billion dollar projects."
-image: 
-image_credit: 
+excerpt: >-
+  A gleaming new stadium is often sold as a catalyst for urban renewal and a
+  great deal for the city. But who really pays, and who benefits? A sports
+  editor and a finance editor follow the money behind these multi-billion dollar
+  projects.
+image: >-
+  /assets/images/2025/beyond-the-ballpark-the-hidden-economics-of-stadium-financing.jpg
+image_credit: Bry Sparkman — Unsplash
 ---
 
 **By Yonghyuk Choi and Anthony Min**

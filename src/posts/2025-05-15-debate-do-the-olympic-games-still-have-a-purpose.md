@@ -1,17 +1,21 @@
 ---
-title: "The Argosy Debates: Does the Modern Olympic Games Still Have a Purpose?"
-author: "Yonghyuk Choi and Saerom Kim"
-category: "Debate"
-date: "2025-05-15T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Argosy Debates: Does the Modern Olympic Games Still Have a Purpose?'
+author: Yonghyuk Choi and Saerom Kim
+category: Debate
+date: '2025-05-15T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - Olympics
   - sports
   - culture
   - economics
-excerpt: "Once a symbol of global unity and amateur spirit, the Olympics are now a multi-billion dollar commercial spectacle facing accusations of corruption and irrelevance. A sports editor and a culture writer debate if the Games are worth saving."
-image: 
-image_credit: 
+excerpt: >-
+  Once a symbol of global unity and amateur spirit, the Olympics are now a
+  multi-billion dollar commercial spectacle facing accusations of corruption and
+  irrelevance. A sports editor and a culture writer debate if the Games are
+  worth saving.
+image: /assets/images/2025/debate-do-the-olympic-games-still-have-a-purpose.jpg
+image_credit: Nathan Wong — Unsplash
 ---
 
 ***Editor's Note:*** *With ballooning costs, doping scandals, and a viewership that is steadily aging, the Olympic Games are at a crossroads. Does the ideal of bringing the world together through sport still hold power, or has the reality of money and politics tarnished the flame for good?*

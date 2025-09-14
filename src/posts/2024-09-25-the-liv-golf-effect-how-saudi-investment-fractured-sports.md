@@ -1,18 +1,25 @@
 ---
-title: "The LIV Golf Effect: How Saudi Investment Fractured and Reshaped Professional Sports"
-author: "Yonghyuk Choi and Anthony Min"
-category: "Interdisciplinary"
-date: "2024-09-25T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: >-
+  The LIV Golf Effect: How Saudi Investment Fractured and Reshaped Professional
+  Sports
+author: Yonghyuk Choi and Anthony Min
+category: Interdisciplinary
+date: '2024-09-25T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - sports
   - finance
   - LIV Golf
   - Saudi Arabia
   - sportswashing
-excerpt: "A seemingly infinite supply of cash from Saudi Arabia's Public Investment Fund didn't just create a new golf league—it challenged the entire business model of professional sports. A sports editor and a finance editor break down the fallout."
-image: 
-image_credit: 
+excerpt: >-
+  A seemingly infinite supply of cash from Saudi Arabia's Public Investment Fund
+  didn't just create a new golf league—it challenged the entire business model
+  of professional sports. A sports editor and a finance editor break down the
+  fallout.
+image: >-
+  /assets/images/2024/the-liv-golf-effect-how-saudi-investment-fractured-sports.jpg
+image_credit: Pixels Of Life — Unsplash
 ---
 
 **By Yonghyuk Choi and Anthony Min**

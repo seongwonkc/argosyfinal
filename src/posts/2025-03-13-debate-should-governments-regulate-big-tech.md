@@ -1,17 +1,20 @@
 ---
-title: "The Argosy Debates: Should Governments Actively Regulate 'Big Tech' Companies?"
-author: "Hannah Ryu and Anthony Min"
-category: "Debate"
-date: "2025-03-13T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The Argosy Debates: Should Governments Actively Regulate ''Big Tech'' Companies?'
+author: Hannah Ryu and Anthony Min
+category: Debate
+date: '2025-03-13T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - big tech
   - regulation
   - economics
   - psychology
-excerpt: "They control our information, shape our social lives, and dominate our economy. Is it time for governments to step in and regulate Big Tech? A media writer and a finance editor go head-to-head on the question of tech monopoly."
-image: 
-image_credit: 
+excerpt: >-
+  They control our information, shape our social lives, and dominate our
+  economy. Is it time for governments to step in and regulate Big Tech? A media
+  writer and a finance editor go head-to-head on the question of tech monopoly.
+image: /assets/images/2025/debate-should-governments-regulate-big-tech.jpg
+image_credit: Magnus Engø — Unsplash
 ---
 
 ***Editor's Note:*** *From antitrust lawsuits against Google to concerns about the impact of social media on teenage mental health, the power of major technology companies has become a subject of intense global debate. Are these companies innovative engines of growth or unregulated monopolies that require government intervention?*

@@ -1,17 +1,22 @@
 ---
-title: "Everyone Wants Green Energy, Nobody Wants to See It: Solving the NIMBY Problem"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2024-04-18T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Everyone Wants Green Energy, Nobody Wants to See It: Solving the NIMBY Problem'
+author: Ethan Yang
+category: Sustainability
+date: '2024-04-18T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - renewable energy
   - NIMBY
   - social science
   - policy
-excerpt: "Polls show overwhelming support for renewable energy. Yet, across the country, new wind and solar projects are being blocked by local opposition. 'Not In My Backyard' sentiment is becoming one of the biggest hurdles to the energy transition."
-image: 
-image_credit: 
+excerpt: >-
+  Polls show overwhelming support for renewable energy. Yet, across the country,
+  new wind and solar projects are being blocked by local opposition. 'Not In My
+  Backyard' sentiment is becoming one of the biggest hurdles to the energy
+  transition.
+image: >-
+  /assets/images/2024/everyone-wants-green-energy-nobody-wants-to-see-it-solving-the-nimby-problem.jpg
+image_credit: Marko Sun — Unsplash
 ---
 
 Ask almost anyone if they support transitioning to clean, renewable energy, and the answer will be a resounding "yes." The urgency of climate change has created a broad public consensus. Yet, a strange paradox is unfolding in communities across the globe. While support for renewables is high in the abstract, specific projects on the ground are facing fierce local opposition. From wind turbines on rural ridgelines to solar farms on agricultural land, a wave of "Not In My Backyard" (NIMBY) sentiment is stalling, and in some cases, killing the very projects we need to build our clean energy future. This social and political hurdle is proving to be just as challenging as any engineering problem in the energy transition.

@@ -1,17 +1,21 @@
 ---
-title: "Can We Drink the Sea? The Geopolitical Gamble of Desalination"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2023-11-05T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: Can We Drink the Sea? The Geopolitical Gamble of Desalination
+author: Ethan Yang
+category: Sustainability
+date: '2023-11-05T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - desalination
   - water security
   - geopolitics
   - engineering
-excerpt: "As freshwater sources dwindle, nations are turning to the ocean. Desalination technology is a modern marvel, but its high costs and environmental side effects are making water a new front in global politics."
-image: 
-image_credit: 
+excerpt: >-
+  As freshwater sources dwindle, nations are turning to the ocean. Desalination
+  technology is a modern marvel, but its high costs and environmental side
+  effects are making water a new front in global politics.
+image: >-
+  /assets/images/2023/can-we-drink-the-sea-the-geopolitical-gamble-of-desalination.jpg
+image_credit: Fabio Sasso — Unsplash
 ---
 
 Water is the foundation of civilization, yet for billions of people, it is becoming an increasingly scarce resource. Climate change is exacerbating droughts, depleting rivers, and shrinking aquifers. In this precarious new reality, humanity is turning to its most abundant water source: the ocean. The technology of desalination, once a niche and costly solution, is rapidly becoming a cornerstone of national security for water-stressed nations from the Middle East to California. It is an engineering marvel, a testament to our ability to overcome natural limits. But this technological triumph comes with a steep price, creating a new geopolitical landscape where control over water technology is as critical as control over oil.

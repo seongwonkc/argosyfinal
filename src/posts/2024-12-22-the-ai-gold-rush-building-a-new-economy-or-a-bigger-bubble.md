@@ -1,18 +1,23 @@
 ---
-title: "The AI Gold Rush: Are We Building a New Economy or Just a Bigger Bubble?"
-author: "Anthony Min and Ethan Yang"
-category: "Interdisciplinary"
-date: "2024-12-22T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'The AI Gold Rush: Are We Building a New Economy or Just a Bigger Bubble?'
+author: Anthony Min and Ethan Yang
+category: Interdisciplinary
+date: '2024-12-22T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - AI
   - venture capital
   - economics
   - sustainability
   - technology
-excerpt: "Billions in venture capital are pouring into AI, promising a productivity boom not seen in generations. But is this a genuine technological revolution or a speculative frenzy with a hidden environmental cost? A finance editor and a sustainability writer investigate."
-image: 
-image_credit: 
+excerpt: >-
+  Billions in venture capital are pouring into AI, promising a productivity boom
+  not seen in generations. But is this a genuine technological revolution or a
+  speculative frenzy with a hidden environmental cost? A finance editor and a
+  sustainability writer investigate.
+image: >-
+  /assets/images/2024/the-ai-gold-rush-building-a-new-economy-or-a-bigger-bubble.jpg
+image_credit: Tim Mossholder — Unsplash
 ---
 
 **By Anthony Min and Ethan Yang**

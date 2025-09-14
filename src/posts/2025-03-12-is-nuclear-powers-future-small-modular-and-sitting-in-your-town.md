@@ -1,17 +1,22 @@
 ---
-title: "Is Nuclear Power's Future Small, Modular, and Sitting in Your Town?"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-03-12T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Is Nuclear Power''s Future Small, Modular, and Sitting in Your Town?'
+author: Ethan Yang
+category: Sustainability
+date: '2025-03-12T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - nuclear energy
   - SMRs
   - engineering
   - energy grid
-excerpt: "For decades, nuclear power has meant massive, expensive, and controversial plants. A new generation of Small Modular Reactors (SMRs) aims to change that, promising safer, cheaper, and more flexible nuclear energy. Is this the key to a stable, carbon-free grid?"
-image: 
-image_credit: 
+excerpt: >-
+  For decades, nuclear power has meant massive, expensive, and controversial
+  plants. A new generation of Small Modular Reactors (SMRs) aims to change that,
+  promising safer, cheaper, and more flexible nuclear energy. Is this the key to
+  a stable, carbon-free grid?
+image: >-
+  /assets/images/2025/is-nuclear-powers-future-small-modular-and-sitting-in-your-town.jpg
+image_credit: Junshen Zeng — Unsplash
 ---
 
 Nuclear power occupies a strange and controversial space in the climate change debate. On one hand, it is a proven source of immense, carbon-free, 24/7 power. On the other, it is haunted by the specter of catastrophic accidents like Chernobyl and Fukushima, the unresolved problem of long-term radioactive waste, and a history of massive cost overruns and construction delays. For decades, the industry has been defined by gigawatt-scale, custom-built reactors that take over a decade and tens of billions of dollars to construct. But a new wave of nuclear innovation is aiming to fundamentally change that paradigm. The future of nuclear, its proponents claim, is not massive, but small; not custom, but modular.

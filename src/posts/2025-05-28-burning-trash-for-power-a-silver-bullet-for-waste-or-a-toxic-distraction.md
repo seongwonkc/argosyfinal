@@ -1,17 +1,22 @@
 ---
-title: "Burning Trash for Power: A Silver Bullet for Waste or a Toxic Distraction?"
-author: "Ethan Yang"
-category: "Sustainability"
-date: "2025-05-28T00:00:00.000Z"
-layout: "layouts/post.njk"
+title: 'Burning Trash for Power: A Silver Bullet for Waste or a Toxic Distraction?'
+author: Ethan Yang
+category: Sustainability
+date: '2025-05-28T00:00:00.000Z'
+layout: layouts/post.njk
 tags:
   - waste to energy
   - incineration
   - circular economy
   - waste management
-excerpt: "Our cities are drowning in waste. Modern Waste-to-Energy plants promise a neat solution: burn the trash, generate electricity, and make landfills a thing of the past. But critics warn of toxic air pollution and a system that undermines recycling."
-image: 
-image_credit: 
+excerpt: >-
+  Our cities are drowning in waste. Modern Waste-to-Energy plants promise a neat
+  solution: burn the trash, generate electricity, and make landfills a thing of
+  the past. But critics warn of toxic air pollution and a system that undermines
+  recycling.
+image: >-
+  /assets/images/2025/burning-trash-for-power-a-silver-bullet-for-waste-or-a-toxic-distraction.jpg
+image_credit: Ekaterina — Unsplash
 ---
 
 Every day, our society produces mountains of municipal solid waste. For decades, the primary solution has been to bury it in landfills, vast repositories of our throwaway culture that leach pollutants into the groundwater and release potent methane gas into the atmosphere. As landfill space becomes scarcer and more expensive, cities are desperately seeking alternatives. One of the most technologically advanced and controversial solutions is Waste-to-Energy (WtE), a process that uses trash as a fuel to generate electricity. In countries like Sweden, Denmark, and Japan, WtE is a cornerstone of waste management, a seemingly magical process that transforms a liability into an asset. But is burning trash a sustainable silver bullet, or a toxic distraction from the real goal of a circular economy?

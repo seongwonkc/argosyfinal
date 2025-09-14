@@ -1,0 +1,28 @@
+---
+pagination:
+  data: collections.categoryList
+  size: 1
+  alias: cat
+permalink: "category/{{ cat.key }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ cat.name }}"
+---
+
+<h1>{{ cat.name }}</h1>
+
+<div class="grid">
+  {% for post in cat.items %}
+    <article class="card">
+      <a href="{{ post.url }}">
+        <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}" alt="{{ post.data.title }}">
+        <h3>{{ post.data.title }}</h3>
+      </a>
+      {% if post.date %}
+        <p class="meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time></p>
+      {% endif %}
+    </article>
+  {% else %}
+    <p>No articles yet in this category.</p>
+  {% endfor %}
+</div>

@@ -1,9 +1,9 @@
 ---
 pagination:
-  data: collections.categoryList   # array of { key, name, count, items }
+  data: collections.categoryList
   size: 1
   alias: cat
-permalink: /category/{{ cat.key }}/index.html
+permalink: "category/{{ cat.key }}/"
 layout: layouts/base.njk
 eleventyComputed:
   title: "{{ cat.name }}"
@@ -12,9 +12,10 @@ eleventyComputed:
 {% macro Card(post) %}
 <article class="card">
   <a href="{{ post.url }}" class="thumb" aria-label="{{ post.data.title }}">
-    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}"
-         alt="{{ post.data.title | safe }}" loading="lazy" decoding="async"
-         width="600" height="338">
+    <img
+      src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}"
+      alt="{{ post.data.title | safe }}"
+      loading="lazy" decoding="async" width="600" height="338">
   </a>
   <div class="meta">
     <h3 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
@@ -25,7 +26,7 @@ eleventyComputed:
 </article>
 {% endmacro %}
 
-<header class="section-head" style="margin: .5rem 0 1rem;">
+<header class="section-head" style="margin:.5rem 0 1rem;">
   <h1 style="margin:0">{{ cat.name }}</h1>
   <span class="meta">{{ cat.count }} article{% if cat.count != 1 %}s{% endif %}</span>
 </header>

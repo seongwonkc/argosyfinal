@@ -3,7 +3,7 @@ const catMap = require("./src/_data/categoryMap.js");
 
 /* ----------------------- Helpers ----------------------- */
 
-// Robust slugifier (diacritics → ascii, spaces → dashes)
+// Robust slugifier
 const slugify = (s) =>
   (s || "")
     .toString()
@@ -14,14 +14,52 @@ const slugify = (s) =>
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
-    .replace(/(^-|-$)/g, "");
+    .replace(/^-+|-+$/g, "") || "uncategorized";
 
-// ISO date (yyyy-mm-dd)
+// Map a raw category string → canonical name via aliases map
+function canonicalName(raw) {
+  if (!raw) return "";
+  const key = String(raw).trim().toLowerCase();
+  return (catMap.aliases && catMap.aliases[key]) || key;
+}
+
+// Title-case for display (keeps small words)
+function displayName(canon) {
+  const small = new Set(["and", "of", "the", "a", "an", "in", "on"]);
+  const words = String(canon || "").split(/[\s-]+/g);
+  return words
+    .map((w, i) => {
+      const low = w.toLowerCase();
+      if (i > 0 && small.has(low)) return low;
+      return low.charAt(0).toUpperCase() + low.slice(1);
+    })
+    .join(" ")
+    .replace(/\bAnd\b/g, "and");
+}
+
+// Normalize categories from front-matter:
+// supports `category: "Sports"` and/or `categories: ["Sports", "Health"]`
+function normalizeCategories(data) {
+  const out = [];
+  const push = (name) => {
+    const raw = (name || "").toString().trim();
+    if (!raw) return;
+    const canon = canonicalName(raw) || raw.toLowerCase();
+    const key = slugify(canon);
+    const nice = displayName(canon);
+    if (!out.find((c) => c.key === key)) out.push({ name: nice, key });
+  };
+  if (Array.isArray(data.categories)) data.categories.forEach(push);
+  else if (typeof data.categories === "string") push(data.categories);
+  if (typeof data.category === "string") push(data.category);
+
+  if (!out.length) out.push({ name: "Uncategorized", key: "uncategorized" });
+  return out;
+}
+
 const isoDate = (date) => {
   try { return new Date(date).toISOString().slice(0, 10); } catch { return ""; }
 };
-
-// Nice display date
 const displayDate = (date, locale = "en-US") => {
   try {
     return new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", year: "numeric" })
@@ -29,49 +67,7 @@ const displayDate = (date, locale = "en-US") => {
   } catch { return ""; }
 };
 
-// Map a raw category string → canonical (via aliases)
-function canonicalName(raw) {
-  if (!raw) return "";
-  const key = String(raw).trim().toLowerCase();
-  return (catMap.aliases && catMap.aliases[key]) || key;
-}
-
-// Title-case for display (keeps & and small words)
-function displayName(canon) {
-  const small = new Set(["and", "of", "the", "a", "an", "in", "on"]);
-  return String(canon)
-    .split(" ")
-    .map((w, i) => {
-      const lw = w.toLowerCase();
-      if (lw === "&") return "&";
-      if (i > 0 && small.has(lw)) return lw;
-      return lw.charAt(0).toUpperCase() + lw.slice(1);
-    })
-    .join(" ");
-}
-
-// Supports `category: "Sports"` OR `categories: ["Sports","Health"]`
-// Returns array [{name, key}] with canonicalization + slug keys
-function normalizeCategories(data) {
-  const set = new Map();
-  const push = (name) => {
-    const raw = String(name || "").trim();
-    if (!raw) return;
-    const canon = canonicalName(raw);
-    const key = slugify(canon) || "uncategorized";
-    const nameOut = displayName(canon);
-    if (!set.has(key)) set.set(key, { name: nameOut, key });
-  };
-
-  if (Array.isArray(data?.categories)) data.categories.forEach(push);
-  else if (typeof data?.categories === "string") push(data.categories);
-  if (typeof data?.category === "string") push(data.category);
-
-  if (set.size === 0) set.set("uncategorized", { name: "Uncategorized", key: "uncategorized" });
-  return Array.from(set.values());
-}
-
-// Safe, lean view of an Eleventy item (don’t spread Template objects)
+// Safe view of a template object (avoid spreading Eleventy Templates)
 function viewOf(item, extraData = {}) {
   return {
     url: item.url,
@@ -106,7 +102,7 @@ module.exports = function (eleventyConfig) {
 
   /* ---- Collections ---- */
 
-  // Posts: src/posts/**/*.md (sorted newest → oldest), with category metadata
+  // All posts (newest → oldest) with primary + all categories computed
   eleventyConfig.addCollection("posts", (api) => {
     return api
       .getFilteredByGlob("src/posts/**/*.md")
@@ -122,65 +118,16 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  // Build the same mapped items once (avoid repeating logic)
-  function mappedItems(api) {
-    return api
-      .getFilteredByGlob("src/posts/**/*.md")
-      .sort((a, b) => (b.date || 0) - (a.date || 0))
-      .map((item) => {
-        const cats = normalizeCategories(item.data);
-        const primary = cats[0];
-        return viewOf(item, {
-          _primaryCategoryName: primary.name,
-          _primaryCategoryKey: primary.key,
-          _allCategories: cats,
-        });
-      });
-  }
-
-  // Merged + ordered categories using src/_data/categoryMap.js
-  eleventyConfig.addCollection("categories", (api) => {
-    const items = mappedItems(api);
-    const buckets = new Map();
-
-    for (const p of items) {
-      const primary = p.data._allCategories?.[0];
-      if (!primary) continue;
-
-      if (!buckets.has(primary.key)) {
-        buckets.set(primary.key, { key: primary.key, name: primary.name, items: [] });
-      }
-      buckets.get(primary.key).items.push(p);
-    }
-
-    let list = Array.from(buckets.values());
-
-    // Apply explicit order if provided
-    const order = (Array.isArray(catMap.order) && catMap.order) || [];
-    if (order.length) {
-      const idx = new Map(order.map((n, i) => [slugify(n), i]));
-      list.sort((a, b) => {
-        const ai = idx.has(a.key) ? idx.get(a.key) : 9999;
-        const bi = idx.has(b.key) ? idx.get(b.key) : 9999;
-        return ai - bi || a.name.localeCompare(b.name);
-      });
-    } else {
-      list.sort((a, b) => a.name.localeCompare(b.name));
-    }
-
-    return list;
-  });
-
-  // Optional: byCategory lookup (key → array of posts)
+  // Map: key → array of posts in that category
   eleventyConfig.addCollection("byCategory", (api) => {
-    const items = mappedItems(api);
     const map = new Map();
-
-    for (const p of items) {
-      const cats = p.data._allCategories || [];
-      for (const c of cats) {
-        if (!map.has(c.key)) map.set(c.key, []);
-        map.get(c.key).push(viewOf(p, { _categoryName: c.name, _categoryKey: c.key }));
+    const posts = eleventyConfig.collections.posts(api) || [];
+    for (const item of posts) {
+      const cats = item.data._allCategories || normalizeCategories(item.data);
+      for (const { name, key } of cats) {
+        const arr = map.get(key) || [];
+        arr.push(viewOf(item, { _categoryName: name, _categoryKey: key }));
+        map.set(key, arr);
       }
     }
     // Sort each bucket newest → oldest
@@ -188,6 +135,30 @@ module.exports = function (eleventyConfig) {
       arr.sort((a, b) => (b.date || 0) - (a.date || 0));
     }
     return Object.fromEntries(map);
+  });
+
+  // ✅ The missing piece: flat list the templates expect
+  // [{ key, name, count, items }]
+  eleventyConfig.addCollection("categoryList", (api) => {
+    const byCat = eleventyConfig.collections.byCategory(api) || {};
+    const list = Object.keys(byCat).map((key) => {
+      const items = byCat[key];
+      const name = items[0]?.data?._categoryName || displayName(key.replace(/-/g, " "));
+      return { key, name, count: items.length, items };
+    });
+
+    // Optional: order according to src/_data/categoryMap.js → order[]
+    const order = (catMap.order || []).map((s) => slugify(canonicalName(s)));
+    list.sort((a, b) => {
+      const ia = order.indexOf(a.key);
+      const ib = order.indexOf(b.key);
+      if (ia !== -1 || ib !== -1) {
+        return (ia === -1 ? 9e9 : ia) - (ib === -1 ? 9e9 : ib);
+      }
+      return a.name.localeCompare(b.name);
+    });
+
+    return list;
   });
 
   /* ---- Static / Dev server ---- */

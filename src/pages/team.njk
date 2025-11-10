@@ -7,128 +7,178 @@ permalink: /team/index.html
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>{{ title }} – Argosy</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --maxw: 1120px;
-      --ink: #111;
-      --muted: #555;
-      --rule: #e6e6e6;
-      --gap: 1rem;
-      --card-bg: #fff;
-    }
-    *{ box-sizing: border-box; }
-    body{
-      margin:0;
-      color:var(--ink);
-      background:#fff;
-      font-family:"EB Garamond",serif;
-      font-size:clamp(16px,0.9vw+14px,18px);
-      line-height:1.55;
-    }
-    a{ color:inherit; text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+  <meta charset="utf-8">
+  <title>{{ title }} – The Argosy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --maxw: 1120px;
+      --ink: #111;
+      --muted: #555;
+      --rule: #e6e6e6;
+      --gap: 1rem;
+      --card-bg: #fff;
+    }
 
-    header.site, main, footer.site{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:1rem;
-    }
-    header.site{ border-bottom:1px solid var(--rule); }
-    .brand{
-      font-family:"Newsreader","EB Garamond",serif;
-      font-weight:700;
-      font-size:clamp(1.6rem,3vw,2.2rem);
-    }
-    h1,h2,h3{
-      font-family:"Newsreader","EB Garamond",serif;
-      font-weight:700;
-      letter-spacing:.006em;
-      line-height:1.12;
-      text-wrap:balance;
-    }
-    h1{ font-size:clamp(1.9rem,3.6vw,2.6rem); margin:.35rem 0 .6rem; }
-    h2{ font-size:clamp(1.2rem,2.2vw,1.4rem); margin:0 0 .25rem; }
-    h3{ font-size:clamp(1.05rem,1.6vw,1.15rem); margin:.15rem 0 .35rem; color:#222; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "EB Garamond", serif;
+      font-size: clamp(16px, 0.9vw + 14px, 18px);
+      line-height: 1.55;
+    }
 
-    .intro{ max-width:72ch; margin-top:.25rem; color:#222; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    .team-grid{
-      display:grid;
-      gap:var(--gap);
-      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-      margin-top:1rem;
-    }
-    .card{
-      background:var(--card-bg);
-      border:1px solid var(--rule);
-      border-radius:14px;
-      padding:1rem;
-      display:grid;
-      grid-template-columns:72px 1fr;
-      grid-template-areas:
-        "avatar name"
-        "avatar role"
-        "bio bio";
-      column-gap:.9rem;
-      row-gap:.25rem;
-    }
-    .avatar{
-      grid-area:avatar;
-      width:72px; height:72px;
-      border-radius:999px;
-      background:#ddd url('https://via.placeholder.com/72?text=👤') center/cover no-repeat;
-    }
-    .name{ grid-area:name; }
-    .role{ grid-area:role; color:var(--muted); font-size:.95rem; }
-    .bio{ grid-area:bio; margin-top:.35rem; color:#222; }
-    .bio p{ margin:0 0 .75rem; }
+    header.site, main, footer.site {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    header.site { border-bottom: 1px solid var(--rule); }
+    .brand {
+      font-family: "Newsreader","EB Garamond",serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem,3vw,2.2rem);
+    }
 
-    .section{ margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--rule); }
+    h1, h2, h3 {
+      font-family: "Newsreader","EB Garamond",serif;
+      font-weight: 700;
+      letter-spacing: .006em;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+    h1 { font-size: clamp(1.9rem,3.6vw,2.6rem); margin: .35rem 0 .6rem; }
+    h2 { font-size: clamp(1.2rem,2.2vw,1.4rem); margin: 0 0 .25rem; }
+    h3 { font-size: clamp(1.05rem,1.6vw,1.15rem); margin: .15rem 0 .35rem; color: #222; }
 
-    footer.site{ border-top:1px solid var(--rule); margin-top:2rem; color:#444; }
-  </style>
+    .intro {
+      max-width: 72ch;
+      margin-top: .25rem;
+      color: #222;
+    }
+
+    .team-grid {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      grid-template-areas:
+        "avatar name"
+        "avatar role"
+        "bio bio";
+      column-gap: .9rem;
+      row-gap: .25rem;
+      transition: transform .2s ease;
+    }
+    .card:hover { transform: translateY(-2px); }
+
+    .avatar {
+      grid-area: avatar;
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: #ddd url('https://via.placeholder.com/72?text=👤') center/cover no-repeat;
+    }
+
+    .name { grid-area: name; }
+    .role { grid-area: role; color: var(--muted); font-size: .95rem; }
+    .bio { grid-area: bio; margin-top: .35rem; color: #222; }
+    .bio p { margin: 0 0 .75rem; }
+
+    .section { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+    footer.site { border-top: 1px solid var(--rule); margin-top: 2rem; color: #444; }
+  </style>
 </head>
+
 <body>
-  <header class="site">
-    <div class="brand"><a href="/">Argosy</a></div>
-  </header>
+  <header class="site">
+    <div class="brand"><a href="/">The Argosy</a></div>
+  </header>
 
-  <main id="content">
-    <h1>Meet the Team</h1>
-    <p class="intro">
-      Welcome to <em>The Argosy</em>, an independent newspaper dedicated to delivering insightful analysis on the issues that shape our world. Our team is composed of dedicated student journalists from around the globe, each bringing a unique perspective and a commitment to rigorous, high-quality reporting.
-    </p>
+  <main id="content">
+    <h1>Meet the Team</h1>
+    <p class="intro">
+      Welcome to <em>The Argosy</em>, an independent newspaper dedicated to delivering insightful analysis on the issues that shape our world. Our team is composed of dedicated student journalists from around the globe, each bringing a unique perspective and a commitment to rigorous, high-quality reporting.
+    </p>
 
-    <section class="section team-grid">
-      {% set people = [
-        {name:'Minwoo Jung',role:'Editor in Chief and Politics Editor',bio:"Based in Seoul, Minwoo is a keen analyst of international relations and geopolitical strategy. His work is grounded in a realist’s perspective, focusing on the dynamics of state power and the strategic imperatives that drive global decision-making. He provides sharp, incisive commentary on major elections and diplomatic flashpoints. He is the author of several books available on Amazon: “Through the Canvas,” “Civics for Cynics,” and “Lions Don’t Roar in Parliament.”"},
-        {name:'Yehee Jung',role:'Science & Health Editor',bio:"A student at NLCS Jeju, Yehee deconstructs complex topics in public health, biology, and environmental science. Her writing is driven by a passion for systemic analysis, exploring not only the science itself but also the ethical and societal frameworks that surround it. She is committed to making critical scientific issues accessible and understandable."},
-        {name:'Saerom Kim',role:'Culture Editor',bio:"Currently a student at Bulloch Academy in Statesboro, Georgia, Saerom offers a unique lens on Southern American culture. Through a blend of personal narrative and deep, evidence-based observation, her “Koreans in Georgia” series and other ethnographic work explore the rich tapestry of foodways, traditions, and social dynamics of her adopted home."},
-        {name:'Yonghyuk Choi',role:'Sports Editor',bio:"Yonghyuk offers a view of the sports world that goes beyond the box score. With a sharp focus on golf, tennis, and baseball, he analyzes the business, financial, and strategic forces that shape the games we love. His writing balances a warm appreciation for the human stories of athletes with a clear-eyed view of the industry behind them."},
-        {name:'Anthony Min',role:'Economics & Finance Editor',bio:"Anthony, a home-schooled student in Korea and the US, delivers direct, unsentimental analysis of the economic world. His work cuts straight to the core of an issue, focusing on financial mechanics, corporate strategy, and the flow of capital. He believes in explaining the “how” and “why” behind the numbers that drive our economies."},
-        {name:'Jioh Lee',role:'MENA & Education Writer',bio:'A 12-year resident of Abu Dhabi, Jioh brings a valuable "third culture" perspective to the team. Her writing connects the dynamic social and economic transformations of the MENA region with global trends in international trade and education. She provides a nuanced, on-the-ground look at issues ranging from Gulf politics to the changing landscape of global university admissions.'},
-        {name:'Kyusung Lee',role:'Culture & Communications Writer',bio:'Based in Texas, Kyusung explores the intersections of culture, communication, and belief. His work is often reflective, blending narrative-driven reporting with analysis. An agnostic, he is particularly interested in the role of religion in public life, the power of sports as a social text, and the way we communicate (or fail to communicate) across our deepest divides.'},
-        {name:'Hannah Ryu',role:'Psychology & Media Writer',bio:"Attending Pomfret School, Hannah explores the intersection of psychology, media, and society. Her writing deconstructs complex social phenomena, from consumer behavior to criminology, into their core psychological components. She is particularly interested in how media narratives shape our understanding of the world and ourselves."},
-        {name:'Ethan Yang',role:'Sustainability Writer',bio:"Ethan, a student at Fayston Prep, is focused on the critical challenges of environmental engineering and sustainability. His work bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He analyzes emerging technologies and policies with a pragmatic, solutions-oriented approach."}
-      ] %}
-      {% for p in people %}
-      <article class="card">
-        <div class="avatar"></div>
-        <div class="name"><h2>{{ p.name }}</h2></div>
-        <div class="role">{{ p.role }}</div>
-        <div class="bio"><p>{{ p.bio | safe }}</p></div>
-      </article>
-      {% endfor %}
-    </section>
-  </main>
+    <section class="section team-grid">
+      {% set people = [
+        {
+          name: "Minwoo Jung",
+          role: "Editor in Chief and Politics Editor",
+          bio: "Based in Seoul, Minwoo is a keen analyst of international relations and geopolitical strategy. His work is grounded in a realist’s perspective, focusing on the dynamics of state power and the strategic imperatives that drive global decision-making. He provides sharp, incisive commentary on major elections and diplomatic flashpoints. He is the author of several books available on Amazon: “Through the Canvas,” “Civics for Cynics,” and “Lions Don’t Roar in Parliament.”"
+        },
+        {
+          name: "Yehee Jung",
+          role: "Science & Health Editor",
+          bio: "A student at NLCS Jeju, Yehee deconstructs complex topics in public health, biology, and environmental science. Her writing is driven by a passion for systemic analysis, exploring not only the science itself but also the ethical and societal frameworks that surround it. She is committed to making critical scientific issues accessible and understandable."
+        },
+        {
+          name: "Saerom Kim",
+          role: "Culture Editor",
+          bio: "Currently a student at Bulloch Academy in Statesboro, Georgia, Saerom offers a unique lens on Southern American culture. Through a blend of personal narrative and deep, evidence-based observation, her “Koreans in Georgia” series and other ethnographic work explore the rich tapestry of foodways, traditions, and social dynamics of her adopted home."
+        },
+        {
+          name: "Yonghyuk Choi",
+          role: "Sports Editor",
+          bio: "Yonghyuk offers a view of the sports world that goes beyond the box score. With a sharp focus on golf, tennis, and baseball, he analyzes the business, financial, and strategic forces that shape the games we love. His writing balances a warm appreciation for the human stories of athletes with a clear-eyed view of the industry behind them."
+        },
+        {
+          name: "Anthony Min",
+          role: "Economics & Finance Editor",
+          bio: "Anthony, a home-schooled student in Korea and the US, delivers direct, unsentimental analysis of the economic world. His work cuts straight to the core of an issue, focusing on financial mechanics, corporate strategy, and the flow of capital. He believes in explaining the “how” and “why” behind the numbers that drive our economies."
+        },
+        {
+          name: "Hannah Ryu",
+          role: "Psychology & Media Writer",
+          bio: "Attending Pomfret School, Hannah explores the intersection of psychology, media, and society. Her writing deconstructs complex social phenomena, from consumer behavior to criminology, into their core psychological components. She is particularly interested in how media narratives shape our understanding of the world and ourselves."
+        },
+        {
+          name: "Ethan Yang",
+          role: "Sustainability Writer",
+          bio: "Ethan, a student at Fayston Prep, is focused on the critical challenges of environmental engineering and sustainability. His work bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He analyzes emerging technologies and policies with a pragmatic, solutions-oriented approach."
+        },
+        {
+          name: "Jioh Lee",
+          role: "International & Education Writer",
+          bio: "A Korean student living in Abu Dhabi for the past 12 years, Jioh brings a nuanced understanding of MENA affairs and cross-cultural exchange. Her interests include Middle Eastern current issues, international culture and trade, and global education reform—particularly the reinstatement of standardized testing in college admissions. She also writes on student entrepreneurship and business innovation."
+        },
+        {
+          name: "Kyusung Lee",
+          role: "Sports & Society Contributor",
+          bio: "Based in Texas, Kyusung writes at the intersection of sports, religion, and communication. Though agnostic, he has a deep appreciation for interfaith dialogue and often explores how religious spaces foster reflection, community, and cultural exchange. His writing combines curiosity, empathy, and a grounded sense of humor."
+        }
+      ] %}
 
-  <footer class="site">
-    <p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p>
-  </footer>
+      {% for p in people %}
+        <article class="card">
+          <div class="avatar"></div>
+          <div class="name"><h2>{{ p.name }}</h2></div>
+          <div class="role">{{ p.role }}</div>
+          <div class="bio"><p>{{ p.bio | safe }}</p></div>
+        </article>
+      {% endfor %}
+    </section>
+  </main>
+
+  <footer class="site">
+    <p>&copy; {{ page.date | date('yyyy') }} The Argosy. All rights reserved.</p>
+  </footer>
 </body>
 </html>

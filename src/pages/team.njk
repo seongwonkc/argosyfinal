@@ -111,24 +111,24 @@ permalink: /team/index.html
         {name:'Saerom Kim',role:'Culture Editor',bio:"Currently a student at Bulloch Academy in Statesboro, Georgia, Saerom offers a unique lens on Southern American culture. Through a blend of personal narrative and deep, evidence-based observation, her “Koreans in Georgia” series and other ethnographic work explore the rich tapestry of foodways, traditions, and social dynamics of her adopted home."},
         {name:'Yonghyuk Choi',role:'Sports Editor',bio:"Yonghyuk offers a view of the sports world that goes beyond the box score. With a sharp focus on golf, tennis, and baseball, he analyzes the business, financial, and strategic forces that shape the games we love. His writing balances a warm appreciation for the human stories of athletes with a clear-eyed view of the industry behind them."},
         {name:'Anthony Min',role:'Economics & Finance Editor',bio:"Anthony, a home-schooled student in Korea and the US, delivers direct, unsentimental analysis of the economic world. His work cuts straight to the core of an issue, focusing on financial mechanics, corporate strategy, and the flow of capital. He believes in explaining the “how” and “why” behind the numbers that drive our economies."},
-        {name:'Hannah Ryu',role:'Psychology & Media Writer',bio:"Attending Pomfret School, Hannah explores the intersection of psychology, media, and society. Her writing deconstructs complex social phenomena, from consumer behavior to criminology, into their core psychological components. She is particularly interested in how media narratives shape our understanding of the world and ourselves."},
-  S       {name:'Ethan Yang',role:'Sustainability Writer',bio:"Ethan, a student at Fayston Prep, is focused on the critical challenges of environmental engineering and sustainability. His work bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He analyzes emerging technologies and policies with a pragmatic, solutions-oriented approach."},
-        {name:'Jioh Lee',role:'MENA, Education & Business Writer',bio:'A 12-year resident of Abu Dhabi, Jioh brings a valuable "third culture" perspective to the team. Her writing connects the dynamic social and economic transformations of the MENA region with global trends in international trade and education. She provides a nuanced, on-the-ground look at issues ranging from Gulf politics to the changing landscape of global university admissions.'},
-        {name:'Kyusung Lee',role:'Culture & Communications Writer',bio:'Based in Texas, Kyusung explores the intersections of culture, communication, and belief. His work is often reflective, blending narrative-driven reporting with analysis. An agnostic, he is particularly interested in the role of religion in public life, the power of sports as a social text, and the way we communicate (or fail to communicate) across our deepest divides.'}
+        {name:'Jioh Lee',role:'MENA & Education Writer',bio:'A 12-year resident of Abu Dhabi, Jioh brings a valuable "third culture" perspective to the team. Her writing connects the dynamic social and economic transformations of the MENA region with global trends in international trade and education. She provides a nuanced, on-the-ground look at issues ranging from Gulf politics to the changing landscape of global university admissions.'},
+        {name:'Kyusung Lee',role:'Culture & Communications Writer',bio:'Based in Texas, Kyusung explores the intersections of culture, communication, and belief. His work is often reflective, blending narrative-driven reporting with analysis. An agnostic, he is particularly interested in the role of religion in public life, the power of sports as a social text, and the way we communicate (or fail to communicate) across our deepest divides.'},
+        {name:'Hannah Ryu',role:'Psychology & Media Writer',bio:"Attending Pomfret School, Hannah explores the intersection of psychology, media, and society. Her writing deconstructs complex social phenomena, from consumer behavior to criminology, into their core psychological components. She is particularly interested in how media narratives shape our understanding of the world and ourselves."},
+        {name:'Ethan Yang',role:'Sustainability Writer',bio:"Ethan, a student at Fayston Prep, is focused on the critical challenges of environmental engineering and sustainability. His work bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He analyzes emerging technologies and policies with a pragmatic, solutions-oriented approach."}
       ] %}
       {% for p in people %}
       <article class="card">
         <div class="avatar"></div>
         <div class="name"><h2>{{ p.name }}</h2></div>
-  S       <div class="role">{{ p.role }}</div>
+        <div class="role">{{ p.role }}</div>
         <div class="bio"><p>{{ p.bio | safe }}</p></div>
-D     </article>
+      </article>
       {% endfor %}
     </section>
   </main>
 
   <footer class="site">
     <p>&copy; {{ page.date | date('yyyy') }} Argosy. All rights reserved.</p>
-S </footer>
+  </footer>
 </body>
 </html>

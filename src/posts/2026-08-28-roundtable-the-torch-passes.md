@@ -1,6 +1,6 @@
 ---
 title: 'The Roundtable: The Torch Passes'
-author: 'By Ethan Yang, Gawon Ryu, David Lee, Patrick Kim, Olivia Kim, Peter Lee, Isacc Kim, Ejin Chung, and Doyeon Kim'
+author: 'By Ethan Yang, Gawon Ryu, David Lee, Patrick Kim, Olivia Kim, Peter Lee, Isaac Kim, Ejin Chung, and Doyeon Kim'
 category: Roundtable
 date: 2026-08-28T00:00:00.000Z
 layout: layouts/post.njk
@@ -18,11 +18,11 @@ image: /assets/images/2026/roundtable-the-torch-passes.jpg
 image_credit: Somogro Bangladesh — Pexels
 ---
 
-*Editor's Note: With the school year beginning, the expanded editorial board convenes its first September table. Three staff writers step up to lead new desks — Peter Lee (Health), Isacc Kim (Education), and Ejin Chung (Science & Technology) — and the politics desk welcomes its first new writer of the post-founder era, Doyeon Kim. Per house rules, everyone makes predictions December will be allowed to grade. Lightly edited for length and clarity.*
+*Editor's Note: With the school year beginning, the expanded editorial board convenes its first September table. Three staff writers step up to lead new desks — Peter Lee (Health), Isaac Kim (Education), and Ejin Chung (Science & Technology) — and the politics desk welcomes its first new writer of the post-founder era, Doyeon Kim. Per house rules, everyone makes predictions December will be allowed to grade. Lightly edited for length and clarity.*
 
 **Ethan Yang:** Fourth year of The Argosy. First September of the new table. And the biggest masthead this paper has ever run — nine of us now, which means the group chat has achieved what our founders would call critical mass and what I call a moderation problem.
 
-**Ethan Yang:** Formalities first, joyfully. Peter, Isacc, and Ejin have been writing for us since last year; as of this term they run their own desks — Health, Education, and Science & Technology. And Doyeon joins as our new politics writer, first of the post-founder era.
+**Ethan Yang:** Formalities first, joyfully. Peter, Isaac, and Ejin have been writing for us since last year; as of this term they run their own desks — Health, Education, and Science & Technology. And Doyeon joins as our new politics writer, first of the post-founder era.
 
 **Ethan Yang:** House rule for this meeting, inherited and non-negotiable: declare your beat's big question for the year, publicly, so December can embarrass you. Veterans first. Gawon.
 
@@ -50,9 +50,9 @@ image_credit: Somogro Bangladesh — Pexels
 
 **Peter Lee:** On paper, the barriers fell. My year is checking whether they fell in practice — who actually gets the prescription, who's still outside the pharmacy looking in. Access is my desk's whole thesis: a cure that doesn't reach people is a press release.
 
-**Isacc Kim:** Education desk, and my year-question writes itself: the first full admissions cycle of the testing restoration. The retreat from test-optional is complete at most selective schools now, and a generation that planned around one set of rules is applying under another.
+**Isaac Kim:** Education desk, and my year-question writes itself: the first full admissions cycle of the testing restoration. The retreat from test-optional is complete at most selective schools now, and a generation that planned around one set of rules is applying under another.
 
-**Isacc Kim:** Second watch item: every school on Earth is writing its AI-homework policy this fall, mostly in a panic, mostly copying each other. Somebody should read them all side by side. Unfortunately for my sleep schedule, that somebody is me.
+**Isaac Kim:** Second watch item: every school on Earth is writing its AI-homework policy this fall, mostly in a panic, mostly copying each other. Somebody should read them all side by side. Unfortunately for my sleep schedule, that somebody is me.
 
 **Ejin Chung:** Science & Technology desk, thrilled to exist officially. My year: the season the lab bets pay out or don't. AI-designed drugs are in human trials. The quantum computing world is still spending its Nobel glow. A rocket company had the largest IPO in history and then the most interesting six weeks of any stock alive.
 
@@ -91,7 +91,7 @@ image_credit: Somogro Bangladesh — Pexels
 
 **Peter Lee:** Medicine's breakthroughs are upstream; my desk lives downstream, where people either get them or don't — and downstream is where the year will be decided.
 
-**Isacc Kim:** Every education system on Earth is rewriting its rules at once, and somebody should file the comparison — neatly, with citations.
+**Isaac Kim:** Every education system on Earth is rewriting its rules at once, and somebody should file the comparison — neatly, with citations.
 
 **Ejin Chung:** Results, not demos. Ask me in December which was which.
 

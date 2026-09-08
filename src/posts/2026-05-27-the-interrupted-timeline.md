@@ -1,6 +1,6 @@
 ---
 title: 'The Interrupted Timeline'
-author: Isacc Kim
+author: Isaac Kim
 category: Education
 date: 2026-05-27T00:00:00.000Z
 layout: layouts/post.njk

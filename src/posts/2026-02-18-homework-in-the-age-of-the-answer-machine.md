@@ -1,6 +1,6 @@
 ---
 title: 'Homework in the Age of the Answer Machine'
-author: Isacc Kim
+author: Isaac Kim
 category: Education
 date: 2026-02-18T00:00:00.000Z
 layout: layouts/post.njk

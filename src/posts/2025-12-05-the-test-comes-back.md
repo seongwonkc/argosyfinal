@@ -1,6 +1,6 @@
 ---
 title: 'The Test Comes Back'
-author: Isacc Kim
+author: Isaac Kim
 category: Education
 date: 2025-12-05T00:00:00.000Z
 layout: layouts/post.njk

@@ -39,8 +39,8 @@ layout: layouts/base.njk
     </figure>
   {% endif %}
 
-  <section class="post-body" itemprop="articleBody">
-    {{ content | safe }}
+  <section class="post-body{% if isRoundtable %} is-chat{% endif %}" itemprop="articleBody">
+    {% if isRoundtable %}{{ content | chatify | safe }}{% else %}{{ content | safe }}{% endif %}
   </section>
 
   <footer class="post-end">

@@ -5,10 +5,12 @@ module.exports = {
     "communications",
     "culture",
     "economics and finance",
+    "education",
     "health & medicine",
     "politics",
     "psychology",
     "roundtable",
+    "science and technology",
     "sports"
   ],
 

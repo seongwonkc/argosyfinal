@@ -20,41 +20,61 @@ image: >-
 image_credit: winter visual — Pexels
 ---
 
-*Editor's Note: The Milan-Cortina Winter Olympics closed this weekend. The editors convened the morning after the flame went out. This transcript has been lightly edited for length and clarity.*
+*Editor's Note: The Milan-Cortina Winter Olympics closed this weekend. The editors convened the morning after the flame went out, on varying amounts of sleep. Lightly edited for length and clarity.*
 
-**Yonghyuk Choi:** The flame is out, so let's do what we do: sort the Games into what mattered. The medal table says Norway, overwhelmingly — eighteen golds, a small nation of five million treating winter as a home fixture. The highlight reel says the American-Canadian hockey final, two-to-one in overtime, the first best-on-best Olympic tournament in twelve years delivering exactly the classic everyone ordered. And the heart says — well, I'll let this table tell me where the heart says. Gawon, you wrote mid-Games about why we cry at these things. Final tally on your own tear ducts?
+**Yonghyuk Choi:** Flame's out. Table's open. Let's sort these Games.
 
-**Gawon Ryu:** Multiple incidents, zero regrets. The one that finished me was Kim Gil-li's fifteen-hundred meters — her first individual gold, and then the relay with Choi Min-jeong and Shim Suk-hee, three generations of Korean short track on one podium. I stand by my thesis: the Olympics is a machine for compressing whole lives into two minutes, and the machine worked on me exactly as designed. Though I'd add a finding from this fortnight: the crash moved the world as much as any gold. Lindsey Vonn's downhill ending in the safety netting, at her age, on her terms — my feeds grieved that harder than most victories.
+**Yonghyuk Choi:** The medal count says Norway. Eighteen golds. A nation of five million treating winter as a home fixture. And the highlight reel says USA–Canada, 2–1 in overtime, first best-on-best in twelve years delivering EXACTLY the classic everyone ordered.
 
-**Saerom Kim:** Which says something lovely about audiences, actually — we came for triumph and attached to devotion. From my seat, the Games I watched were about time. Vonn racing the clock of her own body. Shim Suk-hee, a veteran of so many Olympic cycles, back on the relay. Even Shiffrin's slalom — redemption framed entirely by what happened four years ago. Winter sports age their heroes in public, two-year increments, and this edition felt like a meditation on that.
+**Yonghyuk Choi:** But the heart? I'm letting the table tell me where the heart goes. Gawon — you wrote mid-Games about why we cry at these things. Final count on your own tear ducts?
 
-**Kyusung Lee:** I'll bring the Texas report: the hockey final stopped my town, and my town does not stop for ice. Church league group chats, of all places, went silent for overtime. There's my sociology observation for the month — international best-on-best does something club sport can't. The jersey means a bigger "us." Which connects to what I keep writing about: people are starving for the big "us," and they'll take it wherever it's stocked — a sanctuary, a stadium, or a rink in Milan at six in the morning.
+**Gawon Ryu:** Multiple incidents. Zero regrets.
 
-**David Lee:** And I'm contractually obligated to be the one who talks about the snow. So: the snow. Enormous amounts of it were manufactured — reservoirs, energy, fleets of machines carpeting the Alps so the pastoral broadcast could proceed. This isn't a scandal; it's now standard, and the researchers who study this say the pool of places that can reliably host future Winter Games is shrinking decade by decade. There was even that bizarre sabotage incident at the sliding center — someone pulling refrigeration lines — which, whatever its motive, accidentally made the point: this entire festival of winter runs on refrigeration. The Winter Olympics is becoming an indoor event held outdoors.
+**Gawon Ryu:** The one that finished me was Kim Gil-li's fifteen hundred — her first individual gold — and then the relay. Choi Min-jeong, Kim Gil-li, Shim Suk-hee on one podium. Three generations of Korean short track in one frame.
 
-**Yonghyuk Choi:** Say the uncomfortable version out loud, David.
+**Gawon Ryu:** I stand by my thesis: the Olympics compresses whole lives into two-minute portions, and the machine worked on me exactly as designed. (One addendum from this fortnight: the crashes moved us as much as the golds. My feeds grieved Vonn's downhill harder than most victories.)
 
-**David Lee:** The uncomfortable version: we may be within a couple of generations of the Winter Games as a technically preserved ritual — winter as heritage performance, like a historical reenactment, staged in the few high-altitude refuges left, for a world where most kids have never made a snowball. I find the Games genuinely beautiful. I also think we're watching the world's most expensive museum exhibit of a disappearing season.
+**Saerom Kim:** Which says something lovely about audiences, doesn't it — we came for triumph and attached to devotion.
 
-**Gawon Ryu:** That lands psychologically, too. Part of this fortnight's emotional charge — and I noticed it in myself — is anticipatory nostalgia. We cry at winter partly because some part of us suspects it's leaving.
+**Saerom Kim:** From my seat these were the Games about time. Vonn racing her own body's clock. Shim Suk-hee, all those Olympic cycles later, back on a relay. Even Shiffrin's slalom was framed entirely by what happened four years ago. Winter sports age their heroes in public, two years at a time, and this edition felt like a long meditation on that.
 
-**Saerom Kim:** There's a word for that — mourning something while it's still here. The Games might be the biggest communal expression of it on Earth.
+**Kyusung Lee:** Texas report: the hockey final stopped my town. And my town does not stop for ice.
 
-**Kyusung Lee:** For balance: Norway isn't mourning. Eighteen golds is not elegy behavior.
+**Kyusung Lee:** Church league group chats went SILENT during overtime. I've seen those chats survive three pastoral transitions. There's my sociology for the month — best-on-best does something club sport can't. The jersey means a bigger us. And folks are starving for the bigger us. They'll take it wherever it's stocked: a sanctuary, a stadium, or a rink in Milan at six in the morning.
 
-**Yonghyuk Choi:** Norway is never mourning; Norway is drafting the next biathlon dynasty as we speak. Let me close the sports ledger, then: a hockey final for the ages, a Korean short-track masterclass, Shiffrin completing one of the great career arcs in alpine history, and a Games whose lasting image might genuinely be the snow machines running through the night. All of it true at once. Sounds like the world, honestly.
+**David Lee:** And I'm contractually the one who talks about the snow. So. The snow.
+
+**David Lee:** Huge amounts of it were manufactured. Reservoirs, energy, fleets of machines carpeting the Alps so the postcard broadcast could happen. That's not a scandal — it's standard now. The researchers tracking this say the list of places that can reliably host future Winter Games shrinks every decade.
+
+**David Lee:** Even that sabotage incident at the sliding center — someone pulling refrigeration lines — accidentally made the point. This whole festival of winter runs on refrigeration.
+
+**Yonghyuk Choi:** Say the uncomfortable version, David. You're among friends.
+
+**David Lee:** The uncomfortable version: we might be a couple generations from the Winter Games as a preserved ritual. Winter as heritage performance. Staged in the last high-altitude refuges, for a world where a lot of kids have never made a snowball.
+
+**David Lee:** I find the Games genuinely beautiful. I also think we watched the world's most expensive museum exhibit of a disappearing season.
+
+**Gawon Ryu:** That lands psychologically, too. Some of this fortnight's emotional charge — I noticed it in myself — is anticipatory nostalgia. We cry at winter partly because part of us suspects it's leaving.
+
+**Saerom Kim:** Mourning something while it's still here. The Games might be the largest communal expression of that on Earth.
+
+**Kyusung Lee:** For the record, Norway is not mourning. Eighteen golds is not elegy behavior.
+
+**Yonghyuk Choi:** Norway is drafting the next biathlon dynasty as we speak.
+
+**Yonghyuk Choi:** Closing the ledger, then. A hockey final for the ages. A Korean short-track masterclass. Shiffrin finishing one of the great alpine arcs ever. And a Games whose lasting image might honestly be snow machines running through the night. All true at once. Sounds like the world.
 
 ---
 ### Final Thoughts
 
-**Yonghyuk Choi:** The competition was magnificent and the medal table familiar — but the most consequential contest at these Games was between winter and the thermometer, and that one isn't best-on-best.
+**Yonghyuk Choi:** Magnificent competition, familiar medal table — but the biggest contest in Milan was winter versus the thermometer, and that one isn't best-on-best.
 
-**Gawon Ryu:** We cried on schedule, as humans do when shown whole lives in two-minute portions. The surprise was how much of the crying was for winter itself.
+**Gawon Ryu:** We cried on schedule, as humans do when shown whole lives in two-minute portions. The surprise was how much of it was for winter itself.
 
-**Kyusung Lee:** An overtime final that silences rival group chats on two sides of a border is worth every ounce of the spectacle's excess. Communion is communion.
+**Kyusung Lee:** An overtime final that silences rival group chats across a border is worth every ounce of the spectacle's excess. Communion is communion.
 
-**David Lee:** Enjoy the Games; audit the snow. The machines keeping this ritual alive are telling us something the ceremonies won't.
+**David Lee:** Enjoy the Games. Audit the snow. The machines keeping the ritual alive are saying something the ceremonies won't.
 
-**Saerom Kim:** Every Olympics is a time capsule. This one sealed in a question: what will "winter sports" mean to the kids watching, when they host their own?
+**Saerom Kim:** Every Olympics is a time capsule; this one sealed in a question — what will "winter" mean to the kids watching, when it's their turn to host?
 
 *Your turn: what's your lasting image of Milan-Cortina? Tell us in the comments.*

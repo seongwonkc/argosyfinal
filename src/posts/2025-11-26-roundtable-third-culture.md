@@ -17,39 +17,65 @@ image: /assets/images/2025/roundtable-third-culture.jpg
 image_credit: Joseph Bobadilla — Unsplash
 ---
 
-*Editor's Note: This month we formally welcome two new members of The Argosy: Jioh Lee, our new International & Education writer, who has spent twelve years in Abu Dhabi, and Kyusung Lee, our new Sports & Society contributor, writing from Texas. Their arrival prompted this month's topic — one this masthead of scattered Koreans knows from the inside. The transcript has been lightly edited for length and clarity.*
+*Editor's Note: This month we formally welcome two new members of The Argosy: Jioh Lee, our new International & Education writer, who has spent twelve years in Abu Dhabi, and Kyusung Lee, our new Sports & Society contributor, writing from Texas. Their arrival prompted this month's topic — one this masthead of scattered Koreans knows from the inside. Lightly edited for length and clarity.*
 
-**Minwoo Jung:** Let me start by welcoming Jioh and Kyusung properly. With your arrival, this paper now files from Seoul, Jeju, Georgia, Texas, and Abu Dhabi — which must make us one of the most geographically confused publications in student journalism. And that's the topic. Every one of us is Korean, and almost none of us is growing up the way our parents did. Jioh, your debut essay called the in-between space the place you're "really from." Defend that.
+**Minwoo Jung:** Let me begin by welcoming Jioh and Kyusung properly. With your arrival, this paper now files from Seoul, Jeju, Georgia, Texas, and Abu Dhabi — which must make us one of the most geographically confused publications in student journalism.
 
-**Jioh Lee:** Gladly. The question I've been asked my whole life is "but where are you really from?" — and the honest answer is: from the translation. I've lived in Abu Dhabi for twelve years, in classrooms with thirty passports, raised by Korean parents inside a city that belongs to everyone and no one. I used to experience that as a deficit — everyone else had a simple answer and I had a paragraph. Now I think the paragraph is the more accurate description of the world we're all entering. The simple answers are the ones getting outdated.
+**Minwoo Jung:** And that is our topic. Every one of us is Korean, and almost none of us is growing up the way our parents did. Jioh, your debut essay called the in-between the place you are really from. Defend that.
 
-**Kyusung Lee:** I'll offer the opposite landscape. Texas is about the most rooted place in America — people's grandparents went to the same high school, the same church pew has a family's name worn into it. Being a Korean kid there means you're visible in a way you'd never be in Seoul or even California. For a long time I read that visibility as distance. What changed my mind was noticing where the two cultures rhyme. My town runs on faith, family, food, and football — and I'd say Korean culture runs on the first three and has strong opinions about the fourth. My non-Korean friends' families and mine are strangely alike: the same reverence for elders, the same weaponized hospitality, the same conviction that love is best expressed as a second helping you didn't ask for.
+**Jioh Lee:** Gladly. The question I have been asked my whole life is "but where are you really from?" The honest answer is: from the translation.
 
-**Saerom Kim:** "Weaponized hospitality" is going in my notebook, Kyusung. This is the entire subject of my "Koreans in Georgia" series, so I'll add the thing my reporting keeps teaching me: the in-between isn't one place — it's generational layers. I've interviewed a war veteran who carried Korea to Georgia seventy years ago, pastors running one church in two languages, kids at Saturday Korean school who groan through it exactly like I once did. Each layer negotiates its own treaty between the two worlds. What moves me is that every layer builds infrastructure for the next one — the church, the school, the restaurant. Belonging turns out to be a thing communities construct, brick by brick, not a feeling you wait to receive.
+**Jioh Lee:** Twelve years in Abu Dhabi. Classrooms with thirty passports. Korean parents, inside a city that belongs to everyone and no one. I used to experience that as a deficit — everyone else had a one-word answer and I had a paragraph.
 
-**Yehee Jung:** I want to complicate the premise, because I'm the control group — I live in Korea. And yet: I attend an international school on Jeju, studying a British curriculum in English, on an island my classmates' parents chose precisely so their children could grow up global without leaving. The in-between isn't only a diaspora condition anymore; Korea is importing it. And from a health angle — since that's my beat — the research on this is double-edged. Kids who navigate multiple cultures show real gains in flexibility and perspective-taking, but studies of third-culture and immigrant youth also flag elevated rates of rootlessness and identity stress, especially where the cultures conflict about achievement. Which, for Korean kids, they reliably do. The in-between is an asset that charges rent.
+**Jioh Lee:** I have since decided the paragraph is the more accurate description of the world. It is the one-word answers that are going out of date.
 
-**Minwoo Jung:** "An asset that charges rent" — this table is quotable today. Here's my provocation, then. Everyone at this table performs a small diplomatic mission daily — explaining Korea to your town, your town to your parents. Fine. But diplomats can become people with no country. Is there a point where between-ness stops being richness and becomes homelessness?
+**Kyusung Lee:** See, and I'll give you the opposite landscape. Texas might be the most rooted place in America. People's grandparents went to the same high school. There are pews with family names basically worn into the wood.
 
-**Jioh Lee:** There is, and I've felt it — usually at airports, oddly. The honest answer is that you need anchors that travel. For my family it's language and food and the phone calls to grandparents. The anchor isn't a place. It's practices.
+**Kyusung Lee:** Being the Korean kid there means you're visible in a way you'd never be in Seoul. For a long time I read that as distance.
 
-**Kyusung Lee:** For mine — and this is funny coming from the table's resident agnostic — it's the congregation. Not the theology; the pews. The gathering travels even when the belief is complicated. I've come to think that's what religious community has quietly done for immigrants forever — it's the luggage that carries itself.
+**Kyusung Lee:** What changed my mind was noticing where the cultures rhyme. My town runs on faith, family, food, and football. Korean culture runs on the first three and has strong opinions about the fourth. My friends' families and mine are weirdly alike — same reverence for elders, same weaponized hospitality, same belief that love is a second helping you didn't ask for.
 
-**Saerom Kim:** And I'd say: the anchor can also be a story you're telling. My series began as journalism and became — I can admit this at a roundtable — a way of writing myself into a place. By interviewing Georgia's Koreans, I was building my own membership. Writing as citizenship application.
+**Saerom Kim:** "Weaponized hospitality" is going in my notebook, Kyusung.
+
+**Saerom Kim:** This is the whole subject of my Georgia series, so here's what the reporting keeps teaching me: the in-between isn't one place. It's layers, one generation deep at a time. The war veteran who carried Korea here seventy years ago. The pastors running one church in two languages. The kids at Saturday school groaning through worksheets exactly like I once did.
+
+**Saerom Kim:** And every layer builds something for the next one — the church, the school, the restaurant. Belonging turns out to be a thing communities construct, brick by brick. Not a feeling you wait around to receive.
+
+**Yehee Jung:** I want to complicate the premise, because technically I'm the control group — I live in Korea.
+
+**Yehee Jung:** Except: I attend an international school on Jeju, studying a British curriculum in English, on an island my classmates' parents chose so their children could grow up global without leaving. The in-between is not only a diaspora condition anymore. Korea is importing it.
+
+**Yehee Jung:** And the research is genuinely double-edged. Multicultural kids show real gains in flexibility and perspective-taking. The same literature flags rootlessness and identity stress, especially where the cultures disagree about achievement. Which, for Korean kids, they reliably do. The in-between is an asset that charges rent.
+
+**Minwoo Jung:** "An asset that charges rent." This table is quotable today.
+
+**Minwoo Jung:** Then allow me the provocation. Each of us performs a small diplomatic mission daily — explaining Korea to your town, your town to your parents. Very well. But diplomats can become people with no country. Is there a point where between-ness stops being richness and becomes homelessness?
+
+**Jioh Lee:** There is. I have felt it — at airports, usually, which will surprise no one.
+
+**Jioh Lee:** The honest answer is that you need anchors that travel. In my family it is language, food, and the Sunday call to grandparents. The anchor is not a place. It is a set of practices.
+
+**Kyusung Lee:** For mine it's the congregation — and yes, I hear it, that's funny coming from the table's resident agnostic. Not the theology. The pews. The gathering travels even when the believing is complicated.
+
+**Kyusung Lee:** I think that's what religious community has quietly done for immigrants forever. It's the luggage that carries itself.
+
+**Saerom Kim:** And mine, I can admit at this table, is the story I've been telling. My series began as journalism and became a way of writing myself into a place. Interview by interview, I was assembling my own membership.
+
+**Saerom Kim:** Writing as citizenship application.
 
 **Yehee Jung:** Approved unanimously, for the record.
 
 ---
 ### Final Thoughts
 
-**Jioh Lee:** "Where are you really from" is the wrong question. The right one is "where are you building?" — and the in-between turns out to be very buildable land.
+**Jioh Lee:** "Where are you really from" is the wrong question. The right one is "where are you building?" — and the in-between is very buildable land.
 
-**Kyusung Lee:** Between two cultures you notice what each one does best. I get judged for that double vision sometimes. I wouldn't trade it.
+**Kyusung Lee:** Standing between two cultures, you see what each one does best. I get judged for the double vision sometimes. Wouldn't trade it.
 
-**Saerom Kim:** Belonging is infrastructure. Somebody built it for us — the church, the school, the grocery store. The least we can do is add a brick.
+**Saerom Kim:** Belonging is infrastructure. Somebody built ours — the church, the school, the grocery store. The least we can do is add a brick.
 
-**Yehee Jung:** Growing up between worlds is a genuine advantage with genuine costs, and pretending it's only one or the other fails the kids living it.
+**Yehee Jung:** The in-between is a genuine advantage with genuine costs, and pretending it is only one of those fails the kids living it.
 
-**Minwoo Jung:** Nations guard their borders; culture ignores them. Everyone at this table is proof, and so, increasingly, is everyone's classroom, everywhere.
+**Minwoo Jung:** Nations guard their borders; culture ignores them entirely. Everyone at this table is proof, and so, increasingly, is everyone's classroom.
 
-*What about you? If you've grown up between cultures — any cultures — we'd genuinely like to hear what anchors you. Let us know in the comments below.*
+*What about you? If you've grown up between cultures — any cultures — we'd genuinely like to hear what anchors you. The comments are open.*

@@ -93,6 +93,93 @@ module.exports = function (eleventyConfig) {
     const words = String(html || "").replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
     return `${Math.max(1, Math.round(words / 230))} min read`;
   });
+
+  /* ---- Roundtable chat transform ----
+     Rewrites a roundtable transcript's rendered HTML into a chat thread:
+     <p><strong>Name:</strong> text</p> becomes an avatar-attributed bubble,
+     consecutive messages from one speaker group together, bracketed stage
+     directions become centered system lines, italic paragraphs become the
+     editor's note / outro, and "Final Thoughts" becomes a divider. If the
+     content doesn't look like a transcript (under 3 speaker turns), the
+     original HTML is returned untouched. */
+  const chatAuthors = require("./src/_data/authors.js");
+  const SEAL = "/assets/images/seal.png";
+  eleventyConfig.addFilter("chatify", (html) => {
+    const src = String(html || "");
+    const blockRe = /<h3[^>]*>[\s\S]*?<\/h3>|<p[^>]*>[\s\S]*?<\/p>|<hr[^>]*>/g;
+    const blocks = src.match(blockRe) || [];
+    if (!blocks.length) return src;
+
+    const speakerRe = /^<p[^>]*><strong>([^<]{1,60}?)(?:\s*\(continuing\))?\s*:<\/strong>\s*([\s\S]*)<\/p>$/;
+    const parsed = [];
+    let speakerTurns = 0;
+    for (const b of blocks) {
+      const m = b.match(speakerRe);
+      if (m) {
+        parsed.push({ kind: "msg", who: m[1].trim(), text: m[2].trim() });
+        speakerTurns++;
+      } else if (/^<h3[^>]*>[\s\S]*Final Thoughts[\s\S]*<\/h3>$/i.test(b)) {
+        parsed.push({ kind: "final" });
+      } else if (/^<hr/.test(b)) {
+        parsed.push({ kind: "rule" });
+      } else if (/^<p[^>]*><em>[\s\S]*<\/em>\s*<\/p>$/.test(b)) {
+        parsed.push({ kind: "note", htmlBlock: b });
+      } else {
+        parsed.push({ kind: "plain", htmlBlock: b });
+      }
+    }
+    if (speakerTurns < 3) return src;
+
+    const sysText = (t) => {
+      const m = t.match(/^\[([\s\S]*)\]$/);
+      return m ? m[1] : null;
+    };
+
+    let out = "";
+    let openChat = false;
+    let lastWho = null;
+    let noteSeen = false;
+    const openChatDiv = () => { if (!openChat) { out += '<div class="rt-chat">'; openChat = true; lastWho = null; } };
+    const closeMsg = () => { if (lastWho !== null) { out += "</div></div>"; lastWho = null; } };
+    const closeChat = () => { if (openChat) { closeMsg(); out += "</div>"; openChat = false; } };
+
+    for (const item of parsed) {
+      if (item.kind === "msg") {
+        const sys = sysText(item.text) || (item.who === "All" ? item.text.replace(/^\[|\]$/g, "") : null);
+        if (item.who === "All" || sys !== null) {
+          openChatDiv(); closeMsg();
+          out += `<div class="rt-system">${sys !== null ? sys : item.text}</div>`;
+          continue;
+        }
+        openChatDiv();
+        const a = chatAuthors[item.who];
+        const flag = a && a.flag ? a.flag : "#1d2733";
+        const avatar = a && a.avatar ? a.avatar : SEAL;
+        if (item.who !== lastWho) {
+          closeMsg();
+          out += `<div class="msg" style="--who:${flag}">` +
+                 `<img class="chat-avatar" src="${avatar}" alt="" width="36" height="36" loading="lazy">` +
+                 `<div class="msg-body"><span class="who sc">${item.who}</span>`;
+          lastWho = item.who;
+        }
+        out += `<div class="bubble">${item.text}</div>`;
+      } else if (item.kind === "final") {
+        closeChat();
+        out += '<div class="rt-divider sc"><span>Closing statements</span></div>';
+      } else if (item.kind === "rule") {
+        closeMsg();
+      } else if (item.kind === "note") {
+        closeChat();
+        out += `<div class="${noteSeen ? "rt-outro" : "rt-note"}">${item.htmlBlock}</div>`;
+        noteSeen = true;
+      } else {
+        closeChat();
+        out += item.htmlBlock;
+      }
+    }
+    closeChat();
+    return out;
+  });
   eleventyConfig.addFilter("exceptByUrl", (arr, url) => (arr || []).filter((x) => x && x.url !== url));
   eleventyConfig.addFilter("slug", slugify);
   eleventyConfig.addFilter("isoDate", isoDate);

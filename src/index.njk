@@ -58,7 +58,7 @@ title: Home
       <p class="dek">{{ hero.data.excerpt or hero.data.description or (hero.templateContent | striptags | truncate(200)) }}</p>
       <div class="byline-row">
         {% set heroAuthor = authors[hero.data.author] %}
-        {% if heroAuthor %}<img class="avatar" src="{{ heroAuthor.avatar }}" alt="" width="36" height="36">{% endif %}
+        {% if heroAuthor %}<img class="avatar" src="{{ heroAuthor.avatar }}" alt="" width="44" height="44">{% endif %}
         {% if hero.data.author %}<span class="name sc">{{ hero.data.author }}</span><span class="dot">·</span>{% endif %}
         <time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>
       </div>

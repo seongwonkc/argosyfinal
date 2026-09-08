@@ -266,7 +266,7 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
   flex-wrap: wrap;
 }
 .byline-row .avatar {
-  width: 36px; height: 36px;
+  width: 44px; height: 44px;
   border-radius: 5px;
   image-rendering: pixelated;
   flex-shrink: 0;
@@ -426,7 +426,7 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .post-head .byline-row { justify-content: center; margin-bottom: 0.4rem; }
 .post-head .byline-row .avatar {
-  width: 48px; height: 48px;
+  width: 56px; height: 56px;
   border-radius: 6px;
   border: 1px solid var(--rule);
 }
@@ -527,12 +527,12 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .msg {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 72px 1fr;
   gap: 0.65rem;
   align-items: start;
 }
 .chat-avatar {
-  width: 56px; height: 56px;
+  width: 72px; height: 72px;
   border-radius: 5px;
   image-rendering: pixelated;
   background: var(--wash);
@@ -588,8 +588,8 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 @media (max-width: 480px) {
-  .msg { grid-template-columns: 44px 1fr; gap: 0.5rem; }
-  .chat-avatar { width: 44px; height: 44px; }
+  .msg { grid-template-columns: 52px 1fr; gap: 0.5rem; }
+  .chat-avatar { width: 52px; height: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

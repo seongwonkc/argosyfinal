@@ -1,6 +1,6 @@
 ---
 title: 'The Argosy Debates: Should Governments Actively Regulate ''Big Tech'' Companies?'
-author: Hannah Ryu and Anthony Min
+author: Gawon Ryu and Anthony Min
 category: Debate
 date: '2025-03-13T00:00:00.000Z'
 layout: layouts/post.njk
@@ -20,7 +20,7 @@ image_credit: Magnus Engø — Unsplash
 ***Editor's Note:*** *From antitrust lawsuits against Google to concerns about the impact of social media on teenage mental health, the power of major technology companies has become a subject of intense global debate. Are these companies innovative engines of growth or unregulated monopolies that require government intervention?*
 
 ### The Case for Regulation as a Social Necessity
-**By Hannah Ryu**
+**By Gawon Ryu**
 
 To frame the debate over Big Tech as a purely economic one is to miss the fundamental nature of their power. Companies like Meta, Google, and Amazon are not just businesses; they are the architects of our social and informational reality. Their products are specifically engineered to capture our most valuable resource—our attention—and the consequences for our mental health and social fabric are too severe to be left to the whims of the market. Regulation is not a matter of economic policy; it is a matter of public health and safety.
 

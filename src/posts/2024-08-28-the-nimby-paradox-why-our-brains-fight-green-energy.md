@@ -2,7 +2,7 @@
 title: >-
   The NIMBY Paradox: Why Our Brains Are Wired to Fight the Green Energy We Say
   We Want
-author: Ethan Yang and Hannah Ryu
+author: Ethan Yang and Gawon Ryu
 category: Interdisciplinary
 date: '2024-08-28T00:00:00.000Z'
 layout: layouts/post.njk
@@ -21,7 +21,7 @@ image: /assets/images/2024/the-nimby-paradox-why-our-brains-fight-green-energy.j
 image_credit: Moritz Kindler — Unsplash
 ---
 
-**By Ethan Yang and Hannah Ryu**
+**By Ethan Yang and Gawon Ryu**
 
 It is one of the most frustrating paradoxes of the climate era. Public support for transitioning to renewable energy consistently polls at record highs. We collectively agree on the destination: a world powered by clean, sustainable sources. Yet, the journey to that destination is perpetually stalled by local roadblocks. A proposed wind farm that could power thousands of homes is defeated by a town council over concerns about scenic views. A crucial transmission line needed to carry solar power from the desert to the city is mired in years of litigation from landowners. This is the "Not In My Backyard" (NIMBY) phenomenon, and it has become one of the single greatest obstacles to building a green future.
 

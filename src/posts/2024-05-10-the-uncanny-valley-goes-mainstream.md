@@ -1,6 +1,6 @@
 ---
 title: 'The Uncanny Valley Goes Mainstream: AI Deepfakes and the Coming Reality Crisis'
-author: Hannah Ryu
+author: Gawon Ryu
 category: media
 date: 2024-05-10T00:00:00.000Z
 layout: layouts/post.njk

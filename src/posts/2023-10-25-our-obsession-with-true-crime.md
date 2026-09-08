@@ -2,7 +2,7 @@
 title: >-
   Our Obsession with True Crime: Does It Create Justice or Just
   'Trauma-tainment'?
-author: Hannah Ryu
+author: Gawon Ryu
 category: media
 date: 2023-10-25T00:00:00.000Z
 layout: layouts/post.njk

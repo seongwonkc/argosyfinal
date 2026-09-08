@@ -2,7 +2,7 @@
 title: >-
   The Argosy Debates: Has Social Media Done More to Corrupt Than to Support
   Modern Journalism?
-author: Hannah Ryu and Minwoo Jung
+author: Gawon Ryu and Minwoo Jung
 category: Debate
 date: '2024-12-11T00:00:00.000Z'
 layout: layouts/post.njk
@@ -22,7 +22,7 @@ image_credit: Brett Jordan — Unsplash
 ***Editor's Note:*** *From the Arab Spring to the 2020 US election, social media platforms have played a central role in how news is made, distributed, and consumed. But has this revolution empowered journalism or irrevocably damaged it? We asked two editors to make their case.*
 
 ### The Case That Social Media Has Broken Journalism
-**By Hannah Ryu**
+**By Gawon Ryu**
 
 Let us be clear about what social media platforms are. They are not neutral town squares. They are for-profit advertising businesses whose core product is engagement. Their algorithms are not designed to inform, but to addict. And in the process of pursuing that business model, they have created an information ecosystem that is fundamentally toxic to the core principles of journalism.
 

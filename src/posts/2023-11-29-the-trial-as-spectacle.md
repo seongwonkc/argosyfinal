@@ -2,7 +2,7 @@
 title: >-
   The Trial as Spectacle: How Media Narratives Shaped the Case of Sam
   Bankman-Fried
-author: Hannah Ryu
+author: Gawon Ryu
 category: media
 date: 2023-11-29T00:00:00.000Z
 layout: layouts/post.njk

@@ -1,6 +1,6 @@
 ---
 title: 'Anatomy of a Blockbuster: The Persuasive Psychology of the ''Barbie'' Movie'
-author: Hannah Ryu
+author: Gawon Ryu
 category: communications
 date: 2023-08-15T00:00:00.000Z
 layout: layouts/post.njk

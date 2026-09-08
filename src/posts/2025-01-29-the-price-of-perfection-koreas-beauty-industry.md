@@ -2,7 +2,7 @@
 title: >-
   The Price of Perfection: A Cultural and Psychological Look at South Korea's
   Beauty Industry
-author: Saerom Kim and Hannah Ryu
+author: Saerom Kim and Gawon Ryu
 category: Interdisciplinary
 date: '2025-01-29T00:00:00.000Z'
 layout: layouts/post.njk
@@ -21,7 +21,7 @@ image: /assets/images/2025/the-price-of-perfection-koreas-beauty-industry.jpg
 image_credit: Kamil Kalkan — Unsplash
 ---
 
-**By Saerom Kim and Hannah Ryu**
+**By Saerom Kim and Gawon Ryu**
 
 To the outside world, the South Korean beauty industry is a marvel of innovation and a global cultural force. K-Beauty, with its multi-step skincare routines, its playful packaging, and its promise of "glass skin," has become a dominant trend, shaping the cosmetic industry from Seoul to New York. The industry is a source of national pride, a powerful economic engine, and a key pillar of the Hallyu wave. But for those living within its sphere of influence, this obsession with beauty has a much darker side. Behind the glossy exports is a society grappling with some of the world's most rigid and unforgiving beauty standards, creating a landscape of intense psychological pressure, particularly for young people.
 

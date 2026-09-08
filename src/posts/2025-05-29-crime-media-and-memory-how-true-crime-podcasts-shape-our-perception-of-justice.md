@@ -2,7 +2,7 @@
 title: >-
   Crime, Media, and Memory: How True Crime Podcasting Shapes Our Perception of
   Justice
-author: Hannah Ryu
+author: Gawon Ryu
 category: Interdisciplinary
 date: '2025-05-29T00:00:00.000Z'
 layout: layouts/post.njk
@@ -21,7 +21,7 @@ image: >-
 image_credit: Jessica Christian — Unsplash
 ---
 
-**By Hannah Ryu**
+**By Gawon Ryu**
 ***With contributions from Dr. Lee Ji-eun, Professor of Criminology at Yonsei University***
 
 The true crime genre is as old as the printing press itself. But in the 21st century, it has found its most powerful and intimate medium yet: the podcast. Shows like "Serial," "My Favorite Murder," and a thousand others have transformed the genre from a niche interest into a dominant force in popular culture. Millions of listeners tune in every week, becoming amateur sleuths, armchair detectives, and devoted followers of stories of real-life tragedy. This boom has created a powerful new media industry, but it also raises profound questions about the ethics of turning murder into entertainment and the impact this genre is having on our collective understanding of crime, victims, and the justice system itself.

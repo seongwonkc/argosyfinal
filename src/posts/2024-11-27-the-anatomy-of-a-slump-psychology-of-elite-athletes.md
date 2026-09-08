@@ -2,7 +2,7 @@
 title: >-
   The Anatomy of a Slump: Deconstructing the Psychological Pressures on Elite
   Athletes
-author: Hannah Ryu and Yonghyuk Choi
+author: Gawon Ryu and Yonghyuk Choi
 category: Interdisciplinary
 date: '2024-11-27T00:00:00.000Z'
 layout: layouts/post.njk
@@ -20,7 +20,7 @@ image: /assets/images/2024/the-anatomy-of-a-slump-psychology-of-elite-athletes.j
 image_credit: Natalia Churina — Unsplash
 ---
 
-**By Hannah Ryu and Yonghyuk Choi**
+**By Gawon Ryu and Yonghyuk Choi**
 
 It is one of the most baffling and painful spectacles in sports. A superstar golfer who has won major championships suddenly cannot make a two-foot putt. A dominant baseball pitcher, famed for his pinpoint control, can no longer find the strike zone. A professional tennis player develops a hitch in their serve that they cannot seem to fix. This is the world of the slump, the choke, and the dreaded "yips"—a mysterious condition where an athlete's brain seems to betray their body, making a once-automatic skill feel alien and impossible.
 

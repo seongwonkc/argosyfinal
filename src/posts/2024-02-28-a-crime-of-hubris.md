@@ -1,6 +1,6 @@
 ---
 title: 'A Crime of Hubris: The Psychology of the White-Collar Criminal'
-author: Hannah Ryu
+author: Gawon Ryu
 category: psychology
 date: 2024-02-28T00:00:00.000Z
 layout: layouts/post.njk

@@ -1,6 +1,6 @@
 ---
 title: 'Your Feed is Lying to You: The Psychology of the Social Media Echo Chamber'
-author: Hannah Ryu
+author: Gawon Ryu
 category: psychology
 date: 2024-07-25T00:00:00.000Z
 layout: layouts/post.njk

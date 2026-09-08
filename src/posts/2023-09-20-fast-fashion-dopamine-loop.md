@@ -2,7 +2,7 @@
 title: >-
   The Dopamine Loop of Fast Fashion: The Hidden Psychological Cost of a $5
   T-Shirt
-author: Hannah Ryu
+author: Gawon Ryu
 category: psychology
 date: 2023-09-20T00:00:00.000Z
 layout: layouts/post.njk

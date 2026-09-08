@@ -2,7 +2,7 @@
 title: >-
   The Search for a Secret Story: Deconstructing the Psychology of Conspiracy
   Theories
-author: Hannah Ryu
+author: Gawon Ryu
 category: psychology
 date: 2025-01-15T00:00:00.000Z
 layout: layouts/post.njk

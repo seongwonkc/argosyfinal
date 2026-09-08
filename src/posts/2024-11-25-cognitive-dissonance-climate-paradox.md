@@ -1,6 +1,6 @@
 ---
 title: 'Knowing and Ignoring: Cognitive Dissonance and the Climate Change Paradox'
-author: Hannah Ryu
+author: Gawon Ryu
 category: psychology
 date: 2024-11-25T00:00:00.000Z
 layout: layouts/post.njk

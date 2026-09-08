@@ -64,6 +64,16 @@ permalink: /team/index.html
       color: #222;
     }
 
+    .section-title {
+      font-size: clamp(1.35rem,2.4vw,1.7rem);
+      margin: 0 0 .35rem;
+    }
+    .section-note {
+      color: var(--muted);
+      max-width: 72ch;
+      margin: 0 0 .5rem;
+    }
+
     .team-grid {
       display: grid;
       gap: var(--gap);
@@ -101,6 +111,17 @@ permalink: /team/index.html
     .bio { grid-area: bio; margin-top: .35rem; color: #222; }
     .bio p { margin: 0 0 .75rem; }
 
+    .college {
+      display: inline-block;
+      margin-top: .15rem;
+      font-size: .9rem;
+      color: #333;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: .05rem .6rem;
+      background: #fafafa;
+    }
+
     .section { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
     footer.site { border-top: 1px solid var(--rule); margin-top: 2rem; color: #444; }
   </style>
@@ -117,52 +138,34 @@ permalink: /team/index.html
       Welcome to <em>The Argosy</em>, an independent newspaper dedicated to delivering insightful analysis on the issues that shape our world. Our team is composed of dedicated student journalists from around the globe, each bringing a unique perspective and a commitment to rigorous, high-quality reporting.
     </p>
 
-    <section class="section team-grid">
+    <section class="section">
+      <h2 class="section-title">The Editorial Board</h2>
+      <div class="team-grid">
       {% set people = [
         {
-          name: "Minwoo Jung",
-          role: "Editor in Chief and Politics Editor",
-          bio: "Based in Seoul, Minwoo is a keen analyst of international relations and geopolitical strategy. His work is grounded in a realist’s perspective, focusing on the dynamics of state power and the strategic imperatives that drive global decision-making. He provides sharp, incisive commentary on major elections and diplomatic flashpoints. He is the author of several books available on Amazon: “Through the Canvas,” “Civics for Cynics,” and “Lions Don’t Roar in Parliament.”"
-        },
-        {
-          name: "Yehee Jung",
-          role: "Science & Health Editor",
-          bio: "A student at NLCS Jeju, Yehee deconstructs complex topics in public health, biology, and environmental science. Her writing is driven by a passion for systemic analysis, exploring not only the science itself but also the ethical and societal frameworks that surround it. She is committed to making critical scientific issues accessible and understandable."
-        },
-        {
-          name: "Saerom Kim",
-          role: "Culture Editor",
-          bio: "Currently a student at Bulloch Academy in Statesboro, Georgia, Saerom offers a unique lens on Southern American culture. Through a blend of personal narrative and deep, evidence-based observation, her “Koreans in Georgia” series and other ethnographic work explore the rich tapestry of foodways, traditions, and social dynamics of her adopted home."
-        },
-        {
-          name: "Yonghyuk Choi",
-          role: "Sports Editor",
-          bio: "Yonghyuk offers a view of the sports world that goes beyond the box score. With a sharp focus on golf, tennis, and baseball, he analyzes the business, financial, and strategic forces that shape the games we love. His writing balances a warm appreciation for the human stories of athletes with a clear-eyed view of the industry behind them."
-        },
-        {
-          name: "Anthony Min",
-          role: "Economics & Finance Editor",
-          bio: "Anthony, a home-schooled student in Korea and the US, delivers direct, unsentimental analysis of the economic world. His work cuts straight to the core of an issue, focusing on financial mechanics, corporate strategy, and the flow of capital. He believes in explaining the “how” and “why” behind the numbers that drive our economies."
-        },
-        {
-          name: "Hannah Ryu",
-          role: "Psychology & Media Writer",
-          bio: "Attending Pomfret School, Hannah explores the intersection of psychology, media, and society. Her writing deconstructs complex social phenomena, from consumer behavior to criminology, into their core psychological components. She is particularly interested in how media narratives shape our understanding of the world and ourselves."
-        },
-        {
           name: "Ethan Yang",
-          role: "Sustainability Writer",
-          bio: "Ethan, a student at Fayston Prep, is focused on the critical challenges of environmental engineering and sustainability. His work bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He analyzes emerging technologies and policies with a pragmatic, solutions-oriented approach."
+          role: "Editor-in-Chief",
+          bio: "The Argosy's second Editor-in-Chief, Ethan wrote the paper's sustainability column for three years before taking the helm in 2026. A student at Fayston Prep, he bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He still cannot resist an energy story, and the masthead has stopped trying to make him."
         },
         {
-          name: "Jioh Lee",
-          role: "International & Education Writer",
-          bio: "A Korean student living in Abu Dhabi for the past 12 years, Jioh brings a nuanced understanding of MENA affairs and cross-cultural exchange. Her interests include Middle Eastern current issues, international culture and trade, and global education reform—particularly the reinstatement of standardized testing in college admissions. She also writes on student entrepreneurship and business innovation."
+          name: "Gawon Ryu",
+          role: "Psychology Editor",
+          bio: "Attending Pomfret School, Gawon leads the desk she made the paper's most-read. Her writing deconstructs complex social phenomena — from doomscrolling and Olympic tears to the willpower myth — into their core psychological components. She is particularly interested in how media environments shape attention, emotion, and our understanding of ourselves, and in reporting the evidence even when it dismantles her own priors."
         },
         {
-          name: "Kyusung Lee",
-          role: "Sports & Society Contributor",
-          bio: "Based in Texas, Kyusung writes at the intersection of sports, religion, and communication. Though agnostic, he has a deep appreciation for interfaith dialogue and often explores how religious spaces foster reflection, community, and cultural exchange. His writing combines curiosity, empathy, and a grounded sense of humor."
+          name: "David Lee",
+          role: "Sustainability Editor",
+          bio: "David covers the energy transition from the ground up — home batteries and virtual power plants, broken disaster statistics, the solar century, and the machines rebuilding the grid. A staff writer since 2025 and editor since 2026, he writes about infrastructure at human scale: who builds it, who pays for it, and who gets left off it. His rule for every milestone and every miracle alike: audit it."
+        },
+        {
+          name: "Patrick Kim",
+          role: "Culture Editor",
+          bio: "A staff writer for culture since 2025 and editor since 2026, Patrick writes about culture as an industry and an ecosystem — the death of the monoculture, the AI remix wars, the halftime show that became the main event. He is interested in how attention is assembled, bought, and occasionally shared, and in the rare moments when a fragmented audience still gathers around one text."
+        },
+        {
+          name: "Olivia Kim",
+          role: "Science & Health Writer",
+          bio: "A student at Pomfret School, Olivia joined The Argosy in 2026 and covers science and health with a naturalist's eye: follow the mechanism. Her work traces the verbs of biology — transmit, mutate, immunize, erode — through public health, medicine, and the systems that keep both running. She believes thresholds don't negotiate, and writes accordingly."
         }
       ] %}
 
@@ -174,6 +177,69 @@ permalink: /team/index.html
           <div class="bio"><p>{{ p.bio | safe }}</p></div>
         </article>
       {% endfor %}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Argosy Alumni</h2>
+      <p class="section-note">
+        The founding cohort built this paper between 2023 and 2026 and graduated in the spring of 2026. Their archives remain permanent — and so does their habit of reading everything we publish within hours.
+      </p>
+      <div class="team-grid">
+      {% set alumni = [
+        {
+          name: "Minwoo Jung",
+          role: "Founding Editor-in-Chief · Politics Editor, 2023–2026",
+          college: "Northwestern University",
+          bio: "Founded The Argosy from Seoul and anchored its politics desk with a realist's eye for state power, elections, and diplomatic flashpoints. He is the author of several books available on Amazon: “Through the Canvas,” “Civics for Cynics,” and “Lions Don’t Roar in Parliament.”"
+        },
+        {
+          name: "Yehee Jung",
+          role: "Science & Health Editor, 2023–2026",
+          college: "University of Southern California",
+          bio: "Built the paper's science and health desk from NLCS Jeju, deconstructing public health, biology, and medicine with a passion for systemic analysis. Now on the pre-med path, she taught this paper that a column could be a lab notebook."
+        },
+        {
+          name: "Saerom Kim",
+          role: "Culture Editor, 2023–2026",
+          college: "UC Berkeley",
+          bio: "Wrote the paper's defining work — the six-part “Koreans in Georgia” series — from Statesboro, Georgia, blending personal narrative with deep, evidence-based ethnography of the American South and the community that carried her."
+        },
+        {
+          name: "Yonghyuk Choi",
+          role: "Sports Editor, 2023–2026",
+          college: "University of Illinois Urbana-Champaign",
+          bio: "Covered golf, tennis, and baseball with the conviction that the game is never just the game — from the data revolution and the golf wars to a World Series that two countries stayed up for. His failed predictions remain published, per house rules, and he remains proud of most of them."
+        },
+        {
+          name: "Anthony Min",
+          role: "Economics & Finance Editor, 2023–2026",
+          college: "Vanderbilt University",
+          bio: "Delivered direct, unsentimental analysis of financial mechanics and corporate strategy — from the end of easy money to the ouroboros economy of the AI boom. House catchphrase, now permanently on loan to the masthead: follow the incentives."
+        },
+        {
+          name: "Jioh Lee",
+          role: "International & Education Writer, 2025–2026",
+          college: "Sungkyunkwan University",
+          bio: "Wrote on global education, the Gulf, and growing up between systems, drawing on twelve years in Abu Dhabi. Her essays on learning in translation and the Gulf's great education experiment gave the paper its widest lens in a single season."
+        },
+        {
+          name: "Kyusung Lee",
+          role: "Sports & Society Contributor, 2025–2026",
+          college: "UC Irvine",
+          bio: "Wrote from Texas at the intersection of sports, religion, and community — Friday-night lights, the chapel in the clubhouse, the portal and the paycheck. Agnostic with a deep appreciation for interfaith dialogue, he covered belonging wherever it gathered, with curiosity, empathy, and a grounded sense of humor."
+        }
+      ] %}
+
+      {% for p in alumni %}
+        <article class="card">
+          <div class="avatar"></div>
+          <div class="name"><h2>{{ p.name }}</h2></div>
+          <div class="role">{{ p.role }}<br><span class="college">{{ p.college }}</span></div>
+          <div class="bio"><p>{{ p.bio | safe }}</p></div>
+        </article>
+      {% endfor %}
+      </div>
     </section>
   </main>
 

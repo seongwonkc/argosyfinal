@@ -266,8 +266,8 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
   flex-wrap: wrap;
 }
 .byline-row .avatar {
-  width: 28px; height: 28px;
-  border-radius: 4px;
+  width: 36px; height: 36px;
+  border-radius: 5px;
   image-rendering: pixelated;
   flex-shrink: 0;
   background: var(--wash);
@@ -425,6 +425,11 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-wrap: pretty;
 }
 .post-head .byline-row { justify-content: center; margin-bottom: 0.4rem; }
+.post-head .byline-row .avatar {
+  width: 48px; height: 48px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
 
 .post-hero {
   max-width: 58rem;
@@ -522,12 +527,12 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .msg {
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 40px 1fr;
   gap: 0.65rem;
   align-items: start;
 }
 .chat-avatar {
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   border-radius: 5px;
   image-rendering: pixelated;
   background: var(--wash);
@@ -583,8 +588,8 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 @media (max-width: 480px) {
-  .msg { grid-template-columns: 30px 1fr; gap: 0.5rem; }
-  .chat-avatar { width: 30px; height: 30px; }
+  .msg { grid-template-columns: 34px 1fr; gap: 0.5rem; }
+  .chat-avatar { width: 34px; height: 34px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -158,7 +158,7 @@ module.exports = function (eleventyConfig) {
         if (item.who !== lastWho) {
           closeMsg();
           out += `<div class="msg" style="--who:${flag}">` +
-                 `<img class="chat-avatar" src="${avatar}" alt="" width="36" height="36" loading="lazy">` +
+                 `<img class="chat-avatar" src="${avatar}" alt="" width="40" height="40" loading="lazy">` +
                  `<div class="msg-body"><span class="who sc">${item.who}</span>`;
           lastWho = item.who;
         }

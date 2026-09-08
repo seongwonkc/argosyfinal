@@ -17,9 +17,9 @@ layout: layouts/base.njk
     {% endif %}
     <div class="byline-row">
       {% if authorInfo %}
-        <img class="avatar" src="{{ authorInfo.avatar }}" alt="" width="28" height="28">
+        <img class="avatar" src="{{ authorInfo.avatar }}" alt="" width="48" height="48">
       {% elif isRoundtable %}
-        <img class="avatar" src="/assets/images/seal.png" alt="" width="28" height="28">
+        <img class="avatar" src="/assets/images/seal.png" alt="" width="48" height="48">
       {% endif %}
       {% if author %}<span class="name sc" itemprop="author">{{ author }}</span><span class="dot">·</span>{% endif %}
       {% if date %}<time datetime="{{ date | isoDate }}" itemprop="datePublished">{{ date | displayDate('en-US') }}</time><span class="dot">·</span>{% endif %}

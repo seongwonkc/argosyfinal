@@ -12,7 +12,7 @@ tags:
 excerpt: >-
   This week, the US measles count for 2026 surpassed all of last year — which
   was itself the worst year in three decades. Two record years in a row is not
-  bad luck. It''s arithmetic, and the arithmetic is worth learning, because it
+  bad luck. It's arithmetic, and the arithmetic is worth learning, because it
   explains exactly how this ends — in either direction.
 image: /assets/images/2026/the-arithmetic-of-an-outbreak.jpg
 image_credit: Jahra Tasfia Reza — Pexels

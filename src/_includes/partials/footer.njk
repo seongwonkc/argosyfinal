@@ -1,5 +1,37 @@
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="wrap">
-    <p>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</p>
+    <div class="f-brand">
+      <span class="wordmark">The Argosy</span>
+      <p>An independent student newspaper. An argosy is a merchant ship — a vessel built by many hands, carrying ideas across distance.</p>
+    </div>
+    <nav class="f-sections" aria-label="Sections">
+      <h2>Sections</h2>
+      <ul>
+        <li><a href="/category/politics/">Politics</a></li>
+        <li><a href="/category/culture/">Culture</a></li>
+        <li><a href="/category/economics-and-finance/">Economics</a></li>
+        <li><a href="/category/sustainability/">Sustainability</a></li>
+        <li><a href="/category/health-and-medicine/">Health</a></li>
+        <li><a href="/category/psychology/">Psychology</a></li>
+        <li><a href="/category/sports/">Sports</a></li>
+        <li><a href="/category/roundtable/">The Roundtable</a></li>
+        <li><a href="/categories/">All sections</a></li>
+      </ul>
+    </nav>
+    <nav class="f-pages" aria-label="The paper">
+      <h2>The Paper</h2>
+      <ul>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/team/">Meet the team</a></li>
+        <li><a href="/join/">Join us</a></li>
+        <li><a href="mailto:editors@argosynews.com">editors@argosynews.com</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap">
+    <div class="colophon">
+      <span>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</span>
+      <span>Founded 2023 · Published from five time zones</span>
+    </div>
   </div>
 </footer>

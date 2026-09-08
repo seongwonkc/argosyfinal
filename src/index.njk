@@ -6,58 +6,20 @@ title: Home
 {% set all = collections.posts %}
 {% set hero = all[0] %}
 {% set rest = all | exceptByUrl(hero.url if hero else null) %}
-
-{# ===== Card macro ===== #}
-{% macro Card(post) %}
-<article class="card">
-  <a href="{{ post.url }}" class="thumb" aria-label="{{ post.data.title }}">
-    <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}"
-         alt="{{ post.data.title | safe }}"
-         loading="lazy" decoding="async" width="600" height="338">
-  </a>
-  <div class="meta">
-    {% set catName = (post.data._categoryName or post.data._primaryCategoryName) %}
-    {% set catKey  = (post.data._categoryKey  or post.data._primaryCategoryKey) %}
-    {% if catName and catKey %}
-      <a class="pill" href="/category/{{ catKey }}/">{{ catName }}</a>
-    {% endif %}
-    <h3 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    {% if post.date %}
-      <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
-    {% endif %}
-  </div>
-</article>
-{% endmacro %}
-
-{# ===== Category lists ===== #}
 {% set catsAll = collections.categoryList %}
-{# keys we want as the primary buckets #}
+
 {% set topKeys = [
   'politics',
   'culture',
   'economics-and-finance',
   'sustainability',
-  'public-health',
+  'health-and-medicine',
+  'psychology',
   'sports',
   'roundtable'
 ] %}
 
-{# Helper: find a category object by key in catsAll #}
-{% macro CatByKey(key) -%}
-  {%- for c in catsAll -%}
-    {%- if c.key == key -%}
-      {{- c | dump | safe -}}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endmacro %}
-
-{# Build arrays for top cats and "other" cats #}
-{% set topCats = [] %}
-{% for k in topKeys %}
-  {% for c in catsAll if c.key == k %}
-    {% set topCats = topCats.concat([c]) %}
-  {% endfor %}
-{% endfor %}
+{% set heroUrl = hero.url if hero else '' %}
 {% set otherCats = [] %}
 {% for c in catsAll %}
   {% if c.key not in topKeys %}
@@ -65,169 +27,134 @@ title: Home
   {% endif %}
 {% endfor %}
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ title or "Home" }}</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{ --maxw:1120px; --gap:1rem; --ink:#111; --muted:#666; --rule:#e6e6e6; --measure:68ch; }
-    *{ box-sizing:border-box; } html{ text-size-adjust:100%; }
-    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.5; }
-    a{ color:inherit; text-decoration:none; } a:hover{ text-decoration:underline; }
-    header.site,main,footer.site{ max-width:var(--maxw); margin:0 auto; padding:1rem; }
+{# Latest roundtable, for the band (skip it when it IS the lead story) #}
+{% set rtBand = null %}
+{% for c in catsAll %}
+  {% if c.key == 'roundtable' %}
+    {% if c.items[0] and c.items[0].url != heroUrl %}
+      {% set rtBand = c.items[0] %}
+    {% elif c.items[1] %}
+      {% set rtBand = c.items[1] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
 
-    /* Dropdown primary categories */
-    .primary-nav .menu{
-      display:flex; justify-content:center; flex-wrap:wrap;
-      gap:1.25rem 1.75rem; padding:.75rem 0 1rem;
-      border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
-      font-family:"Newsreader","EB Garamond",Georgia,serif;
-      font-weight:500; letter-spacing:.02em;
-      font-size:clamp(1.05rem,1.6vw,1.25rem);
-      list-style:none; margin:0;
-    }
-    .primary-nav .menu>li{ position:relative; }
-    .primary-nav a,.primary-nav .dropbtn{
-      text-decoration:none; background:none; border:0; padding:.25rem .25rem;
-      line-height:1.2; color:inherit; cursor:pointer; font:inherit;
-    }
-    .primary-nav a:hover,.primary-nav .dropbtn:hover{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:2px; }
-    .primary-nav .has-dropdown .dropdown{
-      display:none; position:absolute; top:calc(100% + .4rem); left:50%; transform:translateX(-50%);
-      min-width:220px; background:#fff; border:1px solid var(--rule);
-      box-shadow:0 8px 20px rgba(0,0,0,.08); padding:.4rem 0; z-index:40;
-      list-style:none; margin:0;
-    }
-    .primary-nav .has-dropdown:hover .dropdown,
-    .primary-nav .has-dropdown:focus-within .dropdown{ display:block; }
-    .primary-nav .dropdown li a{ display:block; padding:.45rem .9rem; white-space:nowrap; }
-    .primary-nav .dropdown li a:hover{ background:#f7f7f7; text-decoration:none; }
-    .primary-nav .caret{ margin-left:.25rem; font-size:.9em; }
-
-    h1,h2,h3{ font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:600; letter-spacing:.005em; }
-    h2{ font-size:clamp(1.4rem,2.2vw,2rem); line-height:1.15; margin:0; }
-    h3{ font-size:clamp(1.125rem,1.8vw,1.35rem); line-height:1.2; margin:.25rem 0 .25rem; }
-    .dek{ color:#333; font-size:clamp(1rem,1.2vw,1.15rem); max-width:var(--measure); margin-top:.5rem; }
-
-    .hero{ display:grid; gap:var(--gap); grid-template-columns:1fr; padding-block:1.25rem; border-bottom:1px solid var(--rule); }
-    .hero .media img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
-    .hero .hed{ font-size:clamp(1.75rem,3.5vw,2.4rem); line-height:1.12; margin:.5rem 0; }
-    .byline{ color:var(--muted); font-size:.95rem; }
-
-    .section{ padding-block:1rem; border-bottom:1px solid var(--rule); }
-    .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.5rem; gap:.5rem; }
-    .section-head .more{ font-variant:small-caps; letter-spacing:.04em; color:#444; }
-
-    .grid{ display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); }
-    .card{ display:flex; flex-direction:column; gap:.5rem; }
-    .card .thumb img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f2f2f2; }
-    .pill{ font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color:#555; }
-
-    @media (min-width:900px){ .hero{ grid-template-columns:1.15fr .85fr; } }
-  </style>
-</head>
-<body>
-  <header class="site" role="banner">
-    {# Primary dropdown nav #}
-    <nav class="primary-nav wrap" aria-label="Primary">
-      <ul class="menu" role="menubar">
-        <li role="none"><a role="menuitem" href="/category/politics/">Politics</a></li>
-        <li role="none"><a role="menuitem" href="/category/culture/">Culture</a></li>
-        <li role="none"><a role="menuitem" href="/category/economics-and-finance/">Economics and Finance</a></li>
-        <li role="none"><a role="menuitem" href="/category/sustainability/">Sustainability</a></li>
-        <li role="none"><a role="menuitem" href="/category/public-health/">Public Health</a></li>
-        <li role="none"><a role="menuitem" href="/category/sports/">Sports</a></li>
-        <li role="none"><a role="menuitem" href="/category/roundtable/">Roundtable</a></li>
-
-        <li class="has-dropdown" role="none">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
-            Other <span class="caret" aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown" role="menu">
-            {% for c in otherCats %}
-              <li role="none"><a role="menuitem" href="/category/{{ c.key }}/">{{ c.name }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="content">
-    <section class="hero" aria-label="Lead story">
-      {% if hero %}
-        <div class="media">
-          <a href="{{ hero.url }}">
-            <img src="{{ hero.data.image or '/assets/fallback-hero.jpg' }}"
-                 alt="{{ hero.data.title | safe }}" loading="eager" decoding="async" width="1200" height="675">
-          </a>
-        </div>
-        <article class="meta">
-          {% if hero.data._primaryCategoryName and hero.data._primaryCategoryKey %}
-            <a class="pill" href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
-          {% endif %}
-          <h1 class="hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h1>
-          <p class="dek">{{ hero.data.description or hero.templateContent | striptags | truncate(180) }}</p>
-          <p class="byline">
-            {% if hero.data.author %}By {{ hero.data.author }} · {% endif %}
-            {% if hero.date %}<time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>{% endif %}
-          </p>
-        </article>
-      {% else %}
-        <article><h1 class="hed">No articles yet</h1></article>
+{# ============ Lead package ============ #}
+<section class="lead-package" aria-label="Lead story">
+  {% if hero %}
+    <figure class="lead-media">
+      <a href="{{ hero.url }}">
+        <img src="{{ hero.data.image or '/assets/fallback.svg' }}"
+             alt="{{ hero.data.title | safe }}" loading="eager" decoding="async"
+             width="1200" height="800">
+      </a>
+    </figure>
+    <div class="lead-text">
+      {% if hero.data._primaryCategoryKey %}
+        <a class="kicker cat-{{ hero.data._primaryCategoryKey }}"
+           href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
       {% endif %}
-    </section>
-
-    <section class="section" aria-label="Top Stories">
-      <div class="section-head"><h2>Top Stories</h2></div>
-      <div class="grid">
-        {% for post in rest | take(6) %}
-          {{ Card(post) | safe }}
-        {% else %}<p class="muted">More stories coming soon.</p>{% endfor %}
+      <h1 class="lead-hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h1>
+      <p class="dek">{{ hero.data.excerpt or hero.data.description or (hero.templateContent | striptags | truncate(200)) }}</p>
+      <div class="byline-row">
+        {% set heroAuthor = authors[hero.data.author] %}
+        {% if heroAuthor %}<img class="avatar" src="{{ heroAuthor.avatar }}" alt="" width="28" height="28">{% endif %}
+        {% if hero.data.author %}<span class="name sc">{{ hero.data.author }}</span><span class="dot">·</span>{% endif %}
+        <time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>
       </div>
-    </section>
 
-    {# Render the 7 top buckets first (only if they exist) #}
-    {% for c in topCats %}
-      {% if c and c.items and c.items.length %}
-        <section class="section category-block" id="{{ c.key }}">
-          <div class="section-head">
-            <h2>{{ c.name }}</h2>
-            <a class="more" href="/category/{{ c.key }}/">More</a>
-          </div>
-          <div class="grid">
-            {% for post in c.items | take(6) %}
-              {{ Card(post) | safe }}
-            {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
-          </div>
-        </section>
-      {% endif %}
-    {% endfor %}
+      <div class="latest">
+        <h2 class="latest-title sc">The Latest</h2>
+        <ol>
+          {% for post in rest | take(4) %}
+            <li>
+              <span class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
+              <div class="when">
+                {% if post.data._primaryCategoryName %}{{ post.data._primaryCategoryName }} · {% endif %}
+                <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  {% endif %}
+</section>
 
-    {# Then render any remaining categories under “Other” #}
-    {% for c in otherCats %}
-      {% if c and c.items and c.items.length %}
-        <section class="section category-block" id="{{ c.key }}">
-          <div class="section-head">
-            <h2>{{ c.name }}</h2>
-            <a class="more" href="/category/{{ c.key }}/">More</a>
-          </div>
-          <div class="grid">
-            {% for post in c.items | take(6) %}
-              {{ Card(post) | safe }}
-            {% else %}<p class="muted">No articles yet in this section.</p>{% endfor %}
-          </div>
-        </section>
-      {% endif %}
-    {% endfor %}
-  </main>
+{# ============ Roundtable band ============ #}
+{% if rtBand %}
+<aside class="rt-band" aria-label="From the Roundtable">
+  <div class="wrap">
+    <img class="seal" src="/assets/images/seal.png" alt="" width="64" height="64">
+    <div>
+      <span class="kicker cat-roundtable">From the Roundtable</span>
+      <p class="rt-quote"><a href="{{ rtBand.url }}">{{ rtBand.data.title }}</a></p>
+      <div class="byline-row">
+        <time datetime="{{ rtBand.date | isoDate }}">{{ rtBand.date | displayDate('en-US') }}</time>
+      </div>
+    </div>
+  </div>
+</aside>
+{% endif %}
 
-  <footer class="site" role="contentinfo">
-    <p>&copy; {{ now | date('yyyy') }} The Argosy. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+{# ============ Section blocks ============ #}
+{% macro SectionBlock(c, heroUrl, rtUrl) %}
+  {% set items = [] %}
+  {% for p in c.items %}
+    {% if p.url != heroUrl and p.url != rtUrl and items.length < 5 %}
+      {% set items = items.concat([p]) %}
+    {% endif %}
+  {% endfor %}
+  {% if items.length %}
+  <section class="front-section cat-{{ c.key }}" aria-labelledby="sec-{{ c.key }}">
+    <div class="section-head">
+      <h2 class="section-name" id="sec-{{ c.key }}"><a href="/category/{{ c.key }}/">{{ c.name }}</a></h2>
+      <a class="section-more sc" href="/category/{{ c.key }}/">All {{ c.count }} stories →</a>
+    </div>
+    <div class="section-grid">
+      {% set lead = items[0] %}
+      <article class="feature">
+        <figure class="thumb">
+          <a href="{{ lead.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ lead.data.image or '/assets/fallback.svg' }}" alt=""
+                 loading="lazy" decoding="async" width="600" height="400">
+          </a>
+        </figure>
+        <div>
+          <h3 class="hed"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h3>
+          <p class="dek">{{ lead.data.excerpt or lead.data.description or '' | truncate(160) }}</p>
+          <div class="byline-row">
+            {% if lead.data.author %}<span class="name sc">{{ lead.data.author }}</span><span class="dot">·</span>{% endif %}
+            <time datetime="{{ lead.date | isoDate }}">{{ lead.date | displayDate('en-US') }}</time>
+          </div>
+        </div>
+      </article>
+      <ul class="headline-list">
+        {% for post in items | take(5) %}
+          {% if not loop.first %}
+          <li>
+            <span class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
+            <div class="meta">
+              {% if post.data.author %}{{ post.data.author }} · {% endif %}
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+            </div>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+{% endmacro %}
+
+{% set rtUrl = rtBand.url if rtBand else '' %}
+
+{% for k in topKeys %}
+  {% for c in catsAll %}
+    {% if c.key == k %}{{ SectionBlock(c, heroUrl, rtUrl) }}{% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% for c in otherCats %}
+  {{ SectionBlock(c, heroUrl, rtUrl) }}
+{% endfor %}

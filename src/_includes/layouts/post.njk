@@ -1,145 +1,103 @@
-{# src/_includes/layouts/post.njk #}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ title }}</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
-  <style>
-    :root{ --maxw: 1120px; --measure: 68ch; --ink:#111; --muted:#666; --rule:#e6e6e6; --gap:1.25rem; }
-    *{ box-sizing:border-box; } html{ text-size-adjust:100%; }
-    body{ margin:0; color:var(--ink); background:#fff; font-family:"EB Garamond",Garamond,Georgia,serif; font-size:clamp(16px,0.9vw+14px,18px); line-height:1.6; }
-    a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
-    a:hover{ text-decoration-thickness:2px; }
+---
+layout: layouts/base.njk
+---
+{% set cats = normalizeCategories({ category: category, categories: categories }) %}
+{% set primary = cats[0] %}
+{% set authorInfo = authors[author] %}
+{% set isRoundtable = primary and primary.key == 'roundtable' %}
 
-    main { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
-    article.post { display:grid; grid-template-columns:1fr; gap: var(--gap); }
-    .post-head { border-bottom:1px solid var(--rule); padding-bottom:.75rem; }
-    .post-hed { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:700; letter-spacing:.006em; line-height:1.12; font-size:clamp(2rem,4vw,3rem); text-wrap:balance; margin:.25rem 0 .5rem; }
-    .post-dek { color:#333; font-size:clamp(1.05rem,1.2vw,1.2rem); max-width:var(--measure); margin:.25rem 0 .75rem; }
-    .byline { color: var(--muted); font-size:.98rem; }
-    .post-body { max-width: var(--measure); margin: 0 auto; }
-    .post-body p { margin: 0 0 1.05em; }
-    .post-body > p:first-of-type { font-size:1.03em; line-height:1.65; hanging-punctuation:first allow-end; text-wrap:pretty; }
-    h2,h3 { font-family:"Newsreader","EB Garamond",Georgia,serif; font-weight:600; line-height:1.2; letter-spacing:.004em; margin:1.6em 0 .5em; }
-    h2{ font-size:clamp(1.35rem,2.2vw,1.85rem); } h3{ font-size:clamp(1.15rem,1.8vw,1.35rem); }
-    blockquote{ margin:1.4em auto; padding:.75em 1em; border-left:3px solid #bbb; color:#333; max-width:calc(var(--measure) - 1ch); font-style:italic; background:#fafafa; }
-    blockquote cite{ display:block; color:var(--muted); font-style:normal; margin-top:.5em; }
-    .post-body img{ display:block; max-width:min(100%,900px); width:100%; height:auto; margin:0 auto; border-radius:6px; background:#f2f2f2; }
-    figure{ margin:1.25rem auto; text-align:center; max-width:min(100%,900px); }
-    figure > img{ margin:0 auto; }
-    figcaption{ margin-top:.5rem; color:#444; font-size:.95rem; line-height:1.35; }
-    p:has(> img){ text-align:center; }
-    p:has(> img) + p em.caption{ display:block; margin-top:.5rem; color:#444; font-size:.95rem; font-style:normal; }
-    .full{ width:100vw; max-width:100vw; margin-left:50%; transform:translateX(-50%); }
-    .post-body table{ border-collapse:collapse; width:100%; overflow:auto; display:block; margin:1rem 0; border:1px solid var(--rule); }
-    .post-body th,.post-body td{ padding:.5rem .75rem; border-bottom:1px solid var(--rule); }
-    .post-body thead th{ background:#fafafa; text-align:left; }
-    pre,code{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; font-size:.95em; }
-    pre{ background:#0f0f0f; color:#eee; padding:.9rem 1rem; border-radius:8px; overflow:auto; margin:1rem 0; }
-    code{ background:#f6f6f6; padding:.1rem .25rem; border-radius:4px; }
-    .footnotes{ margin-top:2rem; border-top:1px solid var(--rule); padding-top:1rem; color:#333; }
-    .footnotes ol{ padding-left:1.25rem; }
-    .footnotes li{ margin:.35rem 0; }
-    .post-nav{ display:flex; justify-content:space-between; gap:1rem; border-top:1px solid var(--rule); padding-top:1rem; margin-top:2rem; font-size:.98rem; color:#333; }
-
-    /* === Hero image fix === */
-    article.post > figure { max-width: 850px; margin: 0 auto 1.5rem; }
-    article.post > figure > img {
-      width: 100% !important; max-width: 100%; height: auto; display: block; margin: 0 auto;
-    }
-    article.post .post-body { max-width: 850px; margin: 0 auto; padding: 0 1rem; }
-
-    /* Readability tweaks */
-    .post-hed, .post-dek { text-wrap: balance; }
-    .post-body { hyphens: auto; hanging-punctuation: first allow-end; }
-    .post-body p { orphans: 3; widows: 3; }
-
-    /* Related posts block */
-    .related { border-top:1px solid var(--rule); margin-top:2rem; padding-top:1.25rem; }
-    .related h2 { font-size:1.25rem; margin:0 0 .75rem; }
-    .related-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; list-style:none; padding:0; margin:0; }
-    .related-card { display:block; border:1px solid var(--rule); border-radius:8px; overflow:hidden; text-decoration:none; color:inherit; background:#fff; }
-    .related-thumb { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:#f3f3f3; }
-    .related-body { padding:.75rem .9rem; }
-    .related-title { font-weight:600; line-height:1.25; }
-    .related-meta { color:#666; font-size:.95rem; margin-top:.35rem; }
-  </style>
-</head>
-<body>
-  {% include "partials/header.njk" %}
-
-  <main id="content">
-    <article class="post" itemscope itemtype="https://schema.org/NewsArticle">
-      <header class="post-head">
-        {% set cats = normalizeCategories({ category: category, categories: categories }) %}
-        {% set primary = cats[0] %}
-        {% if primary %}
-          <div class="byline">In <a href="/category/{{ primary.key }}/">{{ primary.name }}</a></div>
-        {% endif %}
-
-        <h1 class="post-hed" itemprop="headline">{{ title }}</h1>
-        {% if description %}<p class="post-dek">{{ description }}</p>{% endif %}
-        <p class="byline">
-          {% if author %}By <span itemprop="author">{{ author }}</span> · {% endif %}
-          {% if date %}<time datetime="{{ date | isoDate }}" itemprop="datePublished">{{ date | displayDate('en-US') }}</time>{% endif %}
-        </p>
-      </header>
-
-      {% if image %}
-        <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <img src="{{ image }}" alt="{{ title | safe }}" loading="eager" decoding="async" width="1200" height="675">
-          {% if imageCaption %}<figcaption>{{ imageCaption | safe }}</figcaption>{% endif %}
-          <meta itemprop="url" content="{{ image }}">
-        </figure>
+<article class="post{% if primary %} cat-{{ primary.key }}{% endif %}" itemscope itemtype="https://schema.org/NewsArticle">
+  <header class="post-head">
+    {% if primary %}
+      <a class="kicker cat-{{ primary.key }}" href="/category/{{ primary.key }}/">{{ primary.name }}</a>
+    {% endif %}
+    <h1 class="post-hed" itemprop="headline">{{ title }}</h1>
+    {% if excerpt or description %}
+      <p class="post-dek">{{ excerpt or description }}</p>
+    {% endif %}
+    <div class="byline-row">
+      {% if authorInfo %}
+        <img class="avatar" src="{{ authorInfo.avatar }}" alt="" width="28" height="28">
+      {% elif isRoundtable %}
+        <img class="avatar" src="/assets/images/seal.png" alt="" width="28" height="28">
       {% endif %}
+      {% if author %}<span class="name sc" itemprop="author">{{ author }}</span><span class="dot">·</span>{% endif %}
+      {% if date %}<time datetime="{{ date | isoDate }}" itemprop="datePublished">{{ date | displayDate('en-US') }}</time><span class="dot">·</span>{% endif %}
+      <span>{{ content | readingTime }}</span>
+    </div>
+  </header>
 
-      <section class="post-body" itemprop="articleBody">
-        {{ content | safe }}
-      </section>
-
-      {# === Related posts (same primary category, up to 3, excluding current) === #}
-      {% if collections.posts and primary %}
-        <section class="related" aria-labelledby="related-heading">
-          <h2 id="related-heading">Related posts</h2>
-          <ul class="related-list">
-            {% set shown = 0 %}
-            {% for p in collections.posts | reverse %}
-              {% if shown < 3 and p.url != page.url %}
-                {% set pcats = p.data.categories or [] %}
-                {% if p.data.category == primary.name or primary.name in pcats %}
-                  <li>
-                    <a class="related-card" href="{{ p.url }}">
-                      {% if p.data.image %}
-                        <img class="related-thumb" src="{{ p.data.image }}" alt="">
-                      {% endif %}
-                      <div class="related-body">
-                        <div class="related-title">{{ p.data.title }}</div>
-                        <div class="related-meta">
-                          {% if p.date %}{{ p.date | date('MMM d, yyyy') }}{% endif %}
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  {% set shown = shown + 1 %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </section>
+  {% if image %}
+    <figure class="post-hero" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <img src="{{ image }}" alt="{{ title | safe }}" loading="eager" decoding="async" width="1200" height="675">
+      <meta itemprop="url" content="{{ image }}">
+      {% if image_credit %}
+        <figcaption>Photograph: {{ image_credit }}</figcaption>
+      {% elif imageCaption %}
+        <figcaption>{{ imageCaption | safe }}</figcaption>
       {% endif %}
+    </figure>
+  {% endif %}
 
-      <nav class="post-nav" aria-label="Post navigation">
-        <div>{% if collections.posts and pagination and pagination.href.previous %}<a href="{{ pagination.href.previous }}">← Previous</a>{% endif %}</div>
-        <div>{% if collections.posts and pagination and pagination.href.next %}<a href="{{ pagination.href.next }}">Next →</a>{% endif %}</div>
-      </nav>
-    </article>
-  </main>
+  <section class="post-body" itemprop="articleBody">
+    {{ content | safe }}
+  </section>
 
-  {% include "partials/footer.njk" %}
-</body>
-</html>
+  <footer class="post-end">
+    {% if primary %}
+      <span>Filed under <a class="kicker cat-{{ primary.key }}" href="/category/{{ primary.key }}/">{{ primary.name }}</a></span>
+    {% endif %}
+    {% if author %}<span class="sc">{{ author }}{% if authorInfo and authorInfo.role %} · {{ authorInfo.role }}{% endif %}</span>{% endif %}
+  </footer>
+
+  {# Related: same primary category, newest first, excluding current #}
+  {% if collections.posts and primary %}
+    {% set related = [] %}
+    {% for p in collections.posts %}
+      {% if related.length < 3 and p.url != page.url and p.data._primaryCategoryKey == primary.key %}
+        {% set related = related.concat([p]) %}
+      {% endif %}
+    {% endfor %}
+    {% if related.length %}
+    <section class="related" aria-labelledby="related-heading">
+      <h2 class="related-title sc" id="related-heading">More in {{ primary.name }}</h2>
+      <ul class="related-list">
+        {% for p in related %}
+          <li>
+            <figure class="thumb">
+              <a href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+                <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="480" height="270">
+              </a>
+            </figure>
+            <div class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></div>
+            <div class="meta">
+              {% if p.data.author %}{{ p.data.author }} · {% endif %}
+              <time datetime="{{ p.date | isoDate }}">{{ p.date | displayDate('en-US') }}</time>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  {% endif %}
+
+  {# Previous / next by publication date #}
+  {% set newer = null %}
+  {% set older = null %}
+  {% set found = false %}
+  {% for p in collections.posts %}
+    {% if found and not older %}{% set older = p %}{% endif %}
+    {% if p.url == page.url %}{% set found = true %}{% endif %}
+    {% if not found %}{% set newer = p %}{% endif %}
+  {% endfor %}
+  {% if newer or older %}
+  <nav class="post-nav" aria-label="Adjacent articles">
+    {% if older %}
+      <a href="{{ older.url }}"><span class="dir sc">← Earlier</span>{{ older.data.title }}</a>
+    {% endif %}
+    {% if newer %}
+      <a class="next" href="{{ newer.url }}"><span class="dir sc">Later →</span>{{ newer.data.title }}</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</article>

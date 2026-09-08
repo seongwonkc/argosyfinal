@@ -14,7 +14,7 @@ excerpt: >-
   continent that long treated air conditioning as an American indulgence is
   buying units by the million. The machine that saves lives in a heat wave
   also warms the planet that causes them — a loop with no villain and no easy
-  exit, which is exactly why it''s worth understanding.
+  exit, which is exactly why it's worth understanding.
 image: /assets/images/2026/the-air-conditioner-paradox.jpg
 image_credit: Julien — Pexels
 ---

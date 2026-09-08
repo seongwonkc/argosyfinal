@@ -12,7 +12,7 @@ tags:
 excerpt: >-
   Every August, the dread arrives on schedule — and every August, it gets
   misdiagnosed. The unsettled feeling of a new school year is mostly not fear
-  of the work. It''s something more interesting, and understanding the
+  of the work. It's something more interesting, and understanding the
   difference changes what actually helps.
 image: >-
   /assets/images/2026/back-to-school-anxiety-isnt-what-you-think.jpg

@@ -11,7 +11,7 @@ tags:
   - sports
 excerpt: >-
   The World Cup group stage has delivered its verdicts, and one of them broke
-  this masthead''s collective heart: Korea is out — on a benching nobody can
+  this masthead's collective heart: Korea is out — on a benching nobody can
   explain, a result nobody saw coming, and a mathematical twist from another
   group entirely. The new table convenes to process it, and everything else
   the first two weeks taught.

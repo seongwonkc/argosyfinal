@@ -16,11 +16,15 @@ const slugify = (s) =>
     .replace(/\s+/g, "-")
     .replace(/^-+|-+$/g, "") || "uncategorized";
 
-// Map a raw category string → canonical name via aliases map
+// Map a raw category string → canonical name via aliases map.
+// Aliases are keyed in slug form ("sports-analysis"), but raw categories
+// arrive in space form ("Sports Analysis") — check both, else the alias
+// silently misses and intended merges (sports, health & medicine) never happen.
 function canonicalName(raw) {
   if (!raw) return "";
   const key = String(raw).trim().toLowerCase();
-  return (catMap.aliases && catMap.aliases[key]) || key;
+  const aliases = catMap.aliases || {};
+  return aliases[key] || aliases[slugify(key)] || key;
 }
 
 // Title-case for display (keeps small words)
@@ -85,6 +89,10 @@ function viewOf(item, extraData = {}) {
 module.exports = function (eleventyConfig) {
   /* ---- Filters ---- */
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
+  eleventyConfig.addFilter("readingTime", (html) => {
+    const words = String(html || "").replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
+    return `${Math.max(1, Math.round(words / 230))} min read`;
+  });
   eleventyConfig.addFilter("exceptByUrl", (arr, url) => (arr || []).filter((x) => x && x.url !== url));
   eleventyConfig.addFilter("slug", slugify);
   eleventyConfig.addFilter("isoDate", isoDate);

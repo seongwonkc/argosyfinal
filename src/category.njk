@@ -9,20 +9,32 @@ eleventyComputed:
   title: "{{ cat.name }}"
 ---
 
-<h1>{{ cat.name }}</h1>
+<header class="cat-head cat-{{ cat.key }}">
+  <h1>{{ cat.name }}</h1>
+  <p class="count sc">{{ cat.count }} {% if cat.count == 1 %}story{% else %}stories{% endif %} · newest first</p>
+</header>
 
-<div class="grid">
+<ol class="index-list cat-{{ cat.key }}" reversed>
   {% for post in cat.items %}
-    <article class="card">
-      <a href="{{ post.url }}">
-        <img src="{{ post.data.image or '/assets/fallback-thumb.jpg' }}" alt="{{ post.data.title }}">
-        <h3>{{ post.data.title }}</h3>
-      </a>
-      {% if post.date %}
-        <p class="meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time></p>
-      {% endif %}
-    </article>
+    <li>
+      <figure class="thumb">
+        <a href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ post.data.image or '/assets/fallback.svg' }}" alt=""
+               loading="lazy" decoding="async" width="480" height="320">
+        </a>
+      </figure>
+      <div>
+        <h2 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        {% if post.data.excerpt %}
+          <p class="dek">{{ post.data.excerpt | truncate(190) }}</p>
+        {% endif %}
+        <div class="meta">
+          {% if post.data.author %}{{ post.data.author }} · {% endif %}
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+        </div>
+      </div>
+    </li>
   {% else %}
-    <p>No articles yet in this category.</p>
+    <li><p>No articles yet in this category.</p></li>
   {% endfor %}
-</div>
+</ol>

@@ -11,9 +11,9 @@ tags:
   - editorial
 excerpt: >-
   A new school year, a new masthead, and a tradition too good to retire: the
-  editors convene to declare what they''ll be watching this year, what they''re
+  editors convene to declare what they'll be watching this year, what they're
   afraid of getting wrong, and what they owe the table that came before. The
-  Argosy''s fourth year starts now.
+  Argosy's fourth year starts now.
 image: /assets/images/2026/roundtable-the-torch-passes.jpg
 image_credit: Somogro Bangladesh — Pexels
 ---

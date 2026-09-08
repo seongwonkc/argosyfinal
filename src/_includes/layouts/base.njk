@@ -3,14 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or 'The Argosy' }}</title>
+    <title>{% if title and title != 'Home' %}{{ title }} — The Argosy{% else %}The Argosy — An Independent Student Newspaper{% endif %}</title>
+    <meta name="description" content="{{ (excerpt or description or 'The Argosy is an independent student newspaper — politics, culture, economics, sustainability, health, psychology, and sports, filed from five time zones.') | striptags | truncate(300) }}">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
+    <meta property="og:site_name" content="The Argosy">
+    <meta property="og:title" content="{{ title or 'The Argosy' }}">
+    <meta property="og:type" content="{% if layout == 'layouts/post.njk' or image %}article{% else %}website{% endif %}">
+    <meta property="og:image" content="https://theargosy.org{{ image or '/assets/images/seal.png' }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/base.css">
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
     {% include "partials/header.njk" %}
 
-    <main class="site-content">
+    <main id="content" class="wrap">
       {{ content | safe }}
     </main>
 

@@ -13,7 +13,7 @@ excerpt: >-
   With the first daily weight-loss pill now on pharmacy shelves, obesity
   medicine has entered its mass-market era. The most interesting effects may
   be psychological — because a small tablet is quietly dismantling one of our
-  culture''s oldest and cruelest moral theories: that appetite is character.
+  culture's oldest and cruelest moral theories: that appetite is character.
 image: /assets/images/2026/the-willpower-myth.jpg
 image_credit: Pixabay — Pexels
 ---

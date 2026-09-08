@@ -14,7 +14,7 @@ excerpt: >-
   Spain conquered the World Cup with ten-man Argentina defiant to the last.
   Sinner kept Wimbledon. A New Zealander stole the Open with a final-round 62.
   And a Korean golfer shot the lowest round in the history of major
-  championship golf — men''s or women''s. The table convenes to sort a summer
+  championship golf — men's or women's. The table convenes to sort a summer
   that refused to pace itself.
 image: >-
   /assets/images/2026/roundtable-the-summer-everything-happened.jpg

@@ -13,7 +13,7 @@ excerpt: >-
   In a Massachusetts hall, engineers are bolting together magnets stronger
   than any ever used in a fusion device, racing to switch on the machine that
   could settle a seventy-year argument. And this summer, for the first time,
-  pension funds — the world''s most unexcitable money — placed a
+  pension funds — the world's most unexcitable money — placed a
   billion-dollar bet on the answer.
 image: /assets/images/2026/the-twenty-tesla-bet.jpg
 image_credit: Killian Eon — Pexels

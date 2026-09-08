@@ -4,247 +4,130 @@ title: Meet the Team
 permalink: /team/index.html
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ title }} – The Argosy</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Newsreader:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --maxw: 1120px;
-      --ink: #111;
-      --muted: #555;
-      --rule: #e6e6e6;
-      --gap: 1rem;
-      --card-bg: #fff;
-    }
+<div class="team-page">
+  <h1>Meet the Team</h1>
+  <p class="team-intro">
+    <em>The Argosy</em> is an independent newspaper written by student journalists filing from five time zones.
+    Every crew member below is real; every portrait is, admittedly, about sixteen pixels of real.
+  </p>
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: #fff;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(16px, 0.9vw + 14px, 18px);
-      line-height: 1.55;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    header.site, main, footer.site {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    header.site { border-bottom: 1px solid var(--rule); }
-    .brand {
-      font-family: "Newsreader","EB Garamond",serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem,3vw,2.2rem);
-    }
-
-    h1, h2, h3 {
-      font-family: "Newsreader","EB Garamond",serif;
-      font-weight: 700;
-      letter-spacing: .006em;
-      line-height: 1.12;
-      text-wrap: balance;
-    }
-    h1 { font-size: clamp(1.9rem,3.6vw,2.6rem); margin: .35rem 0 .6rem; }
-    h2 { font-size: clamp(1.2rem,2.2vw,1.4rem); margin: 0 0 .25rem; }
-    h3 { font-size: clamp(1.05rem,1.6vw,1.15rem); margin: .15rem 0 .35rem; color: #222; }
-
-    .intro {
-      max-width: 72ch;
-      margin-top: .25rem;
-      color: #222;
-    }
-
-    .section-title {
-      font-size: clamp(1.35rem,2.4vw,1.7rem);
-      margin: 0 0 .35rem;
-    }
-    .section-note {
-      color: var(--muted);
-      max-width: 72ch;
-      margin: 0 0 .5rem;
-    }
-
-    .team-grid {
-      display: grid;
-      gap: var(--gap);
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      margin-top: 1rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--rule);
-      border-radius: 14px;
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      grid-template-areas:
-        "avatar name"
-        "avatar role"
-        "bio bio";
-      column-gap: .9rem;
-      row-gap: .25rem;
-      transition: transform .2s ease;
-    }
-    .card:hover { transform: translateY(-2px); }
-
-    .avatar {
-      grid-area: avatar;
-      width: 72px;
-      height: 72px;
-      border-radius: 999px;
-      background: #ddd url('https://via.placeholder.com/72?text=👤') center/cover no-repeat;
-    }
-
-    .name { grid-area: name; }
-    .role { grid-area: role; color: var(--muted); font-size: .95rem; }
-    .bio { grid-area: bio; margin-top: .35rem; color: #222; }
-    .bio p { margin: 0 0 .75rem; }
-
-    .college {
-      display: inline-block;
-      margin-top: .15rem;
-      font-size: .9rem;
-      color: #333;
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      padding: .05rem .6rem;
-      background: #fafafa;
-    }
-
-    .section { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-    footer.site { border-top: 1px solid var(--rule); margin-top: 2rem; color: #444; }
-  </style>
-</head>
-
-<body>
-  <header class="site">
-    <div class="brand"><a href="/">The Argosy</a></div>
-  </header>
-
-  <main id="content">
-    <h1>Meet the Team</h1>
-    <p class="intro">
-      Welcome to <em>The Argosy</em>, an independent newspaper dedicated to delivering insightful analysis on the issues that shape our world. Our team is composed of dedicated student journalists from around the globe, each bringing a unique perspective and a commitment to rigorous, high-quality reporting.
-    </p>
-
-    <section class="section">
-      <h2 class="section-title">The Editorial Board</h2>
-      <div class="team-grid">
+  <section class="crew-section" aria-labelledby="board-title">
+    <h2 id="board-title">The Editorial Board</h2>
+    <div class="crew-grid">
       {% set people = [
         {
           name: "Ethan Yang",
           role: "Editor-in-Chief",
+          avatar: "/assets/images/avatars/ethan-yang.png",
           bio: "The Argosy's second Editor-in-Chief, Ethan wrote the paper's sustainability column for three years before taking the helm in 2026. A student at Fayston Prep, he bridges the gap between environmentalism as a philosophy and the practical, engineering-based solutions required to address climate change. He still cannot resist an energy story, and the masthead has stopped trying to make him."
         },
         {
           name: "Gawon Ryu",
           role: "Psychology Editor",
+          avatar: "/assets/images/avatars/gawon-ryu.png",
           bio: "Attending Pomfret School, Gawon leads the desk she made the paper's most-read. Her writing deconstructs complex social phenomena — from doomscrolling and Olympic tears to the willpower myth — into their core psychological components. She is particularly interested in how media environments shape attention, emotion, and our understanding of ourselves, and in reporting the evidence even when it dismantles her own priors."
         },
         {
           name: "David Lee",
           role: "Sustainability Editor",
+          avatar: "/assets/images/avatars/david-lee.png",
           bio: "David covers the energy transition from the ground up — home batteries and virtual power plants, broken disaster statistics, the solar century, and the machines rebuilding the grid. A staff writer since 2025 and editor since 2026, he writes about infrastructure at human scale: who builds it, who pays for it, and who gets left off it. His rule for every milestone and every miracle alike: audit it."
         },
         {
           name: "Patrick Kim",
           role: "Culture Editor",
+          avatar: "/assets/images/avatars/patrick-kim.png",
           bio: "A staff writer for culture since 2025 and editor since 2026, Patrick writes about culture as an industry and an ecosystem — the death of the monoculture, the AI remix wars, the halftime show that became the main event. He is interested in how attention is assembled, bought, and occasionally shared, and in the rare moments when a fragmented audience still gathers around one text."
         },
         {
           name: "Olivia Kim",
           role: "Science & Health Writer",
+          avatar: "/assets/images/avatars/olivia-kim.png",
           bio: "A student at Pomfret School, Olivia joined The Argosy in 2026 and covers science and health with a naturalist's eye: follow the mechanism. Her work traces the verbs of biology — transmit, mutate, immunize, erode — through public health, medicine, and the systems that keep both running. She believes thresholds don't negotiate, and writes accordingly."
         }
       ] %}
-
       {% for p in people %}
-        <article class="card">
-          <div class="avatar"></div>
-          <div class="name"><h2>{{ p.name }}</h2></div>
-          <div class="role">{{ p.role }}</div>
-          <div class="bio"><p>{{ p.bio | safe }}</p></div>
+        <article class="crew-card">
+          <img class="avatar" src="{{ p.avatar }}" alt="Pixel-art portrait of {{ p.name }}" width="96" height="96" loading="lazy">
+          <div class="id">
+            <h3>{{ p.name }}</h3>
+            <div class="role">{{ p.role }}</div>
+          </div>
+          <div class="bio"><p>{{ p.bio }}</p></div>
         </article>
       {% endfor %}
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2 class="section-title">Argosy Alumni</h2>
-      <p class="section-note">
-        The founding cohort built this paper between 2023 and 2026 and graduated in the spring of 2026. Their archives remain permanent — and so does their habit of reading everything we publish within hours.
-      </p>
-      <div class="team-grid">
+  <section class="crew-section" aria-labelledby="alumni-title">
+    <h2 id="alumni-title">Argosy Alumni</h2>
+    <p class="crew-note">
+      The founding cohort built this paper between 2023 and 2026 and graduated in the spring of 2026.
+      Their archives remain permanent — and so does their habit of reading everything we publish within hours.
+    </p>
+    <div class="crew-grid">
       {% set alumni = [
         {
           name: "Minwoo Jung",
           role: "Founding Editor-in-Chief · Politics Editor, 2023–2026",
           college: "Northwestern University",
+          avatar: "/assets/images/avatars/minwoo-jung.png",
           bio: "Founded The Argosy from Seoul and anchored its politics desk with a realist's eye for state power, elections, and diplomatic flashpoints. He is the author of several books available on Amazon: “Through the Canvas,” “Civics for Cynics,” and “Lions Don’t Roar in Parliament.”"
         },
         {
           name: "Yehee Jung",
           role: "Science & Health Editor, 2023–2026",
           college: "University of Southern California",
+          avatar: "/assets/images/avatars/yehee-jung.png",
           bio: "Built the paper's science and health desk from NLCS Jeju, deconstructing public health, biology, and medicine with a passion for systemic analysis. Now on the pre-med path, she taught this paper that a column could be a lab notebook."
         },
         {
           name: "Saerom Kim",
           role: "Culture Editor, 2023–2026",
           college: "UC Berkeley",
+          avatar: "/assets/images/avatars/saerom-kim.png",
           bio: "Wrote the paper's defining work — the six-part “Koreans in Georgia” series — from Statesboro, Georgia, blending personal narrative with deep, evidence-based ethnography of the American South and the community that carried her."
         },
         {
           name: "Yonghyuk Choi",
           role: "Sports Editor, 2023–2026",
           college: "University of Illinois Urbana-Champaign",
+          avatar: "/assets/images/avatars/yonghyuk-choi.png",
           bio: "Covered golf, tennis, and baseball with the conviction that the game is never just the game — from the data revolution and the golf wars to a World Series that two countries stayed up for. His failed predictions remain published, per house rules, and he remains proud of most of them."
         },
         {
           name: "Anthony Min",
           role: "Economics & Finance Editor, 2023–2026",
           college: "Vanderbilt University",
+          avatar: "/assets/images/avatars/anthony-min.png",
           bio: "Delivered direct, unsentimental analysis of financial mechanics and corporate strategy — from the end of easy money to the ouroboros economy of the AI boom. House catchphrase, now permanently on loan to the masthead: follow the incentives."
         },
         {
           name: "Jioh Lee",
           role: "International & Education Writer, 2025–2026",
           college: "Sungkyunkwan University",
+          avatar: "/assets/images/avatars/jioh-lee.png",
           bio: "Wrote on global education, the Gulf, and growing up between systems, drawing on twelve years in Abu Dhabi. Her essays on learning in translation and the Gulf's great education experiment gave the paper its widest lens in a single season."
         },
         {
           name: "Kyusung Lee",
           role: "Sports & Society Contributor, 2025–2026",
           college: "UC Irvine",
+          avatar: "/assets/images/avatars/kyusung-lee.png",
           bio: "Wrote from Texas at the intersection of sports, religion, and community — Friday-night lights, the chapel in the clubhouse, the portal and the paycheck. Agnostic with a deep appreciation for interfaith dialogue, he covered belonging wherever it gathered, with curiosity, empathy, and a grounded sense of humor."
         }
       ] %}
-
       {% for p in alumni %}
-        <article class="card">
-          <div class="avatar"></div>
-          <div class="name"><h2>{{ p.name }}</h2></div>
-          <div class="role">{{ p.role }}<br><span class="college">{{ p.college }}</span></div>
-          <div class="bio"><p>{{ p.bio | safe }}</p></div>
+        <article class="crew-card">
+          <img class="avatar" src="{{ p.avatar }}" alt="Pixel-art portrait of {{ p.name }}" width="96" height="96" loading="lazy">
+          <div class="id">
+            <h3>{{ p.name }}</h3>
+            <div class="role">{{ p.role }}</div>
+            <span class="college">{{ p.college }}</span>
+          </div>
+          <div class="bio"><p>{{ p.bio }}</p></div>
         </article>
       {% endfor %}
-      </div>
-    </section>
-  </main>
-
-  <footer class="site">
-    <p>&copy; {{ page.date | date('yyyy') }} The Argosy. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+    </div>
+  </section>
+</div>

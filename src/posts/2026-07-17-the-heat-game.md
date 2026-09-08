@@ -10,8 +10,8 @@ tags:
   - heat
   - sports
 excerpt: >-
-  As the World Cup reaches its final days, the tournament''s most consistent
-  opponent hasn''t been any team — it''s been the thermometer. Afternoon
+  As the World Cup reaches its final days, the tournament's most consistent
+  opponent hasn't been any team — it's been the thermometer. Afternoon
   kickoffs in a record-breaking summer have turned elite sport into a rolling
   experiment in human thermal limits, and the sports world is quietly
   redesigning itself around a warming calendar.

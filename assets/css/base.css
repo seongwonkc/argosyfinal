@@ -896,13 +896,18 @@ td .lines { margin: 0; }
 .workbook-cover h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 0.5rem; }
 .workbook-toc { max-width: 34rem; margin: 1.5rem auto 0; text-align: left; }
 .workbook .worksheet { border-top: 1px solid var(--rule); }
+.workbook-foreword { max-width: 40rem; margin: 0 auto 2.5rem; padding: 2rem 0; border-top: 1px solid var(--rule); font-size: 1.08rem; line-height: 1.65; }
+.workbook-foreword h2 { font-size: 1.6rem; margin: 0 0 1rem; }
+.workbook-foreword p { margin: 0 0 1em; }
+.workbook-foreword .sig { margin-top: 1.5rem; }
 @media print {
   @page { margin: 16mm 14mm; }
   body:has(.worksheet) > :not(main), body:has(.worksheet) .skip-link { display: none !important; }
   body:has(.worksheet) { background: #fff; }
   body:has(.worksheet) main { max-width: none; padding: 0; }
   .worksheet { max-width: none; padding: 0; }
-  .worksheet + .worksheet, .workbook-cover + .worksheet { break-before: page; }
+  .worksheet + .worksheet, .workbook-cover + .worksheet, .workbook-foreword, .workbook-foreword + .worksheet { break-before: page; }
+  .workbook-foreword { border-top: 0; padding-top: 18mm; }
   .answer-key { break-before: page; background: none; }
   .ws-body h2, .ws-body table tr { break-inside: avoid; break-after: avoid; }
   .lines { break-inside: avoid; }

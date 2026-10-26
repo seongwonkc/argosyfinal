@@ -13,6 +13,14 @@ permalink: /about/nie/workbook/
       {% for s in sheets %}<li><a href="{{ s.url }}">{{ s.data.title }}</a> <span class="sc">&middot; {{ s.data.editor }}</span></li>{% endfor %}
     </ol>
   </section>
+  <section class="workbook-foreword">
+    <h2>A Note Before You Begin</h2>
+    <p>Every article in this workbook was written by a student. Not a professional pretending to be one, and not a textbook voice: a teenager who picked a question, chased it down, and put their name on the answer.</p>
+    <p>That is why this program matters to me. The question I keep coming back to, in my own writing and in the citizen-science project I started, is why people show up for something. Why does a volunteer log a jellyfish sighting? Why does a reader come back to a paper written by students in five time zones? The answer I keep finding is simple: people show up when someone takes them seriously first. <em>The Argosy</em>'s founders did that for me. When I became Editor-in-Chief, I wanted to pass it further down.</p>
+    <p>These worksheets are how we do that. They don't ask you to agree with us. Many of them ask what you think, and a good argument counts either way. Read the short version first, then the real article when you're ready. Underline what you doubt. Write your report as if it might be published, because someday it might be.</p>
+    <p>To the teachers and parents bringing us into the room: thank you. To the students: welcome aboard.</p>
+    <p class="sig">&mdash; <strong>Ethan Yang</strong>, Editor-in-Chief</p>
+  </section>
   {% for s in sheets %}
     {% set ws = s.data %}{% set wsContent = s.templateContent %}
     {% include "partials/worksheet-body.njk" %}

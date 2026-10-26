@@ -25,6 +25,7 @@
       <ul>
         <li><a href="/about/">About us</a></li>
         <li><a href="/team/">Meet the team</a></li>
+        {% if nie.live or eleventy.env.runMode == "serve" %}<li><a href="/about/nie/">Newspaper in Education</a></li>{% endif %}
         <li><a href="/join/">Join us</a></li>
         <li><a href="mailto:editors@theargosy.org">editors@theargosy.org</a></li>
       </ul>

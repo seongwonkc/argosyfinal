@@ -191,6 +191,17 @@ module.exports = function (eleventyConfig) {
     return displayDate(d, locale);
   });
 
+  /* ---- Drafts ----
+     Production builds skip anything marked `draft: true`, any post dated in
+     the future, and the NIE page until src/_data/nie.json says live. The dev
+     server (`npm run dev`) still renders them so they can be previewed. */
+  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+    if (process.env.ELEVENTY_RUN_MODE !== "build") return;
+    if (data.draft === true) return false;
+    if (data.nieProgramPage && !(data.nie && data.nie.live)) return false;
+    if (data.layout === "layouts/post.njk" && data.date && new Date(data.date) > new Date()) return false;
+  });
+
   /* ---- Expose normalizeCategories to Nunjucks ---- */
   eleventyConfig.addJavaScriptFunction("normalizeCategories", normalizeCategories);
   eleventyConfig.addNunjucksGlobal("normalizeCategories", normalizeCategories);

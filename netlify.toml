@@ -18,3 +18,75 @@
   from = "/category/public-health/*"
   to = "/category/health-and-medicine/"
   status = 301
+
+# Ethan Yang Sustainability duplicates (2026-10 dedupe): the earlier copies
+# were removed; the later-dated copies are kept.
+[[redirects]]
+  from = "/posts/2023-08-15-engineering-a-cooler-planet-the-hope-and-hype-of-carbon-capture/*"
+  to = "/posts/2024-08-15-engineering-a-cooler-planet-the-hope-and-hype-of-carbon-capture/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2023-09-20-beyond-the-blue-bin-deconstructing-the-myth-of-a-truly-circular-economy/*"
+  to = "/posts/2024-08-28-beyond-the-blue-bin-deconstructing-the-myth-of-a-truly-circular-economy/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2023-11-05-can-we-drink-the-sea-the-geopolitical-gamble-of-desalination/*"
+  to = "/posts/2024-09-18-can-we-drink-the-sea-the-geopolitical-gamble-of-desalination/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2023-12-20-the-dubai-agreement-was-cop28s-transition-away-a-landmark-or-a-letdown/*"
+  to = "/posts/2024-10-15-the-dubai-agreement-was-cop28s-transition-away-a-landmark-or-a-letdown/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-01-25-our-ev-addiction-has-a-dirty-secret-the-true-environmental-cost-of-lithium-mining/*"
+  to = "/posts/2024-10-29-our-ev-addiction-has-a-dirty-secret-the-true-environmental-cost-of-lithium-mining/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-03-10-why-the-world-is-betting-billions-on-green-hydrogen/*"
+  to = "/posts/2024-11-20-why-the-world-is-betting-billions-on-green-hydrogen/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-04-18-everyone-wants-green-energy-nobody-wants-to-see-it-solving-the-nimby-problem/*"
+  to = "/posts/2024-12-18-everyone-wants-green-energy-nobody-wants-to-see-it-solving-the-nimby-problem/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-05-22-decoding-the-esg-mirage-a-guide-to-spotting-corporate-greenwashing/*"
+  to = "/posts/2025-01-15-decoding-the-esg-mirage-a-guide-to-spotting-corporate-greenwashing/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-07-30-architecture-against-the-apocalypse-designing-the-climate-resilient-city/*"
+  to = "/posts/2025-01-29-architecture-against-the-apocalypse-designing-the-climate-resilient-city/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-08-14-the-quiet-revolution-beneath-our-feet-how-regenerative-agriculture-fights-climate-change/*"
+  to = "/posts/2025-02-19-the-quiet-revolution-beneath-our-feet-how-regenerative-agriculture-fights-climate-change/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-10-29-is-nuclear-powers-future-small-modular-and-sitting-in-your-town/*"
+  to = "/posts/2025-03-12-is-nuclear-powers-future-small-modular-and-sitting-in-your-town/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2024-11-15-the-burger-in-the-bioreactor-unpacking-the-sustainability-claims-of-cultured-meat/*"
+  to = "/posts/2025-03-26-the-burger-in-the-bioreactor-unpacking-the-sustainability-claims-of-cultured-meat/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2025-01-20-building-a-greener-world-one-brick-at-a-time-breakthroughs-in-sustainable-concrete-and-steel/*"
+  to = "/posts/2025-04-16-building-a-greener-world-one-brick-at-a-time-breakthroughs-in-sustainable-concrete-and-steel/"
+  status = 301
+
+[[redirects]]
+  from = "/posts/2025-02-12-putting-a-price-tag-on-nature-the-dangerous-economics-of-valuing-biodiversity/*"
+  to = "/posts/2025-05-14-putting-a-price-tag-on-nature-the-dangerous-economics-of-valuing-biodiversity/"
+  status = 301

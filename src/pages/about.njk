@@ -25,11 +25,17 @@ permalink: /about/index.html
   <p>
     The Argosy covers politics, culture, sports, health, economics &amp; finance, business, technology, sustainability, and student affairs. We welcome diverse viewpoints and aim to model good-faith argument—firm in judgment, fair in tone.
   </p>
+  <p>500+ monthly readers</p>
 
   <h2>How We Work</h2>
   <p>
     Writers pitch, revise, and fact-check with editors in a process designed to mirror professional newsrooms. Mentorship is hands-on. Feedback is candid. Publication is earned.
   </p>
+  {% if nie.live or eleventy.env.runMode == "serve" %}
+  <p>
+    The paper also runs a <a href="/about/nie/">Newspaper in Education program</a>.
+  </p>
+  {% endif %}
 
   <h2>Why “Argosy”?</h2>
   <p>

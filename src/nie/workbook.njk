@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Newspaper in Education Workbook
+permalink: /about/nie/workbook/
+---
+{% set sheets = collections.worksheet | sort(false, false, "data.order") %}
+<div class="workbook">
+  <section class="workbook-cover">
+    <p class="sc">The Argosy &middot; Newspaper in Education</p>
+    <h1>The Argosy Workbook</h1>
+    <p class="lede">Real articles by student journalists, turned into worksheets for elementary and middle school readers. Free to print and share.</p>
+    <ol class="workbook-toc">
+      {% for s in sheets %}<li><a href="{{ s.url }}">{{ s.data.title }}</a> <span class="sc">&middot; {{ s.data.editor }}</span></li>{% endfor %}
+    </ol>
+  </section>
+  {% for s in sheets %}
+    {% set ws = s.data %}{% set wsContent = s.templateContent %}
+    {% include "partials/worksheet-body.njk" %}
+  {% endfor %}
+</div>

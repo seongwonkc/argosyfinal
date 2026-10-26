@@ -868,3 +868,43 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
   .folio, .section-nav, .site-footer, .related, .post-nav, .skip-link { display: none; }
   body { font-size: 11pt; }
 }
+
+/* ---------- Newspaper in Education worksheets ---------- */
+.worksheet { max-width: 46rem; margin-inline: auto; padding-block: clamp(1.4rem, 3.5vw, 2.2rem) 2rem; }
+.ws-head { border-bottom: 3px double var(--ink); padding-bottom: 1rem; margin-bottom: 1.4rem; }
+.ws-kicker { color: var(--flag, var(--accent)); margin: 0 0 0.3rem; }
+.ws-head h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; margin: 0 0 0.6rem; }
+.ws-source { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.4rem; }
+.ws-source .avatar { border-radius: 50%; flex: none; }
+.ws-source a { color: var(--accent); }
+.ws-meta { color: var(--ink-2); font-size: 0.95rem; margin: 0 0 1rem; }
+.ws-name { display: flex; gap: 2rem; }
+.ws-name span { flex: 1; border-bottom: 1px solid var(--ink); padding-bottom: 0.2rem; font-size: 0.9rem; color: var(--ink-2); }
+.ws-name span:last-child { flex: 0 0 9rem; }
+.ws-body h2 { font-size: 1.35rem; margin: 1.6em 0 0.5em; color: var(--flag, var(--ink)); border-bottom: 1px solid var(--rule); padding-bottom: 0.2rem; }
+.ws-body p { margin: 0 0 0.8em; }
+.ws-body table { width: 100%; border-collapse: collapse; margin: 0 0 1em; }
+.ws-body th, .ws-body td { border: 1px solid var(--rule); padding: 0.5rem 0.6rem; vertical-align: top; text-align: left; }
+.ws-body td:first-child { width: 40%; }
+.ws-body ul { padding-left: 1.2rem; }
+.lines { margin: 0.2rem 0 1rem; }
+.lines i { display: block; height: 2rem; border-bottom: 1px solid #b9c0c8; }
+td .lines { margin: 0; }
+.answer-key { margin-top: 2.5rem; padding: 1rem 1.2rem; border: 1px dashed var(--ink-2); background: color-mix(in srgb, var(--paper) 92%, var(--ink)); }
+.answer-key h2 { margin-top: 0; }
+.workbook-cover { text-align: center; padding-block: 3rem; }
+.workbook-cover h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 0.5rem; }
+.workbook-toc { max-width: 34rem; margin: 1.5rem auto 0; text-align: left; }
+.workbook .worksheet { border-top: 1px solid var(--rule); }
+@media print {
+  @page { margin: 16mm 14mm; }
+  body:has(.worksheet) > :not(main), body:has(.worksheet) .skip-link { display: none !important; }
+  body:has(.worksheet) { background: #fff; }
+  body:has(.worksheet) main { max-width: none; padding: 0; }
+  .worksheet { max-width: none; padding: 0; }
+  .worksheet + .worksheet, .workbook-cover + .worksheet { break-before: page; }
+  .answer-key { break-before: page; background: none; }
+  .ws-body h2, .ws-body table tr { break-inside: avoid; break-after: avoid; }
+  .lines { break-inside: avoid; }
+  .ws-source a { color: inherit; text-decoration: none; }
+}

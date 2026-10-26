@@ -1,0 +1,20 @@
+{# Expects `ws` (worksheet data) and `wsContent` (rendered body) when included
+   from the workbook; falls back to the current page's own data. #}
+{% set w = ws or { title: title, article_title: article_title, article_url: article_url, editor: editor, role: role, desk: desk, grades: grades, minutes: minutes } %}
+{% set body = wsContent or content %}
+{% set editorInfo = authors[w.editor] %}
+<article class="worksheet cat-{{ w.desk | slug }}">
+  <header class="ws-head">
+    <p class="ws-kicker sc">The Argosy &middot; Newspaper in Education</p>
+    <h1>{{ w.title }}</h1>
+    <p class="ws-source">
+      {% if editorInfo and editorInfo.avatar %}<img class="avatar" src="{{ editorInfo.avatar }}" alt="" width="44" height="44">{% endif %}
+      <span>Built from <a href="{{ w.article_url }}"><em>{{ w.article_title }}</em></a> by {{ w.editor }}, {{ w.role }}</span>
+    </p>
+    <p class="ws-meta">{{ w.grades }} &middot; About {{ w.minutes }} minutes &middot; ★ everyone &middot; ★★ older readers</p>
+    <div class="ws-name"><span>Name</span><span>Date</span></div>
+  </header>
+  <div class="ws-body">
+    {{ body | worksheetLines | safe }}
+  </div>
+</article>

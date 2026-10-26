@@ -180,6 +180,11 @@ module.exports = function (eleventyConfig) {
     closeChat();
     return out;
   });
+  // Worksheet writing space: <div class="lines" style="--n:3"></div> becomes
+  // three ruled rows. Real borders print; background gradients get dropped.
+  eleventyConfig.addFilter("worksheetLines", (html) =>
+    String(html || "").replace(/<div class="lines" style="--n:(\d+)"><\/div>/g,
+      (_, n) => `<div class="lines">${"<i></i>".repeat(Number(n))}</div>`));
   eleventyConfig.addFilter("exceptByUrl", (arr, url) => (arr || []).filter((x) => x && x.url !== url));
   eleventyConfig.addFilter("slug", slugify);
   eleventyConfig.addFilter("isoDate", isoDate);
@@ -195,11 +200,16 @@ module.exports = function (eleventyConfig) {
      Production builds skip anything marked `draft: true`, any post dated in
      the future, and the NIE page until src/_data/nie.json says live. The dev
      server (`npm run dev`) still renders them so they can be previewed. */
-  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+  // A bracketed all-caps placeholder like [N] or [PARTNER SCHOOL(S)], not a
+  // markdown link. Pages that would publish with one fail the build.
+  const PLACEHOLDER = /\[(?=[^\]]*[A-Z]{2}|N\])[A-Z0-9 ,.:\/&()'’—–+-]+\](?!\()/;
+  eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
     if (process.env.ELEVENTY_RUN_MODE !== "build") return;
     if (data.draft === true) return false;
     if (data.nieProgramPage && !(data.nie && data.nie.live)) return false;
     if (data.layout === "layouts/post.njk" && data.date && new Date(data.date) > new Date()) return false;
+    const ph = String(content || "").match(PLACEHOLDER);
+    if (ph) throw new Error(`${data.page.inputPath} still has the placeholder ${ph[0]}. Fill it in, or mark the page draft.`);
   });
 
   /* ---- Expose normalizeCategories to Nunjucks ---- */
@@ -268,7 +278,11 @@ module.exports = function (eleventyConfig) {
   });
 
   /* ---- Static / Dev server ---- */
-  eleventyConfig.addPassthroughCopy({ "assets/": "assets" });
+  // NIE worksheet PDFs ship only once the program page is live.
+  const nieLive = require("./src/_data/nie.json").live;
+  eleventyConfig.addPassthroughCopy({ "assets/": "assets" }, {
+    filter: (p) => nieLive || !String(p).replace(/\\/g, "/").startsWith("nie/"),
+  });
   eleventyConfig.addWatchTarget("assets/");
   eleventyConfig.setServerOptions({ showAllHosts: true, port: 8080 });
 

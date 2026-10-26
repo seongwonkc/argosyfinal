@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/worksheet.njk",
+  "tags": ["worksheet"],
+  "grades": "Grades 4–8",
+  "minutes": 45,
+  "permalink": "/about/nie/worksheets/{{ page.fileSlug }}/"
+}

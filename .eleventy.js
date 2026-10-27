@@ -185,6 +185,50 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("worksheetLines", (html) =>
     String(html || "").replace(/<div class="lines" style="--n:(\d+)"><\/div>/g,
       (_, n) => `<div class="lines">${"<i></i>".repeat(Number(n))}</div>`));
+  // Staff on the current masthead: alumni roles carry years ("2023–2026")
+  // or "Founding", current ones don't.
+  const isCurrentStaff = (name) => {
+    const a = chatAuthors[name];
+    return !!a && !/\d{4}|Founding/.test(a.role || "");
+  };
+  // Roundtable bylines list everyone ("By A, B, and C"); pull out the
+  // people we have portraits for, in byline order.
+  eleventyConfig.addFilter("participants", (byline) => {
+    const s = String(byline || "");
+    return Object.keys(chatAuthors)
+      .filter((n) => s.includes(n))
+      .sort((a, b) => s.indexOf(a) - s.indexOf(b))
+      .map((n) => ({ name: n, ...chatAuthors[n] }));
+  });
+  // Posts from the same calendar month in earlier years ("From the archive").
+  // Taken round-robin across years (newest year first) so every past
+  // October gets a slot before any year gets a second.
+  eleventyConfig.addFilter("sameMonthEarlier", (posts, ref) => {
+    const d = ref ? new Date(ref) : new Date();
+    const byYear = new Map();
+    for (const p of posts || []) {
+      const pd = new Date(p.date);
+      if (pd.getUTCMonth() !== d.getUTCMonth() || pd.getUTCFullYear() >= d.getUTCFullYear()) continue;
+      const y = pd.getUTCFullYear();
+      if (!byYear.has(y)) byYear.set(y, []);
+      byYear.get(y).push(p);
+    }
+    const years = [...byYear.keys()].sort((a, b) => b - a).map((y) => byYear.get(y));
+    const out = [];
+    for (let i = 0; years.some((list) => list[i]); i++) {
+      for (const list of years) if (list[i]) out.push(list[i]);
+    }
+    return out;
+  });
+  // The masthead date is the build date (the site rebuilds on every push).
+  eleventyConfig.addGlobalData("now", () => new Date());
+  eleventyConfig.addFilter("weekday", (value) => {
+    try {
+      return new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })
+        .format(value ? new Date(value) : new Date());
+    } catch { return ""; }
+  });
+  eleventyConfig.addFilter("exceptUrls", (arr, urls) => (arr || []).filter((x) => x && !(urls || []).includes(x.url)));
   eleventyConfig.addFilter("exceptByUrl", (arr, url) => (arr || []).filter((x) => x && x.url !== url));
   eleventyConfig.addFilter("slug", slugify);
   eleventyConfig.addFilter("isoDate", isoDate);
@@ -232,6 +276,29 @@ module.exports = function (eleventyConfig) {
           _allCategories: cats,
         });
       });
+  });
+
+  // Columnists rail: each current staff writer's newest solo column,
+  // newest first. Roundtables and editors' notes are left out.
+  eleventyConfig.addCollection("columnists", (api) => {
+    const posts = eleventyConfig.collections.posts(api) || [];
+    const seen = new Set();
+    const out = [];
+    for (const p of posts) {
+      const name = p.data.author;
+      const key = p.data._primaryCategoryKey;
+      if (!name || seen.has(name) || !isCurrentStaff(name)) continue;
+      if (key === "roundtable" || key === "communications") continue;
+      seen.add(name);
+      out.push({ name, ...chatAuthors[name], post: p });
+    }
+    // Each writer's last five solo pieces, so the front page can skip any
+    // already shown higher up and still give every columnist a slot.
+    for (const c of out) {
+      c.posts = posts.filter((p) => p.data.author === c.name &&
+        !["roundtable", "communications"].includes(p.data._primaryCategoryKey)).slice(0, 5);
+    }
+    return out;
   });
 
   // Map: key → array of posts in that category

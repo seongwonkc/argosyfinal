@@ -9,32 +9,84 @@ eleventyComputed:
   title: "{{ cat.name }}"
 ---
 
-<header class="cat-head cat-{{ cat.key }}">
-  <h1>{{ cat.name }}</h1>
-  <p class="count sc">{{ cat.count }} {% if cat.count == 1 %}story{% else %}stories{% endif %} · newest first</p>
-</header>
+{# Section front: the desk's name and its writers, a lead package, then
+   the full river, newest first. #}
+{% set lead = cat.items[0] %}
+{% set pair = cat.items.slice(1, 3) %}
+{% set river = cat.items.slice(3) %}
 
-<ol class="index-list cat-{{ cat.key }}" reversed>
-  {% for post in cat.items %}
-    <li>
-      <figure class="thumb">
-        <a href="{{ post.url }}" tabindex="-1" aria-hidden="true">
-          <img src="{{ post.data.image or '/assets/fallback.svg' }}" alt=""
-               loading="lazy" decoding="async" width="480" height="320">
+{% set writers = [] %}
+{% set writerNames = [] %}
+{% for p in cat.items %}
+  {% if p.data.author and authors[p.data.author] and p.data.author not in writerNames and writers.length < 8 %}
+    {% set writerNames = writerNames.concat([p.data.author]) %}
+    {% set writers = writers.concat([{ name: p.data.author, avatar: authors[p.data.author].avatar }]) %}
+  {% endif %}
+{% endfor %}
+
+<div class="section-front cat-{{ cat.key }}">
+  <header class="sf-head">
+    <h1>{{ cat.name }}</h1>
+    <div class="sf-meta">
+      {% if writers.length %}
+      <ul class="faces" aria-label="Writers on this desk">
+        {% for w in writers %}<li><img src="{{ w.avatar }}" alt="{{ w.name }}" title="{{ w.name }}" width="32" height="32" loading="lazy"></li>{% endfor %}
+      </ul>
+      {% endif %}
+      <p>{{ cat.count }} {% if cat.count == 1 %}story{% else %}stories{% endif %}{% if writers.length %} by {{ writers.length }} {% if writers.length == 1 %}writer{% else %}writers{% endif %}{% endif %}</p>
+    </div>
+  </header>
+
+  {% if lead %}
+  <div class="sf-top">
+    <article class="sf-lead">
+      <a class="thumb" href="{{ lead.url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ lead.data.image or '/assets/fallback.svg' }}" alt="" loading="eager" decoding="async" width="1200" height="800">
+      </a>
+      <h2 class="hed"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h2>
+      {% if lead.data.excerpt %}<p class="summary">{{ lead.data.excerpt }}</p>{% endif %}
+      <p class="byline">
+        {% if lead.data.author %}<span class="name">{{ lead.data.author | replace('By ', '') }}</span>{% endif %}
+        <time datetime="{{ lead.date | isoDate }}">{{ lead.date | displayDate('en-US') }}</time>
+      </p>
+    </article>
+    {% if pair.length %}
+    <div class="sf-pair">
+      {% for p in pair %}
+      <article>
+        <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="600" height="400">
         </a>
-      </figure>
-      <div>
-        <h2 class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        {% if post.data.excerpt %}
-          <p class="dek">{{ post.data.excerpt | truncate(190) }}</p>
-        {% endif %}
-        <div class="meta">
-          {% if post.data.author %}{{ post.data.author }} · {% endif %}
-          <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
+        <h2 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
+        <p class="byline">
+          {% if p.data.author %}<span class="name">{{ p.data.author | replace('By ', '') }}</span>{% endif %}
+          <time datetime="{{ p.date | isoDate }}">{{ p.date | displayDate('en-US') }}</time>
+        </p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if river.length %}
+  <section class="river" aria-labelledby="river-title">
+    <h2 class="river-title" id="river-title">Latest</h2>
+    <ol>
+      {% for p in river %}
+      <li>
+        <time class="river-date" datetime="{{ p.date | isoDate }}">{{ p.date | displayDate('en-US') }}</time>
+        <div class="river-text">
+          <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+          {% if p.data.excerpt %}<p class="summary">{{ p.data.excerpt | truncate(190) }}</p>{% endif %}
+          {% if p.data.author %}<p class="byline"><span class="name">{{ p.data.author | replace('By ', '') }}</span></p>{% endif %}
         </div>
-      </div>
-    </li>
-  {% else %}
-    <li><p>No articles yet in this category.</p></li>
-  {% endfor %}
-</ol>
+        <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="300" height="200">
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+</div>

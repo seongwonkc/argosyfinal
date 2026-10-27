@@ -33,15 +33,19 @@ politics `#8c2f2a` · culture `#7b3b72` · economics-and-finance `#8a5a13` · su
 
 ## Components
 
-- **Folio bar**: thin ink-navy strip; date + motto left, utility links right (paper text).
-- **Nameplate**: centered seal (engraved ship roundel, ~64px) above "The Argosy" in Newsreader 700, flanked by the motto in small caps; double "scotch" rule below.
-- **Section nav**: sticky hairline bar; small-caps links with 3px flag-colored underline on hover/current; horizontally scrollable on mobile; "More" → /categories/.
-- **Lead package** (home): image 3:2 left, kicker + hed + dek + byline right; "The Latest" list beneath the fold line.
-- **Section block** (home): flag-named header + hairline; one featured item (thumb left) + compact headline list. No uniform card grids.
-- **Byline row**: 28px pixel avatar (square, 4px radius, `image-rendering: pixelated`) + small-caps name + dateline + reading time. Roundtables use the ship seal as the avatar.
-- **Article page**: kicker → hed → dek (from `excerpt`) → byline row → hero figure with `image_credit` caption → drop-cap body → "Filed under" → related-by-flag → prev/next.
+Layout grammar (2026-10 redesign): a broadsheet front page in the NYT manner. Ruled columns, not cards: stories sit in a grid separated by 1px `--rule` hairlines, and each section opens on a 1px ink rule with its name in the section flag.
+
+- **Folio bar**: thin ink-navy strip; the date (inner pages) left; About · The Team · Join Us and an outlined **Newsletter** button right.
+- **Masthead (front page)**: three zones. Left ear: long-form date + "Filed from five time zones / Est. 2023". Center: seal and "The Argosy" (Newsreader 700) on one line. Right ear: a promo (the free Argosy Workbook while NIE is live, else Join). Motto in small caps beneath. Ears drop below 760px.
+- **Masthead (inner pages)**: compact centered seal + wordmark.
+- **Section nav**: sticky; desks in roman, then a hairline divider and the paper's other work in italic (The Roundtable, Worksheets, More). 3px flag underline on hover/current; 3px double ink rule beneath. Scrolls horizontally on mobile.
+- **Front page**: (1) top stories, 3fr, beside a Columnists rail, 1fr, split by a vertical hairline. Lead package = text left (desk label, hed, summary, byline with avatar), 3:2 picture right with credit; then three second-tier stories in ruled columns; then four text-only briefs. (2) Columnists rail: each current staff writer's newest piece not already on the page, with a 52px pixel avatar, name and role in small caps, headline in Newsreader italic; "From the Editor" note below. (3) "Beyond the news" band on `--wash` under a double ink rule: The Roundtable (participant avatar row), Newspaper in Education (a stack of worksheet sheets linking to the workbook), the Newsletter (inline Netlify form), Join the Crew; four ruled columns on desktop, two on tablet, stacked on phones. (4) Desk fronts in alternating layouts (A: big story left; B: big story right), three stories each. (5) From the Archive: this calendar month in earlier years, one per year first.
+- **Desk label**: small caps, flag color, above a headline only where stories from several desks share a row.
+- **Byline**: small-caps name + dateline in muted display type; optional 32px pixel avatar.
+- **Section front**: flag-colored section name with the desk's writers as an avatar row; lead package (2fr) beside two stacked stories (1fr); then a "Latest" river: dateline column, headline + summary + byline, thumbnail right.
+- **Article page**: left-aligned header in the reading column (desk link → hed → dek → hairline → byline row), hero figure wider than the column with a left-aligned credit, drop-cap body, then an author box (avatar + "X is The Argosy's [role]"), "Filed under" and a newsletter link, related-by-flag, prev/next.
 - **Team cards**: 96px pixel avatars; alumni cards add a college pill.
-- **Footer**: ink-navy; nameplate + motto, section index, pages/contact; colophon line.
+- **Footer**: newsletter band (email form) above the ink-navy footer: nameplate + motto, section index, pages/contact; colophon line.
 
 ## Motion
 

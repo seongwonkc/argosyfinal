@@ -1,45 +1,75 @@
-{# Masthead: folio bar → nameplate → scotch rule → sticky section nav #}
+{# Masthead. The front page gets the full nameplate with its two "ears";
+   every other page gets a compact one. Both share the folio bar and the
+   sticky section nav. #}
 {% set here = page.url or '/' %}
+{% set isFront = here == '/' %}
 
 <div class="folio">
   <div class="wrap">
-    <div class="folio-left">
-      <span>{% if page.date %}{{ page.date | displayDate('en-US') }}{% endif %}</span>
-      <span class="folio-motto">Independent student journalism, filed from five time zones · Est. 2023</span>
-    </div>
+    <span class="folio-date">{% if not isFront %}{{ now | weekday }}{% endif %}</span>
     <nav class="folio-nav" aria-label="About the paper">
       <a href="/about/" {% if here == '/about/' %}aria-current="page"{% endif %}>About</a>
       <a href="/team/" {% if here == '/team/' %}aria-current="page"{% endif %}>The Team</a>
       <a href="/join/" {% if here == '/join/' %}aria-current="page"{% endif %}>Join Us</a>
+      <a class="folio-cta" href="#newsletter-email">Newsletter</a>
     </nav>
   </div>
 </div>
 
-<header class="nameplate" role="banner">
-  <a href="/" class="brand" aria-label="The Argosy — home">
-    <img class="seal" src="/assets/images/seal.png" alt="" width="72" height="72">
+{% if isFront %}
+<header class="masthead" role="banner">
+  <div class="wrap masthead-row">
+    <div class="ear ear-left">
+      <p class="ear-date">{{ now | weekday }}</p>
+      <p>Filed from five time zones<br>Est. 2023</p>
+    </div>
+    <a href="/" class="brand" aria-label="The Argosy, home">
+      <img class="seal" src="/assets/images/seal.png" alt="" width="72" height="72">
+      <span class="wordmark">The Argosy</span>
+    </a>
+    <div class="ear ear-right">
+      {% if nie.live %}
+      <a href="/about/nie/workbook/"><strong>For teachers</strong><br>The free Argosy Workbook &rarr;</a>
+      {% else %}
+      <a href="/join/"><strong>Write for us</strong><br>Pitch your first story &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+  <p class="motto sc">A vessel for ideas · Carrying them across distance</p>
+</header>
+{% else %}
+<header class="masthead masthead--compact" role="banner">
+  <a href="/" class="brand" aria-label="The Argosy, home">
+    <img class="seal" src="/assets/images/seal.png" alt="" width="40" height="40">
     <span class="wordmark">The Argosy</span>
   </a>
-  <p class="motto sc">A vessel for ideas · Carrying them across distance</p>
-  <div class="scotch" aria-hidden="true"></div>
 </header>
+{% endif %}
 
 <nav class="section-nav" aria-label="Sections">
   <ul>
-    {% set sections = [
+    {% set desks = [
       { key: 'politics', name: 'Politics' },
       { key: 'culture', name: 'Culture' },
       { key: 'economics-and-finance', name: 'Economics' },
       { key: 'sustainability', name: 'Sustainability' },
       { key: 'health-and-medicine', name: 'Health' },
       { key: 'psychology', name: 'Psychology' },
-      { key: 'sports', name: 'Sports' },
-      { key: 'roundtable', name: 'The Roundtable' }
+      { key: 'science-and-technology', name: 'Science & Tech' },
+      { key: 'education', name: 'Education' },
+      { key: 'sports', name: 'Sports' }
     ] %}
-    {% for s in sections %}
-      <li><a class="sc cat-{{ s.key }}" href="/category/{{ s.key }}/"
+    {% for s in desks %}
+      <li><a class="cat-{{ s.key }}" href="/category/{{ s.key }}/"
              {% if here == '/category/' + s.key + '/' %}aria-current="true"{% endif %}>{{ s.name }}</a></li>
     {% endfor %}
-    <li><a class="sc" href="/categories/" {% if here == '/categories/' %}aria-current="true"{% endif %}>More</a></li>
+    <li class="nav-divider" aria-hidden="true"></li>
+    <li><a class="nav-more cat-roundtable" href="/category/roundtable/"
+           {% if here == '/category/roundtable/' %}aria-current="true"{% endif %}>The Roundtable</a></li>
+    {% if nie.live %}
+    <li><a class="nav-more cat-education" href="/about/nie/"
+           {% if '/about/nie/' in here %}aria-current="true"{% endif %}>Worksheets</a></li>
+    {% endif %}
+    <li><a class="nav-more" href="/categories/" {% if here == '/categories/' %}aria-current="true"{% endif %}>More</a></li>
   </ul>
 </nav>

@@ -3,158 +3,231 @@ layout: layouts/base.njk
 title: Home
 ---
 
+{# ------------------------------------------------------------------
+   Front page, laid out like a broadsheet's: a ruled grid of ranked
+   stories with a columnists rail, a band for everything the paper does
+   besides news, desk-by-desk section fronts, and the archive.
+   Nunjucks note: {% set %} inside a nested loop doesn't escape it, so
+   every list below is built in a single-level loop.
+   ------------------------------------------------------------------ #}
+
 {% set all = collections.posts %}
-{% set hero = all[0] %}
-{% set rest = all | exceptByUrl(hero.url if hero else null) %}
-{% set catsAll = collections.categoryList %}
-
-{% set topKeys = [
-  'politics',
-  'culture',
-  'economics-and-finance',
-  'sustainability',
-  'health-and-medicine',
-  'psychology',
-  'sports',
-  'roundtable'
-] %}
-
-{% set heroUrl = hero.url if hero else '' %}
-{% set otherCats = [] %}
-{% for c in catsAll %}
-  {% if c.key not in topKeys %}
-    {% set otherCats = otherCats.concat([c]) %}
+{% set pool = [] %}
+{% for p in all %}
+  {% if p.data._primaryCategoryKey != 'communications' and p.data._primaryCategoryKey != 'roundtable' %}
+    {% set pool = pool.concat([p]) %}
   {% endif %}
 {% endfor %}
 
-{# Latest roundtable, for the band (skip it when it IS the lead story) #}
-{% set rtBand = null %}
-{% for c in catsAll %}
-  {% if c.key == 'roundtable' %}
-    {% if c.items[0] and c.items[0].url != heroUrl %}
-      {% set rtBand = c.items[0] %}
-    {% elif c.items[1] %}
-      {% set rtBand = c.items[1] %}
-    {% endif %}
-  {% endif %}
+{% set lead = pool[0] %}
+{% set seconds = pool.slice(1, 4) %}
+{% set briefs = pool.slice(4, 8) %}
+{% set topUrls = [] %}
+{% for p in pool.slice(0, 8) %}{% set topUrls = topUrls.concat([p.url]) %}{% endfor %}
+
+{% set editorsNote = null %}
+{% for p in all %}
+  {% if not editorsNote and p.data._primaryCategoryKey == 'communications' %}{% set editorsNote = p %}{% endif %}
 {% endfor %}
 
-{# ============ Lead package ============ #}
-<section class="lead-package" aria-label="Lead story">
-  {% if hero %}
-    <figure class="lead-media">
-      <a href="{{ hero.url }}">
-        <img src="{{ hero.data.image or '/assets/fallback.svg' }}"
-             alt="{{ hero.data.title | safe }}" loading="eager" decoding="async"
-             width="1200" height="800">
-      </a>
-    </figure>
-    <div class="lead-text">
-      {% if hero.data._primaryCategoryKey %}
-        <a class="kicker cat-{{ hero.data._primaryCategoryKey }}"
-           href="/category/{{ hero.data._primaryCategoryKey }}/">{{ hero.data._primaryCategoryName }}</a>
-      {% endif %}
-      <h1 class="lead-hed"><a href="{{ hero.url }}">{{ hero.data.title }}</a></h1>
-      <p class="dek">{{ hero.data.excerpt or hero.data.description or (hero.templateContent | striptags | truncate(200)) }}</p>
-      <div class="byline-row">
-        {% set heroAuthor = authors[hero.data.author] %}
-        {% if heroAuthor %}<img class="avatar" src="{{ heroAuthor.avatar }}" alt="" width="44" height="44">{% endif %}
-        {% if hero.data.author %}<span class="name sc">{{ hero.data.author }}</span><span class="dot">·</span>{% endif %}
-        <time datetime="{{ hero.date | isoDate }}">{{ hero.date | displayDate('en-US') }}</time>
-      </div>
+{% set columnists = [] %}
+{% for c in collections.columnists %}
+  {% set pick = (c.posts | exceptUrls(topUrls))[0] %}
+  {% if pick and columnists.length < 6 %}{% set columnists = columnists.concat([{ name: c.name, role: c.role, avatar: c.avatar, post: pick }]) %}{% endif %}
+{% endfor %}
 
-      <div class="latest">
-        <h2 class="latest-title sc">The Latest</h2>
-        <ol>
-          {% for post in rest | take(4) %}
-            <li>
-              <span class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
-              <div class="when">
-                {% if post.data._primaryCategoryName %}{{ post.data._primaryCategoryName }} · {% endif %}
-                <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
-              </div>
-            </li>
-          {% endfor %}
-        </ol>
-      </div>
-    </div>
-  {% endif %}
-</section>
+{% macro Byline(p, withAvatar) %}
+  <p class="byline">
+    {% set a = authors[p.data.author] %}
+    {% if withAvatar and a %}<img class="avatar" src="{{ a.avatar }}" alt="" width="32" height="32">{% endif %}
+    {% if p.data.author %}<span class="name">{{ p.data.author | replace('By ', '') }}</span>{% endif %}
+    <time datetime="{{ p.date | isoDate }}">{{ p.date | displayDate('en-US') }}</time>
+  </p>
+{% endmacro %}
 
-{# ============ Roundtable band ============ #}
-{% if rtBand %}
-<aside class="rt-band" aria-label="From the Roundtable">
-  <div class="wrap">
-    <img class="seal" src="/assets/images/seal.png" alt="" width="64" height="64">
-    <div>
-      <span class="kicker cat-roundtable">From the Roundtable</span>
-      <p class="rt-quote"><a href="{{ rtBand.url }}">{{ rtBand.data.title }}</a></p>
-      <div class="byline-row">
-        <time datetime="{{ rtBand.date | isoDate }}">{{ rtBand.date | displayDate('en-US') }}</time>
-      </div>
-    </div>
-  </div>
-</aside>
-{% endif %}
-
-{# ============ Section blocks ============ #}
-{% macro SectionBlock(c, heroUrl, rtUrl) %}
-  {% set items = [] %}
-  {% for p in c.items %}
-    {% if p.url != heroUrl and p.url != rtUrl and items.length < 5 %}
-      {% set items = items.concat([p]) %}
-    {% endif %}
-  {% endfor %}
-  {% if items.length %}
-  <section class="front-section cat-{{ c.key }}" aria-labelledby="sec-{{ c.key }}">
-    <div class="section-head">
-      <h2 class="section-name" id="sec-{{ c.key }}"><a href="/category/{{ c.key }}/">{{ c.name }}</a></h2>
-      <a class="section-more sc" href="/category/{{ c.key }}/">All {{ c.count }} stories →</a>
-    </div>
-    <div class="section-grid">
-      {% set lead = items[0] %}
-      <article class="feature">
-        <figure class="thumb">
-          <a href="{{ lead.url }}" tabindex="-1" aria-hidden="true">
-            <img src="{{ lead.data.image or '/assets/fallback.svg' }}" alt=""
-                 loading="lazy" decoding="async" width="600" height="400">
-          </a>
-        </figure>
-        <div>
-          <h3 class="hed"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h3>
-          <p class="dek">{{ lead.data.excerpt or lead.data.description or '' | truncate(160) }}</p>
-          <div class="byline-row">
-            {% if lead.data.author %}<span class="name sc">{{ lead.data.author }}</span><span class="dot">·</span>{% endif %}
-            <time datetime="{{ lead.date | isoDate }}">{{ lead.date | displayDate('en-US') }}</time>
-          </div>
-        </div>
-      </article>
-      <ul class="headline-list">
-        {% for post in items | take(5) %}
-          {% if not loop.first %}
-          <li>
-            <span class="hed"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
-            <div class="meta">
-              {% if post.data.author %}{{ post.data.author }} · {% endif %}
-              <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate('en-US') }}</time>
-            </div>
-          </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
+{% macro Desk(p) %}
+  {% if p.data._primaryCategoryKey %}
+    <a class="desk cat-{{ p.data._primaryCategoryKey }}" href="/category/{{ p.data._primaryCategoryKey }}/">{{ p.data._primaryCategoryName }}</a>
   {% endif %}
 {% endmacro %}
 
-{% set rtUrl = rtBand.url if rtBand else '' %}
+<div class="front">
 
-{% for k in topKeys %}
-  {% for c in catsAll %}
-    {% if c.key == k %}{{ SectionBlock(c, heroUrl, rtUrl) }}{% endif %}
+  {# =================== Top stories + columnists rail =================== #}
+  <div class="front-top">
+    <section class="top-stories" aria-label="Top stories">
+      {% if lead %}
+      <article class="lead">
+        <div class="lead-text">
+          {{ Desk(lead) }}
+          <h1 class="lead-hed"><a href="{{ lead.url }}">{{ lead.data.title }}</a></h1>
+          <p class="summary">{{ lead.data.excerpt }}</p>
+          {{ Byline(lead, true) }}
+        </div>
+        <figure class="lead-media">
+          <a href="{{ lead.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ lead.data.image or '/assets/fallback.svg' }}" alt="" loading="eager" decoding="async" width="1200" height="800">
+          </a>
+          {% if lead.data.image_credit %}<figcaption>{{ lead.data.image_credit }}</figcaption>{% endif %}
+        </figure>
+      </article>
+      {% endif %}
+
+      <div class="seconds">
+        {% for p in seconds %}
+        <article class="second">
+          <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="600" height="400">
+          </a>
+          {{ Desk(p) }}
+          <h2 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
+          <p class="summary">{{ p.data.excerpt | truncate(150) }}</p>
+          {{ Byline(p, false) }}
+        </article>
+        {% endfor %}
+      </div>
+
+      <ol class="briefs" aria-label="More top stories">
+        {% for p in briefs %}
+        <li>
+          {{ Desk(p) }}
+          <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+          {{ Byline(p, false) }}
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <aside class="rail" aria-labelledby="rail-columnists">
+      <h2 class="rail-title" id="rail-columnists"><a href="/team/">Columnists</a></h2>
+      <ul class="columnists">
+        {% for c in columnists %}
+        <li>
+          <img class="avatar" src="{{ c.avatar }}" alt="" width="56" height="56" loading="lazy">
+          <div>
+            <p class="who">{{ c.name }}<span>{{ c.role }}</span></p>
+            <a class="col-hed" href="{{ c.post.url }}">{{ c.post.data.title }}</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% if editorsNote %}
+      <div class="editors-note">
+        <h2 class="rail-title">From the Editor</h2>
+        <a class="col-hed" href="{{ editorsNote.url }}">{{ editorsNote.data.title }}</a>
+        <p>{{ editorsNote.data.excerpt | truncate(140) }}</p>
+        {{ Byline(editorsNote, false) }}
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+
+  {# =================== Beyond the news =================== #}
+  {% set rt = collections.byCategory['roundtable'][0] if collections.byCategory['roundtable'] else null %}
+  <section class="beyond" aria-labelledby="beyond-title">
+    <h2 class="visually-hidden" id="beyond-title">More from The Argosy</h2>
+
+    {% if rt %}
+    <article class="mod mod-roundtable cat-roundtable">
+      <h3 class="mod-name"><a href="/category/roundtable/">The Roundtable</a></h3>
+      <p class="mod-line">The whole masthead, one question, on the record.</p>
+      <a class="mod-hed" href="{{ rt.url }}">{{ rt.data.title | replace('The Roundtable: ', '') }}</a>
+      <ul class="faces" aria-label="Taking part">
+        {% for person in rt.data.author | participants %}
+          <li><img src="{{ person.avatar }}" alt="{{ person.name }}" title="{{ person.name }}" width="36" height="36" loading="lazy"></li>
+        {% endfor %}
+      </ul>
+      <time class="mod-meta" datetime="{{ rt.date | isoDate }}">{{ rt.date | displayDate('en-US') }}</time>
+    </article>
+    {% endif %}
+
+    {% if nie.live %}
+    {% set sheets = collections.worksheet | sort(false, false, "data.order") %}
+    <article class="mod mod-nie cat-education">
+      <h3 class="mod-name"><a href="/about/nie/">Newspaper in Education</a></h3>
+      <p class="mod-line">Free worksheets for grades 4–8, built from our own articles.</p>
+      <a class="sheet-stack" href="/about/nie/workbook/" aria-label="Open the Argosy Workbook">
+        <span class="sheet sheet-3" aria-hidden="true"></span>
+        <span class="sheet sheet-2" aria-hidden="true"></span>
+        <span class="sheet sheet-1">
+          <span class="sheet-kicker">The Argosy Workbook</span>
+          <span class="sheet-title">{{ sheets[0].data.title }}</span>
+          <span class="sheet-lines" aria-hidden="true"></span>
+        </span>
+      </a>
+      <p class="mod-meta">{{ sheets.length }} worksheets · <a href="/assets/nie/argosy-workbook.pdf">Download the PDF</a></p>
+    </article>
+    {% endif %}
+
+    <article class="mod mod-newsletter">
+      <h3 class="mod-name">The Newsletter</h3>
+      <p class="mod-line">New columns, roundtables and worksheets, now and then. No spam.</p>
+      <form name="newsletter" method="POST" action="/newsletter/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <label class="visually-hidden" for="front-newsletter-email">Email address</label>
+        <input id="front-newsletter-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" class="btn">Sign up</button>
+      </form>
+    </article>
+
+    <article class="mod mod-join">
+      <h3 class="mod-name"><a href="/join/">Join the Crew</a></h3>
+      <p class="mod-line">Students write, edit and fact-check every page of this paper. Pitch us yours.</p>
+      <a class="mod-cta" href="/join/">How to apply &rarr;</a>
+    </article>
+  </section>
+
+  {# =================== Section fronts =================== #}
+  {% set deskOrder = [
+    'politics', 'sustainability', 'culture', 'health-and-medicine', 'psychology',
+    'science-and-technology', 'education', 'economics-and-finance', 'sports'
+  ] %}
+  {% for key in deskOrder %}
+    {% set bucket = collections.byCategory[key] or [] %}
+    {% set items = bucket | exceptUrls(topUrls) | take(3) %}
+    {% if items.length %}
+    <section class="desk-front cat-{{ key }} {{ 'layout-a' if loop.index is odd else 'layout-b' }}" aria-labelledby="desk-{{ key }}">
+      <header class="desk-head">
+        <h2 id="desk-{{ key }}"><a href="/category/{{ key }}/">{{ items[0].data._categoryName or items[0].data._primaryCategoryName }}</a></h2>
+        <a class="desk-all" href="/category/{{ key }}/">All {{ bucket.length }} stories &rarr;</a>
+      </header>
+      <div class="desk-grid">
+        {% for p in items %}
+        <article class="desk-story{% if loop.first %} is-first{% endif %}">
+          {% if loop.first or loop.index == 2 %}
+          <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="600" height="400">
+          </a>
+          {% endif %}
+          <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+          {% if loop.first %}<p class="summary">{{ p.data.excerpt | truncate(170) }}</p>{% endif %}
+          {{ Byline(p, false) }}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
   {% endfor %}
-{% endfor %}
 
-{% for c in otherCats %}
-  {{ SectionBlock(c, heroUrl, rtUrl) }}
-{% endfor %}
+  {# =================== From the archive =================== #}
+  {% set past = all | sameMonthEarlier(now) %}
+  {% if past.length %}
+  <section class="archive" aria-labelledby="archive-title">
+    <header class="desk-head">
+      <h2 id="archive-title">From the Archive</h2>
+      <span class="desk-all">This month, in earlier years</span>
+    </header>
+    <ol class="archive-list">
+      {% for p in past | take(4) %}
+      <li>
+        <span class="archive-year">{{ p.date | date('yyyy') }}</span>
+        <a class="hed" href="{{ p.url }}">{{ p.data.title }}</a>
+        {{ Byline(p, false) }}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+</div>

@@ -44,10 +44,17 @@ layout: layouts/base.njk
   </section>
 
   <footer class="post-end">
-    {% if primary %}
-      <span>Filed under <a class="kicker cat-{{ primary.key }}" href="/category/{{ primary.key }}/">{{ primary.name }}</a></span>
+    {% if authorInfo %}
+    <div class="author-box">
+      <img class="avatar" src="{{ authorInfo.avatar }}" alt="" width="64" height="64" loading="lazy">
+      <p><strong>{{ author }}</strong> {% if '20' in authorInfo.role %}was{% else %}is{% endif %} The Argosy's {{ authorInfo.role }}.
+        <a href="/team/">Meet the team</a></p>
+    </div>
     {% endif %}
-    {% if author %}<span class="sc">{{ author }}{% if authorInfo and authorInfo.role %} · {{ authorInfo.role }}{% endif %}</span>{% endif %}
+    <div class="post-end-meta">
+      {% if primary %}<span>Filed under <a class="desk cat-{{ primary.key }}" href="/category/{{ primary.key }}/">{{ primary.name }}</a></span>{% endif %}
+      <a href="#newsletter-email">Get new columns by email</a>
+    </div>
   </footer>
 
   {# Related: same primary category, newest first, excluding current #}

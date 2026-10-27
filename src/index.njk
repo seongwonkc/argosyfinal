@@ -185,26 +185,39 @@ title: Home
   ] %}
   {% for key in deskOrder %}
     {% set bucket = collections.byCategory[key] or [] %}
-    {% set items = bucket | exceptUrls(topUrls) | take(3) %}
+    {% set items = bucket | exceptUrls(topUrls) | take(4) %}
     {% if items.length %}
-    <section class="desk-front cat-{{ key }} {{ 'layout-a' if loop.index is odd else 'layout-b' }}" aria-labelledby="desk-{{ key }}">
+    {% set top = items[0] %}
+    <section class="desk-front cat-{{ key }}{% if loop.index is even %} is-flipped{% endif %}" aria-labelledby="desk-{{ key }}">
       <header class="desk-head">
-        <h2 id="desk-{{ key }}"><a href="/category/{{ key }}/">{{ items[0].data._categoryName or items[0].data._primaryCategoryName }}</a></h2>
+        <h2 id="desk-{{ key }}"><a href="/category/{{ key }}/">{{ top.data._categoryName or top.data._primaryCategoryName }}</a></h2>
         <a class="desk-all" href="/category/{{ key }}/">All {{ bucket.length }} stories &rarr;</a>
       </header>
       <div class="desk-grid">
-        {% for p in items %}
-        <article class="desk-story{% if loop.first %} is-first{% endif %}">
-          {% if loop.first or loop.index == 2 %}
-          <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
-            <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="600" height="400">
+        <article class="desk-lead">
+          <a class="thumb" href="{{ top.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ top.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="600" height="400">
           </a>
-          {% endif %}
-          <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
-          {% if loop.first %}<p class="summary">{{ p.data.excerpt | truncate(170) }}</p>{% endif %}
-          {{ Byline(p, false) }}
+          <h3 class="hed"><a href="{{ top.url }}">{{ top.data.title }}</a></h3>
+          <p class="summary">{{ top.data.excerpt | truncate(170) }}</p>
+          {{ Byline(top, false) }}
         </article>
-        {% endfor %}
+        {% if items.length > 1 %}
+        <ul class="desk-list">
+          {% for p in items.slice(1) %}
+          <li>
+            <div>
+              <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+              <p class="summary">{{ p.data.excerpt | truncate(110) }}</p>
+              {{ Byline(p, false) }}
+            </div>
+            <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+              <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="300" height="200">
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
       </div>
     </section>
     {% endif %}

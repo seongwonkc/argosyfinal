@@ -605,23 +605,31 @@ a.thumb:hover img, .thumb a:hover img { transform: scale(1.02); }
 .desk-all { font-family: var(--display); font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
 a.desk-all:hover { color: var(--flag); text-decoration: underline; text-underline-offset: 3px; }
 
-.desk-grid { display: grid; }
-.desk-story { padding-block: 0.9rem; min-width: 0; }
-.desk-story:first-child { padding-top: 0; }
-.desk-story + .desk-story { border-top: 1px solid var(--rule); }
-.desk-story .hed { font-size: 1.12rem; }
-.desk-story.is-first .hed { font-size: 1.45rem; line-height: 1.15; }
+.desk-grid { display: grid; gap: 1.2rem; }
+.desk-lead .hed { font-size: 1.45rem; line-height: 1.15; }
+.desk-lead .thumb img { aspect-ratio: 16 / 9; }
+.desk-list { list-style: none; margin: 0; padding: 0; }
+.desk-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7.5rem;
+  gap: 1rem;
+  align-items: start;
+  padding-block: 0.95rem;
+  border-top: 1px solid var(--rule);
+}
+.desk-list .hed { font-size: 1.1rem; }
+.desk-list .summary { font-size: 0.93rem; }
+.desk-list .thumb { margin: 0; }
 @media (min-width: 900px) {
-  .desk-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .desk-story { padding: 0 1.15rem; }
-  .desk-story + .desk-story { border-top: 0; border-left: 1px solid var(--rule); }
-  .desk-story.is-first { grid-column: span 2; }
-  .layout-a .desk-story:first-child { padding-left: 0; }
-  .layout-a .desk-story:last-child { padding-right: 0; }
-  /* Layout B mirrors A: the big story sits on the right */
-  .layout-b .desk-story.is-first { order: 2; border-left: 1px solid var(--rule); padding-right: 0; }
-  .layout-b .desk-story:nth-child(2) { order: 0; border-left: 0; padding-left: 0; }
-  .layout-b .desk-story:nth-child(3) { order: 1; border-left: 1px solid var(--rule); }
+  .desk-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0; }
+  .desk-lead { padding-right: 1.6rem; }
+  .desk-list { border-left: 1px solid var(--rule); padding-left: 1.6rem; }
+  .desk-list li:first-child { border-top: 0; padding-top: 0; }
+  .desk-list li:last-child { padding-bottom: 0; }
+  /* Alternate desks put the big story on the right */
+  .is-flipped .desk-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .is-flipped .desk-lead { order: 2; padding: 0 0 0 1.6rem; border-left: 1px solid var(--rule); }
+  .is-flipped .desk-list { order: 1; border-left: 0; padding: 0 1.6rem 0 0; }
 }
 
 /* From the archive */

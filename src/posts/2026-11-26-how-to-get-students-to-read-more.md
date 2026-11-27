@@ -17,6 +17,8 @@ tags:
 excerpt: >-
   A Florida study gave students books they chose themselves to take home for
   the summer. Three summers later, their reading scores were higher.
+image: /assets/images/2026/how-to-get-students-to-read-more.jpg
+image_credit: 'Ron Lach — Pexels'
 ---
 
 Students are reading less, and it shows in their test scores and in what they say about reading.
@@ -53,11 +55,10 @@ The test scores are the part researchers can measure. The National Literacy Trus
 
 A student who picks a book, owns it and has time for it has a reason to open it. Getting students to read more may come down to giving them that reason, one self-chosen book at a time.
 
-*Ella Joung is The Argosy's Junior Education Writer.*
-
 ## Sources
 
 - [National Assessment of Educational Progress, 2024 reading results](https://www.nationsreportcard.gov/reports/reading/2024/g4_8/national-trends/)
 - [National Assessment Governing Board, news release on the 2024 results](https://www.nagb.gov/news-and-events/news-releases/2025/nations-report-card-decline-in-reading-progress-in-math.html)
 - [National Literacy Trust, children and young people's reading in 2025](https://literacytrust.org.uk/research-services/research-reports/children-and-young-peoples-reading-in-2025)
 - [What Works Clearinghouse review of Allington, McGill-Franzen and colleagues' summer reading study](https://ies.ed.gov/ncee/wwc/Docs/QuickReview/sumread_092910.pdf)
+- Photo: [Ron Lach on Pexels](https://www.pexels.com/photo/10638213/)

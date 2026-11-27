@@ -19,5 +19,6 @@ module.exports = {
   "Peter Lee":     { avatar: "/assets/images/avatars/peter-lee.png",     role: "Health Editor",                            flag: "#14656a" },
   "Isaac Kim":     { avatar: "/assets/images/avatars/isaac-kim.png",     role: "Education Editor",                         flag: "#4b3d8f" },
   "Ejin Chung":    { avatar: "/assets/images/avatars/ejin-chung.png",    role: "Science & Technology Editor",              flag: "#0e5b4a" },
-  "Doyeon Kim":    { avatar: "/assets/images/avatars/doyeon-kim.png",    role: "Politics Writer",                          flag: "#8c2f2a" }
+  "Doyeon Kim":    { avatar: "/assets/images/avatars/doyeon-kim.png",    role: "Politics Writer",                          flag: "#8c2f2a" },
+  "Ella Joung":    { avatar: "/assets/images/avatars/ella-joung.png",    role: "Junior Education Writer",                  flag: "#b5651d" }
 };

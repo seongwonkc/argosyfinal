@@ -301,6 +301,19 @@ module.exports = function (eleventyConfig) {
     return out;
   });
 
+  // Author pages: one per single-name byline (roundtable "By ..." and "A and B" bylines are skipped).
+  eleventyConfig.addCollection("authorList", (api) => {
+    const posts = eleventyConfig.collections.posts(api) || [];
+    const map = new Map();
+    for (const p of posts) {
+      const name = p.data.author;
+      if (!name || name.startsWith("By ") || / and |,/.test(name)) continue;
+      if (!map.has(name)) map.set(name, []);
+      map.get(name).push(p);
+    }
+    return [...map].map(([name, items]) => ({ name, items, ...chatAuthors[name] }));
+  });
+
   // Map: key → array of posts in that category
   eleventyConfig.addCollection("byCategory", (api) => {
     const map = new Map();

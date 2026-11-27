@@ -1,0 +1,39 @@
+---
+pagination:
+  data: collections.authorList
+  size: 1
+  alias: writer
+permalink: "author/{{ writer.name | slugify }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ writer.name }}"
+---
+
+{# Author page: the writer, their role, and every piece under their byline, newest first. #}
+<div class="section-front author-page">
+  <header class="sf-head">
+    {% if writer.avatar %}<img class="avatar" src="{{ writer.avatar }}" alt="Pixel-art portrait of {{ writer.name }}" width="96" height="96">{% endif %}
+    <h1>{{ writer.name }}</h1>
+    <div class="sf-meta">
+      <p>{% if writer.role %}The Argosy's {{ writer.role }} · {% endif %}{{ writer.items.length }} {% if writer.items.length == 1 %}story{% else %}stories{% endif %}</p>
+    </div>
+  </header>
+
+  <section class="river" aria-labelledby="river-title">
+    <h2 class="river-title" id="river-title">Stories</h2>
+    <ol>
+      {% for p in writer.items %}
+      <li>
+        <time class="river-date" datetime="{{ p.date | isoDate }}">{{ p.date | displayDate('en-US') }}</time>
+        <div class="river-text">
+          <h3 class="hed"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+          {% if p.data.excerpt %}<p class="summary">{{ p.data.excerpt | truncate(190) }}</p>{% endif %}
+        </div>
+        <a class="thumb" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ p.data.image or '/assets/fallback.svg' }}" alt="" loading="lazy" decoding="async" width="300" height="200">
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+</div>

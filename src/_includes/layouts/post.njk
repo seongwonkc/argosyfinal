@@ -21,7 +21,7 @@ layout: layouts/base.njk
       {% elif isRoundtable %}
         <img class="avatar" src="/assets/images/seal.png" alt="" width="56" height="56">
       {% endif %}
-      {% if author %}<span class="name sc" itemprop="author">{{ author }}</span><span class="dot">·</span>{% endif %}
+      {% if author and not author.startsWith('By ') and ' and ' not in author and ',' not in author %}<a class="name sc" itemprop="author" href="/author/{{ author | slugify }}/">{{ author }}</a><span class="dot">·</span>{% elif author %}<span class="name sc" itemprop="author">{{ author }}</span><span class="dot">·</span>{% endif %}
       {% if date %}<time datetime="{{ date | isoDate }}" itemprop="datePublished">{{ date | displayDate('en-US') }}</time><span class="dot">·</span>{% endif %}
       <span>{{ content | readingTime }}</span>
     </div>
